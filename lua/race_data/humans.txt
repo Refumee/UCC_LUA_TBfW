@@ -1,0 +1,62 @@
+
+#################################################################################################
+######################################## LOYALIST BASE ##########################################
+#################################################################################################
+
+#### Default grey troll
+					{ name = "TROLL_GREY_INFANTRY_ARMOUR_COLOR ", colors = "D0CFBF,A8A8A8,747F73,616153,374336,172830,747F73,616153,747F73" },
+
+################## earthen/stone colors for the randomizer ##################
+					{ name = "TROLL_LIGHTEARTHEN_INFANTRY_ARMOUR_COLOR ", colors = "FAF3C9,F6D39B,C5956A,A9794F,7B4231,422110,C5956A,A9794F,C5956A" },
+					{ name = "TROLL_WOODENEARTH_INFANTRY_ARMOUR_COLOR ", colors = "E6E6A6,C99462,835C35,573A14,352313,131414,835C35,573A14,835C35" },
+					{ name = "TROLL_EARTHEN_INFANTRY_ARMOUR_COLOR ", colors = "D9AC79,BC946B,B3785B,844C1F,462D1F,201810,B3785B,844C1F,B3785B" },
+					{ name = "TROLL_GOBLINMUD_INFANTRY_ARMOUR_COLOR ", colors = "FFCE39,C08008,985810,804018,582820,281010,985810,804018,985810" },
+					{ name = "TROLL_DARKERMUD_INFANTRY_ARMOUR_COLOR ", colors = "CBBC7F,918460,60573C,3C3623,22221A,191911,60573C,3C3623,60573C" },
+					{ name = "TROLL_DARKMUD_INFANTRY_ARMOUR_COLOR ", colors = "FFD087,E2A76F,97663C,574D31,383838,3B3427,97663C,574D31,97663C" },
+					{ name = "TROLL_DARKGREEN_INFANTRY_ARMOUR_COLOR ", colors = "889880,797979,506858,333D33,22221E,191915,506858,333D33,506858" },
+					{ name = "TROLL_DARKBRIGHTSTONE_INFANTRY_ARMOUR_COLOR ", colors = "D5D59B,AA9966,939372,515138,2D2D2D,172830,939372,515138,939372" },
+					{ name = "TROLL_SANDSTONE_INFANTRY_ARMOUR_COLOR ", colors = "F8F8A0,FFFFCE,D6D69C,949473,525239,2D2E22,D6D69C,949473,D6D69C" },
+					{ name = "TROLL_TEAMCOLOR_INFANTRY_ARMOUR_COLOR ", colors = "F49AC1,EF5BA1,D6007F,9E005D,690039,55002A,D6007F,9E005D,D6007F" },
+					{ name = "TROLL_MOLTEN_INFANTRY_ARMOUR_COLOR ", colors = "F7DF8E,E2CD67,F3A62C,AF3C18,8E1A12,6F282B,F3A62C,AF3C18,F3A62C" },
+					{ name = "TROLL_OLDGREEN_INFANTRY_ARMOUR_COLOR", colors = "90F8B8,6ECD8F,50A070,327855,185030,102810,50A070,327855,50A070" },
+
+#################################################################################################
+###################################### LOYALIST CAVALIER ########################################
+#################################################################################################
+#### Default grey troll
+					{ name = "TROLL_GREY_CAVALIER_ARMOUR_COLOR ", colors = "D0CFBF,D0CFBF,A8A8A8,747F73,616153,374336,172830" },
+
+################## earthen/stone colors for the randomizer ##################
+					{ name = "TROLL_LIGHTEARTHEN_CAVALIER_ARMOUR_COLOR ", colors = "FAF3C9,FAF3C9,F6D39B,C5956A,A9794F,7B4231,422110" },
+					{ name = "TROLL_WOODENEARTH_CAVALIER_ARMOUR_COLOR ", colors = "E6E6A6,E6E6A6,C99462,835C35,573A14,352313,131414" },
+					{ name = "TROLL_EARTHEN_CAVALIER_ARMOUR_COLOR ", colors = "D9AC79,D9AC79,BC946B,B3785B,844C1F,462D1F,201810" },
+					{ name = "TROLL_GOBLINMUD_CAVALIER_ARMOUR_COLOR ", colors = "FFCE39,FFCE39,C08008,985810,804018,582820,281010" },
+					{ name = "TROLL_DARKERMUD_CAVALIER_ARMOUR_COLOR ", colors = "CBBC7F,CBBC7F,918460,60573C,3C3623,22221A,191911" },
+					{ name = "TROLL_DARKMUD_CAVALIER_ARMOUR_COLOR ", colors = "FFD087,FFD087,E2A76F,97663C,574D31,383838,3B3427" },
+					{ name = "TROLL_DARKGREEN_CAVALIER_ARMOUR_COLOR ", colors = "889880,889880,797979,506858,333D33,22221E,191915" },
+					{ name = "TROLL_DARKBRIGHTSTONE_CAVALIER_ARMOUR_COLOR ", colors = "D5D59B,D5D59B,AA9966,939372,515138,2D2D2D,172830" },
+					{ name = "TROLL_SANDSTONE_CAVALIER_ARMOUR_COLOR ", colors = "F8F8A0,F8F8A0,FFFFCE,D6D69C,949473,525239,2D2E22" },
+					{ name = "TROLL_TEAMCOLOR_CAVALIER_ARMOUR_COLOR ", colors = "F49AC1,F49AC1,EF5BA1,D6007F,9E005D,690039,55002A" },
+					{ name = "TROLL_MOLTEN_CAVALIER_ARMOUR_COLOR", colors = "F7DF8E,F7DF8E,E2CD67,F3A62C,AF3C18,8E1A12,6F282B" },
+					{ name = "TROLL_OLDGREEN_CAVALIER_ARMOUR_COLOR", colors = "90F8B8,90F8B8,6ECD8F,50A070,327855,185030,102810" },
+
+#################################################################################################
+##################################### LOYALIST JAVELINEER #######################################
+#################################################################################################
+#### Default grey troll
+					{ name = "TROLL_GREY_LEATHER_ARMOUR_COLOR", colors = "a8a8a8,747f73,616153,374336,374336,172830" },
+
+################## earthen/stone colors for the randomizer ##################
+					{ name = "TROLL_LIGHTEARTHEN_LEATHER_ARMOUR_COLOR", colors = "f6d39b,c5956a,a9794f,7b4231,7b4231,422110" },
+					{ name = "TROLL_WOODENEARTH_LEATHER_ARMOUR_COLOR", colors = "c99462,835c35,573a14,352313,352313,131414" },
+					{ name = "TROLL_EARTHEN_LEATHER_ARMOUR_COLOR", colors = "bc946b,b3785b,844c1f,462d1f,462d1f,201810" },
+					{ name = "TROLL_GOBLINMUD_LEATHER_ARMOUR_COLOR", colors = "c08008,985810,804018,582820,582820,281010" },
+					{ name = "TROLL_DARKERMUD_LEATHER_ARMOUR_COLOR", colors = "918460,60573c,3c3623,22221a,22221a,191911" },
+					{ name = "TROLL_DARKMUD_LEATHER_ARMOUR_COLOR", colors = "e2a76f,97663c,574d31,383838,383838,3b3427" },
+					{ name = "TROLL_DARKGREEN_LEATHER_ARMOUR_COLOR", colors = "797979,506858,333d33,22221e,22221e,191915" },
+					{ name = "TROLL_DARKBRIGHTSTONE_LEATHER_ARMOUR_COLOR", colors = "aa9966,939372,515138,2d2d2d,2d2d2d,172830" },
+					{ name = "TROLL_SANDSTONE_LEATHER_ARMOUR_COLOR", colors = "ffffce,d6d69c,949473,525239,525239,2d2e22" },
+					{ name = "TROLL_TEAMCOLOR_LEATHER_ARMOUR_COLOR", colors = "ef5ba1,d6007f,9e005d,690039,690039,55002a" },
+					{ name = "TROLL_MOLTEN_LEATHER_ARMOUR_COLOR", colors = "e2cd67,f3a62c,af3c18,8e1a12,8e1a12,6f282b" },
+					{ name = "TROLL_OLDGREEN_LEATHER_ARMOUR_COLOR", colors = "6ECD8F,50A070,327855,185030,185030,102810" },
+					{ name = "TROLL_GRUU_LEATHER_ARMOUR_COLOR", colors = "a8a8a8,817d71,635054,454133,454133,172830" },
