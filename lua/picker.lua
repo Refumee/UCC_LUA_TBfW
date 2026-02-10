@@ -58,8 +58,8 @@ _G.ucc_open_picker = function(target_unit, ucc_data, whole_faction)
 				-- Das Menü für dieses Körperteil anzeigen
 				wesnoth.wml_actions.message({
 					speaker = "narrator",
-					caption = "UCC: " .. (archetype_data.name or "Teil " .. i),
-					message = "Wähle eine Farbe für " .. (archetype_data.name or "dieses Element"),
+					caption = "UCC: " .. (body_part_entry.name or "Teil " .. i),
+					message = "Wähle eine Farbe für " .. (body_part_entry.name or "dieses Element"),
 					--image = unit_portraits,
 					table.unpack(options)
 				})
@@ -126,6 +126,7 @@ _G.ucc_open_picker = function(target_unit, ucc_data, whole_faction)
                 replace = full_mod 
             } }
         })
+		wesnoth.wml_actions.redraw {}
     end
 end
 

@@ -165,7 +165,7 @@ local body_parts = {
 				base = "C67862,FFF200,F6DB84,C79962",
 				variants = {
 					{ name = "BASE", colors = "C67862,FFF200,F6DB84,C79962" },
-					{ name = "ALBINO", colors = "FF0000,FF7762,DEDEDE,A4988F" },
+					{ name = "ALBINO", colors = "FF0000,FF7762,DEDEDE,A4988F" }
 				},
 			},
 			fighter = { -- archtype
@@ -178,7 +178,7 @@ local body_parts = {
 				base = "F3A62C,FFF200,F7DF8E,C79962",
 				variants = {
 					{ name = "BASE", colors = "F3A62C,FFF200,F7DF8E,C79962" },
-					{ name = "ALBINO", colors = "FF0000,FF7762,DEDEDE,A4988F" },
+					{ name = "ALBINO", colors = "FF0000,FF7762,DEDEDE,A4988F" }
 				},
 			},
 			burner = { -- archtype
@@ -189,7 +189,7 @@ local body_parts = {
 				base = "F3A62C,FFF200,F7DF8E,C79962",
 				variants = {
 					{ name = "BASE", colors = "F3A62C,FFF200,F7DF8E,C79962" },
-					{ name = "ALBINO", colors = "FF0000,FF7762,DEDEDE,A4988F" },
+					{ name = "ALBINO", colors = "FF0000,FF7762,DEDEDE,A4988F" }
 				},
 			},
 			fire = { -- archtype
@@ -197,7 +197,7 @@ local body_parts = {
 				base = "DEB099,F3A62C,D1E997,FDE9F1,C79962",
 				variants = {
 					{ name = "BASE", colors = "DEB099,F3A62C,D1E997,FDE9F1,C79962" },
-					{ name = "ALBINO", colors = "989898,FF0000,FF7762,DEDEDE,A4988F" },
+					{ name = "ALBINO", colors = "989898,FF0000,FF7762,DEDEDE,A4988F" }
 				},
 			},
 			inferno = { -- archtype
@@ -205,7 +205,7 @@ local body_parts = {
 				base = "4C3324,F55711,FFF200",
 				variants = {
 					{ name = "BASE", colors = "4C3324,F55711,FFF200" },
-					{ name = "ALBINO", colors = "414141,FF0000,FF7762" },
+					{ name = "ALBINO", colors = "414141,FF0000,FF7762" }
 				},
 			},
 			armageddon = { -- archtype
@@ -213,7 +213,7 @@ local body_parts = {
 				base = "4C3324,DB9B24",
 				variants = {
 					{ name = "BASE", colors = "4C3324,DB9B24" },
-					{ name = "ALBINO", colors = "414141,FF0000" },
+					{ name = "ALBINO", colors = "414141,FF0000" }
 				},
 			},
 		}
