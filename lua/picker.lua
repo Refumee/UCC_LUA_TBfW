@@ -207,8 +207,9 @@ local function generate_ucc_data(unit, map, found_race_data)
                 if target_variant_id and variants[target_variant_id] then
                     chosen = { id = target_variant_id, data = variants[target_variant_id] }
                 else
-                    local affinity_mod = affinity_modifiers[body_part] or {}
-                    chosen = { id = target_variant_id, data = variants[target_variant_id] } --ToDo
+					wesnoth.interface.add_chat_message("UCC", "Check if the bodyparts got similar names between all bodyparts.")
+                    --local affinity_mod = affinity_modifiers[body_part] or {}
+                    --chosen = { id = target_variant_id, data = variants[target_variant_id] } --ToDo
                 end
 
                 if chosen then
