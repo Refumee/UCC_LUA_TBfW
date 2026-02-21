@@ -1,12 +1,6 @@
 local on_event = wesnoth.require("on_event")
 local gui = wesnoth.require("~add-ons/UCC_LUA/lua/gui.lua")
 
-local function color_changer_ingame_boolean()
-	return wml.variables.color_changer_ingame
-end
-local function color_changer_ingame_side_boolean()
-	return wml.variables.color_changer_ingame_side
-end
 local function color_changer_ingame_allsides_boolean()
 	return wml.variables.color_changer_ingame_allsides
 end
@@ -237,10 +231,7 @@ on_event("turn refresh", function()
 	if color_changer_ingame_allsides_boolean() then
 		wesnoth.wml_actions.set_menu_item({
 			id = "ucc_custom_picker",
-			description = "Color changer: single unit",
-			{ "show_if", {
-				{ "variable", {name="color_changer_ingame", equals=color_changer_ingame_boolean()} }
-			} },
+			description = "Color changer",
 			{ "filter_location", {
 				{ "filter", {} }
 			} },
@@ -279,58 +270,6 @@ on_event("turn refresh", function()
 
 						if found_race_data then
 							_G.ucc_open_picker(unit, found_race_data, nil)
-						else
-							wesnoth.interface.add_chat_message("UCC", "Diese Einheit (" .. unit.type .. ") hat noch keine UCC-Daten.")
-						end
-					]]
-				} }
-			} }
-		})
-		wesnoth.wml_actions.set_menu_item({
-			id = "ucc_custom_picker2",
-			description = "Color changer: whole faction",
-			{ "show_if", {
-				{ "variable", {name="color_changer_ingame_side", equals=color_changer_ingame_side_boolean()} }
-			} },
-			{ "filter_location", {
-				{ "filter", {} }
-			} },
-			{ "command", {
-				{ "lua", {
-					code = [[
-						local unit = wesnoth.units.get(wesnoth.current.event_context.x1, wesnoth.current.event_context.y1)
-						if not unit or not _G.ucc_race_registry then return end
-
-						-- Suche nach passenden Daten
-						local race_data = _G.ucc_race_registry[unit.race]
-						local found_race_data = nil
-						local whole_faction = wml.variables.color_changer_ingame_side
-						
-						if not race_data or not race_data.body_parts then
-							wesnoth.interface.add_chat_message("UCC", "Diese Einheit (" .. unit.type .. ") hat noch keine UCC-Daten.")
-							return nil
-						end
-						
-						for _, body_part_entry in pairs(race_data.body_parts) do
-							
-							-- Inner Loop: Iterate through archetypes (e.g., "glider, fighter ..")
-							for archetype, archetype_data in pairs(body_part_entry.data) do
-								
-								 -- Check if this sub-group applies to this unit type
-								for _, utype in ipairs(archetype_data.unit_types or {}) do
-									if utype == unit.type then 
-										found_race_data = race_data; 
-										break 
-									end
-									if found_race_data then break end
-								end
-								if found_race_data then break end
-							end
-							if found_race_data then break end
-						end
-								
-						if found_race_data then
-							_G.ucc_open_picker(unit, found_race_data, whole_faction)
 						else
 							wesnoth.interface.add_chat_message("UCC", "Diese Einheit (" .. unit.type .. ") hat noch keine UCC-Daten.")
 						end
@@ -341,10 +280,7 @@ on_event("turn refresh", function()
 	else
 		wesnoth.wml_actions.set_menu_item({
 			id = "ucc_custom_picker",
-			description = "Color changer: single unit",
-			{ "show_if", {
-				{ "variable", {name="color_changer_ingame", equals=color_changer_ingame_boolean()} }
-			} },
+			description = "Color changer",
 			{ "filter_location", {
 				{ "filter", { side = wesnoth.current.side} }
 			} },
@@ -383,58 +319,6 @@ on_event("turn refresh", function()
 								
 						if found_race_data then
 							_G.ucc_open_picker(unit, found_race_data, nil)
-						else
-							wesnoth.interface.add_chat_message("UCC", "Diese Einheit (" .. unit.type .. ") hat noch keine UCC-Daten.")
-						end
-					]]
-				} }
-			} }
-		})
-		wesnoth.wml_actions.set_menu_item({
-			id = "ucc_custom_picker2",
-			description = "Color changer: whole faction",
-			{ "show_if", {
-				{ "variable", {name="color_changer_ingame_side", equals=color_changer_ingame_side_boolean()} }
-			} },
-			{ "filter_location", {
-				{ "filter", { side = wesnoth.current.side} }
-			} },
-			{ "command", {
-				{ "lua", {
-					code = [[
-						local unit = wesnoth.units.get(wesnoth.current.event_context.x1, wesnoth.current.event_context.y1)
-						if not unit or not _G.ucc_race_registry then return end
-
-						-- Suche nach passenden Daten
-						local race_data = _G.ucc_race_registry[unit.race]
-						local found_race_data = nil
-						local whole_faction = wml.variables.color_changer_ingame_side
-						
-						if not race_data or not race_data.body_parts then
-							wesnoth.interface.add_chat_message("UCC", "Diese Einheit (" .. unit.type .. ") hat noch keine UCC-Daten.")
-							return nil
-						end
-						
-						for _, body_part_entry in pairs(race_data.body_parts) do
-							
-							-- Inner Loop: Iterate through archetypes (e.g., "glider, fighter ..")
-							for archetype, archetype_data in pairs(body_part_entry.data) do
-								
-								 -- Check if this sub-group applies to this unit type
-								for _, utype in ipairs(archetype_data.unit_types or {}) do
-									if utype == unit.type then 
-										found_race_data = race_data; 
-										break 
-									end
-									if found_race_data then break end
-								end
-								if found_race_data then break end
-							end
-							if found_race_data then break end
-						end
-								
-						if found_race_data then
-							_G.ucc_open_picker(unit, found_race_data, whole_faction)
 						else
 							wesnoth.interface.add_chat_message("UCC", "Diese Einheit (" .. unit.type .. ") hat noch keine UCC-Daten.")
 						end
