@@ -56,7 +56,9 @@ function gui.show_picker(unit, race_data)
     local active_variants_cache = {} 
     local whole_faction_check = false
     local base_image = get_unit_base_image(unit)
-
+	local unit_side = unit.__cfg["side"]
+	local team_mod = "~RC(magenta>" .. unit_side .. ")"
+	
     -- 1. Bild-Vorschau Logik
     local function get_preview_image()
         local img_mod = ""
@@ -82,7 +84,7 @@ function gui.show_picker(unit, race_data)
                 end
             end
         end
-        return base_image .. img_mod.. "~SCALE(216,216)"
+        return base_image .. img_mod .. team_mod .. "~SCALE(216,216)"
     end
 
     -- 2. GUI Definition
