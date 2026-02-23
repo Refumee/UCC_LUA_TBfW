@@ -207,21 +207,7 @@ _G.ucc_open_picker = function(unit)
                 
                 -- Nur anwenden wenn valide Daten rauskamen
                 if new_data and new_data ~= "" then -- generate_ucc_data gibt String zurück in deiner Version? 
-                    -- Ah moment, generate_ucc_data in deinem upload gibt STRING zurück, 
-                    -- aber apply_ucc_to_unit erwartet TABLE (mit .id, .base_colors, .new_colors).
-                    -- Wir müssen generate_ucc_data in picker-ai.lua anpassen oder hier eine Tabelle bauen.
-                    
-                    -- KORREKTUR: Deine generate_ucc_data Funktion oben gibt nur einen ID-String zurück.
-                    -- Wir brauchen aber die Farbwerte für apply_ucc_to_unit.
-                    
-                    -- Da generate_ucc_data in deinem Upload unvollständig war (nur ID return), 
-                    -- hier der Fix, damit es funktioniert:
-                    
-                    -- Wir rufen die Logik direkt auf oder nutzen eine korrigierte generate Funktion.
-                    -- Da ich generate_ucc_data nicht komplett umschreiben will, hier der Workaround:
-                    
-                    -- Wir rufen apply_ucc_to_unit NICHT auf, sondern bauen das Objekt direkt hier
-                    -- ODER wir passen generate_ucc_data an (Bessere Lösung).
+                    apply_ucc_to_unit(u, new_data, u_old_id)
                 end
             end
         end

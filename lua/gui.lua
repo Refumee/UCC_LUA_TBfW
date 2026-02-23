@@ -40,15 +40,10 @@ local function GUI_FORCE_WIDGET_MINIMUM_SIZE(w, h, content)
 end
 
 function gui.show_picker(unit, race_data)
-    -- DEBUG START
-    wesnoth.interface.add_chat_message("UCC", "------------------------------------------------")
-    wesnoth.interface.add_chat_message("UCC", "GUI Start für Unit: " .. unit.name .. " (Type: " .. unit.type .. ")")
     
     if not race_data then
         wesnoth.interface.add_chat_message("UCC", "FEHLER: race_data ist nil! Prüfe _G.ucc_race_registry und unit.race ("..tostring(unit.race)..")")
         return
-    else
-        wesnoth.interface.add_chat_message("UCC", "Race Data gefunden. Anzahl Body Parts: " .. #(race_data.body_parts or {}))
     end
     -- DEBUG END
 
@@ -124,7 +119,7 @@ function gui.show_picker(unit, race_data)
 									T.row {
 										T.column { T.button { id = "cancel", label = "Cancel" } },
 										T.column { T.spacer { width = 10 } },
-										T.column { T.button { id = "ok", label = "Apply" } }
+										T.column { T.button { id = "ok", label = "Apply", return_value = 1 } }
 									}
 								}
 							}
@@ -276,7 +271,6 @@ function gui.show_picker(unit, race_data)
             if selected_idx < 1 then return end
             
             local part_data = race_data.body_parts[selected_idx]
-            -- wesnoth.interface.add_chat_message("UCC", "Lade Varianten für Part: " .. part_data.name)
 
             active_variants_cache = {} 
             local variant_items = {}
@@ -295,6 +289,7 @@ function gui.show_picker(unit, race_data)
                         table.insert(active_variants_cache, variant)
                     end
 					
+					-- makes everything blank
 					local index = 1
 					while index <= biggest_number do
 						dialog.list_variants:find(index, "lbl_image").label = "misc/blank-hex.png"
@@ -302,16 +297,15 @@ function gui.show_picker(unit, race_data)
 						index = index + 1				
 					end
 					for j, variant in ipairs(archetype_data.variants) do
-						dialog.list_variants:find(j, "lbl_image").label = base_image .. "~PAL(" .. archetype_data.base .. ">" .. variant.colors .. ")"
+						dialog.list_variants:find(j, "lbl_image").label = base_image .. "~PAL(" .. archetype_data.base .. ">" .. variant.colors .. ")" .. team_mod
 						dialog.list_variants:find(j, "lbl_variant").label = variant.name
 					end
                 end
 				
+				-- first reset the biggest_number then counts the current size of variant list, for later removable
 				biggest_number = 0
-				if is_match then
-                    for _, variant in ipairs(archetype_data.variants) do
-                        biggest_number = biggest_number + 1
-                    end
+				for _, variant in ipairs(archetype_data.variants) do
+					biggest_number = biggest_number + 1
 				end
             end
 
