@@ -1,6 +1,12 @@
 local on_event = wesnoth.require("on_event")
 local gui = wesnoth.require("~add-ons/UCC_LUA/lua/gui.lua")
 
+-- local function color_changer_ingame_boolean()
+	-- return wml.variables.color_changer_ingame
+-- end
+-- local function color_changer_ingame_side_boolean()
+	-- return wml.variables.color_changer_ingame_side
+-- end
 local function color_changer_ingame_allsides_boolean()
 	return wml.variables.color_changer_ingame_allsides
 end
