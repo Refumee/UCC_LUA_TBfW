@@ -1,11 +1,12 @@
 local on_event = wesnoth.require("on_event")
+local gui = wesnoth.require("~add-ons/UCC_LUA/lua/gui.lua")
 
-local function color_changer_ingame_boolean()
-	return wml.variables.color_changer_ingame
-end
-local function color_changer_ingame_side_boolean()
-	return wml.variables.color_changer_ingame_side
-end
+-- local function color_changer_ingame_boolean()
+	-- return wml.variables.color_changer_ingame
+-- end
+-- local function color_changer_ingame_side_boolean()
+	-- return wml.variables.color_changer_ingame_side
+-- end
 local function color_changer_ingame_allsides_boolean()
 	return wml.variables.color_changer_ingame_allsides
 end
@@ -57,75 +58,54 @@ local function parse_composite_id(old_combined_id)
     return map
 end
 
-local function generate_ucc_data(unit, map, found_race_data)
-	
-	map = map or {}
-	local unit_type = unit.__cfg["type"]
-    local race_data = found_race_data
-    if not race_data or not race_data.body_parts then 
-		return nil
-	end
-
+local function generate_ucc_data(unit, selection_map, race_data)
+    local id_parts = {}
     local final_base_table = {}
     local final_color_table = {}
-    local id_parts = {}
 
-    for _, body_part_entry in pairs(race_data.body_parts) do
-		local body_part = body_part_entry.name
-		
-		-- Inner Loop: Iterate through archetypes (e.g., "glider, fighter ..")
-        for archetype, archetype_data in pairs(body_part_entry.data) do
-            
-			 -- Check if this sub-group applies to this unit type
-			local is_supported = false
-			local current_unit_type = ""
-            for _, utype in ipairs(archetype_data.unit_types or {}) do
-                if utype == unit_type then
-					current_unit_type = utype
-					is_supported = true; 
-					break 
-				end
+    for part_name, variant_name in pairs(selection_map) do
+        -- 1. Archetype finden
+        local found_arch_data = nil
+        local found_arch_name = nil
+        
+        for _, part in ipairs(race_data.body_parts) do
+            if part.name == part_name then
+                for arch_name, arch_data in pairs(part.data) do
+                     for _, ut in ipairs(arch_data.unit_types or {}) do
+                         if ut == unit.type then 
+                            found_arch_data = arch_data
+                            found_arch_name = arch_name
+                            break 
+                         end
+                     end
+                     if found_arch_data then break end
+                end
             end
-			
-            if is_supported then
-			
-				-- Extract variants (k for the name of the color and variants[k] saves the color")
-                local variants = {}
-                for k, v in pairs(archetype_data.variants) do
-					k = v.name
-					variants[k] = v.colors
-                end
+            if found_arch_data then break end
+        end
 
-                local chosen = nil
-                local target_variant_id = map[body_part]
-				
-				-- Pick variant. Keep old variant when leveling up if it exists in the new part, else take group coloring.
-                if target_variant_id and variants[target_variant_id] then
-                    chosen = { id = target_variant_id, data = variants[target_variant_id] }
-                else
-					-- wesnoth.interface.add_chat_message("UCC", "Check if the bodyparts got similar names between all bodyparts.")
-                    --local affinity_mod = affinity_modifiers[body_part] or {}
-                    --chosen = { id = target_variant_id, data = variants[target_variant_id] } --ToDo
+        -- 2. Farben mappen
+        if found_arch_data then
+            local found_colors = nil
+            for _, v in ipairs(found_arch_data.variants) do
+                if v.name == variant_name then
+                    found_colors = v.colors
+                    break
                 end
-
-                if chosen then
-                    table.insert(id_parts, string.format("%s:%s:%s", body_part, current_unit_type, chosen.id))
-                    
-                    -- Compile palettes. Add to the base and target color, but only if the new color isn't same as base color.
-                    local source_pal = archetype_data.base
-                    local target_pal = chosen.data
-                    if source_pal and target_pal then
-                        table.insert(final_base_table, source_pal)
-                        table.insert(final_color_table, target_pal)
-                    end
-                    break -- move to next body_part
-                end
+            end
+            
+            if found_colors then
+                table.insert(id_parts, part_name .. ":" .. found_arch_name .. ":" .. variant_name)
+                table.insert(final_base_table, found_arch_data.base)
+                table.insert(final_color_table, found_colors)
             end
         end
     end
 
+    table.sort(id_parts)
+    
+    -- WICHTIG: Tabelle zurückgeben, keinen String!
     return {
-		-- Combine the tables into strings and return them
         id = table.concat(id_parts, "--"),
         base_colors = table.concat(final_base_table, ","),
         new_colors = table.concat(final_color_table, ",")
@@ -152,150 +132,88 @@ local function apply_ucc_to_unit(unit, data, old_combined_id)
     unit:add_modification("object", mod_cfg)
 end
 
-_G.ucc_open_picker = function(target_unit, ucc_data, whole_faction)
-    -- 1. Bildpfad säubern
-    local unit_type = target_unit.__cfg["type"]
-    local unit_side = target_unit.__cfg["side"]
-    local unit_image = target_unit.__cfg["image"]
-    
-    local final_selections = {}
-
-    -- 2. Das Menü anzeigen (Dein bestehender Code)
-    for i, body_part_entry in pairs(ucc_data.body_parts) do
-        -- Inner Loop: Iterate through archetypes
-        for archetype, archetype_data in pairs(body_part_entry.data) do
-            
-             -- Check if this sub-group applies to this unit type
-            local is_supported = false
-            for _, utype in ipairs(archetype_data.unit_types or {}) do
-                if utype == unit_type then 
-                    is_supported = true; 
-                    break 
-                end
-            end
-
-            if is_supported then
-                local options = {}
-                
-                -- WML-Optionen bauen
-                for j, var in ipairs(archetype_data.variants) do
-                    local preview_mod = "~PAL(" .. archetype_data.base .. ">" .. var.colors .. ")"
-                    local team_mod = "~RC(magenta>" .. unit_side .. ")"
-                    local final_image = unit_image .. preview_mod .. team_mod
-
-                    table.insert(options, { "option", {
-                        message = var.name, -- Name der Variante (z.B. "WYVERN_DRAKE")
-                        image = final_image,
-                        { "command", {
-                            { "set_variable", { name = "ucc_choice", value = j } }
-                        } }
-                    } })
-                end
-
-                -- Menü anzeigen
-                wesnoth.wml_actions.message({
-                    speaker = "narrator",
-                    caption = "UCC: " .. (body_part_entry.name or "Teil " .. i),
-                    message = "Wähle eine Farbe für " .. (body_part_entry.name or "dieses Element"),
-                    table.unpack(options)
-                })
-
-                -- Auswahl speichern
-                local choice = wml.get_variable("ucc_choice")
-                if choice and choice > 0 then
-                    local selected_variant = archetype_data.variants[choice]
-                    
-                    table.insert(final_selections, {
-                        -- WICHTIG: Wir speichern hier nur die abstrakten Namen!
-                        part_name = body_part_entry.name,       -- z.B. "scales"
-                        variant_name = selected_variant.name    -- z.B. "WYVERN_DRAKE"
-                    })
-                    
-                    wml.variables["ucc_choice"] = 0 
-                else
-                    return -- Abbruch bei Cancel
-                end
-            end
-        end
+_G.ucc_open_picker = function(unit)
+    -- 1. Daten holen
+    local race_data = _G.ucc_race_registry[unit.race]
+    if not race_data then 
+        wesnoth.interface.add_chat_message("UCC", "Error: No race data found.")
+        return 
     end
-    
-    -- 3. Finale Anwendung: Einzeln oder Fraktionsweit?
-    if #final_selections > 0 then
+
+    -- 2. GUI öffnen und auf Ergebnis warten
+    local final_selections, whole_faction = gui.show_picker(unit, race_data)
+
+    -- 3. Wenn "Apply" geklickt wurde
+    if final_selections then
         
-        -- A) Wir bauen eine "Blaupause" der Änderungen
-        -- Das Format ist: Map[Körperteil] = "VariantenName"
-        -- z.B. { ["scales"] = "WYVERN_DRAKE", ["eyes"] = "ALBINO" }
-		local blueprint_map = {}
-		for _, sel in ipairs(final_selections) do
-			blueprint_map[sel.part_name] = sel.variant_name
-			
-			-- NEU: Wenn "Whole Faction" aktiv ist, speichern wir das dauerhaft für die Seite
-			if whole_faction then
-				-- Variable-Name z.B.: "ucc_pref_side_1_scales"
-				local var_name = "ucc_pref_side_" .. unit_side .. "_" .. sel.part_name
-				wml.variables[var_name] = sel.variant_name
-			end
-		end
-		
-        -- B) Welche Einheiten sind betroffen?
+        -- A) Liste der zu bearbeitenden Einheiten erstellen
         local units_to_process = {}
+        
         if whole_faction then
-            -- Suche alle Einheiten der Seite auf der Karte
-            units_to_process = wesnoth.units.find_on_map({ side = unit_side })
+             -- Variable speichern
+             for part, variant in pairs(final_selections) do
+                 local var_name = "ucc_pref_side_" .. unit.side .. "_" .. part
+                 wml.variables[var_name] = variant
+             end
+             
+             -- Alle Einheiten der Seite finden
+             units_to_process = wesnoth.units.find_on_map({ side = unit.side })
         else
-            -- Nur die angeklickte Einheit
-            units_to_process = { target_unit }
+             -- Nur die eine Einheit
+             units_to_process = { unit }
         end
 
-        -- C) Schleife über alle betroffenen Einheiten
-        for o, u in ipairs(units_to_process) do
+        -- B) Schleife über alle betroffenen Einheiten
+        for _, u in ipairs(units_to_process) do
             
-            -- 1. Alte Farben der jeweiligen Einheit auslesen
-            -- (Damit wir z.B. die Augenfarbe behalten, wenn wir nur die Schuppen ändern)
+            -- Alte ID der jeweiligen Einheit holen
             local u_modifications = wml.get_child(u.__cfg, "modifications")
             local u_old_id = nil
+            
             if u_modifications then
                 for obj in wml.child_range(u_modifications, "object") do
-                    if obj.ucv_color_id then 
-                        u_old_id = obj.ucv_color_id
-						units_to_process[o]:remove_modifications({ ucv_color_id = u_old_id }, "object"); break 
-                    elseif obj.ucc_color_id then -- Fallback für altes System
-                        u_old_id = obj.ucc_color_id; break 
+                    if obj.ucc_color_id then 
+                        u_old_id = obj.ucc_color_id
+                        break 
+                    elseif obj.ucv_color_id then 
+                        -- Fremde UCV Mods entfernen wir direkt
+                        u:remove_modifications({ ucv_color_id = obj.ucv_color_id }, "object")
+                        -- u_old_id bleibt nil, damit wir sauber neu aufsetzen
+                        break 
                     end
                 end
             end
 
-            -- 2. Bestehende Varianten parsen
+            -- Bestimmen, welche Varianten diese Einheit bekommen soll
+            -- (Mix aus alten Werten und neuer Auswahl)
             local current_map = {}
             if u_old_id then
                 current_map = parse_composite_id(u_old_id)
             end
-
-            -- 3. Blaupause drüberlegen (Update)
-            -- Wir überschreiben die alten Werte mit den neuen Selektionen
-            for part, variant_name in pairs(blueprint_map) do
-                current_map[part] = variant_name
+            
+            -- Neue Auswahl drüberlegen
+            for part, variant in pairs(final_selections) do
+                current_map[part] = variant
             end
 
-            -- 4. Race Data für DIESE Einheit holen
-            -- (Ein Wolf Rider braucht wolf_data, ein Drake braucht drake_data)
+            -- WICHTIG: Die Race-Data der jeweiligen Einheit holen (nicht zwingend die vom Picker-Start!)
+            -- Falls z.B. ein Wolf Rider und ein Troll in der gleichen Fraktion sind.
             local u_race_data = _G.ucc_race_registry[u.race]
-
+            
+            -- Nur anwenden, wenn die Einheit zur Rasse passt (oder wir erzwingen wollen)
+            -- Hier nutzen wir u_race_data, damit generate_ucc_data funktioniert
             if u_race_data then
-                -- 5. Neue Daten generieren
-                -- Hier passiert die Magie: generate_ucc_data sucht für den "Fighter"
-                -- automatisch die "WYVERN_DRAKE" Variante im "fighter"-Archetyp,
-                -- auch wenn wir sie ursprünglich bei einem "Glider" ausgewählt haben.
                 local new_data = generate_ucc_data(u, current_map, u_race_data)
-
-                -- 6. Anwenden (nur wenn valide Daten rauskamen)
-                if new_data and new_data.id ~= "" then
+                
+                -- Nur anwenden wenn valide Daten rauskamen
+                if new_data and new_data ~= "" then -- generate_ucc_data gibt String zurück in deiner Version? 
                     apply_ucc_to_unit(u, new_data, u_old_id)
                 end
             end
         end
-
-        wesnoth.wml_actions.redraw {}
+        
+        -- Da oben ein logisches Loch war (generate vs apply), hier die saubere Lösung für den Loop:
+        -- Ich schreibe dir unten die KORRIGIERTE generate_ucc_data Funktion, die du ersetzen musst.
     end
 end
 
@@ -305,10 +223,7 @@ on_event("turn refresh", function()
 	if color_changer_ingame_allsides_boolean() then
 		wesnoth.wml_actions.set_menu_item({
 			id = "ucc_custom_picker",
-			description = "Color changer: single unit",
-			{ "show_if", {
-				{ "variable", {name="color_changer_ingame", equals=color_changer_ingame_boolean()} }
-			} },
+			description = "Color changer",
 			{ "filter_location", {
 				{ "filter", {} }
 			} },
@@ -323,7 +238,7 @@ on_event("turn refresh", function()
 						local found_race_data = nil
 						
 						if not race_data or not race_data.body_parts then
-							wesnoth.interface.add_chat_message("UCC", "Diese Einheit (" .. unit.type .. ") hat noch keine UCC-Daten.")
+							wesnoth.interface.add_chat_message("UCC", "This Unit (" .. unit.type .. ") isnt supported, yet.")
 							return nil
 						end
 						
@@ -348,59 +263,7 @@ on_event("turn refresh", function()
 						if found_race_data then
 							_G.ucc_open_picker(unit, found_race_data, nil)
 						else
-							wesnoth.interface.add_chat_message("UCC", "Diese Einheit (" .. unit.type .. ") hat noch keine UCC-Daten.")
-						end
-					]]
-				} }
-			} }
-		})
-		wesnoth.wml_actions.set_menu_item({
-			id = "ucc_custom_picker2",
-			description = "Color changer: whole faction",
-			{ "show_if", {
-				{ "variable", {name="color_changer_ingame_side", equals=color_changer_ingame_side_boolean()} }
-			} },
-			{ "filter_location", {
-				{ "filter", {} }
-			} },
-			{ "command", {
-				{ "lua", {
-					code = [[
-						local unit = wesnoth.units.get(wesnoth.current.event_context.x1, wesnoth.current.event_context.y1)
-						if not unit or not _G.ucc_race_registry then return end
-
-						-- Suche nach passenden Daten
-						local race_data = _G.ucc_race_registry[unit.race]
-						local found_race_data = nil
-						local whole_faction = wml.variables.color_changer_ingame_side
-						
-						if not race_data or not race_data.body_parts then
-							wesnoth.interface.add_chat_message("UCC", "Diese Einheit (" .. unit.type .. ") hat noch keine UCC-Daten.")
-							return nil
-						end
-						
-						for _, body_part_entry in pairs(race_data.body_parts) do
-							
-							-- Inner Loop: Iterate through archetypes (e.g., "glider, fighter ..")
-							for archetype, archetype_data in pairs(body_part_entry.data) do
-								
-								 -- Check if this sub-group applies to this unit type
-								for _, utype in ipairs(archetype_data.unit_types or {}) do
-									if utype == unit.type then 
-										found_race_data = race_data; 
-										break 
-									end
-									if found_race_data then break end
-								end
-								if found_race_data then break end
-							end
-							if found_race_data then break end
-						end
-								
-						if found_race_data then
-							_G.ucc_open_picker(unit, found_race_data, whole_faction)
-						else
-							wesnoth.interface.add_chat_message("UCC", "Diese Einheit (" .. unit.type .. ") hat noch keine UCC-Daten.")
+							wesnoth.interface.add_chat_message("UCC", "This Unit (" .. unit.type .. ") isnt supported, yet.")
 						end
 					]]
 				} }
@@ -409,10 +272,7 @@ on_event("turn refresh", function()
 	else
 		wesnoth.wml_actions.set_menu_item({
 			id = "ucc_custom_picker",
-			description = "Color changer: single unit",
-			{ "show_if", {
-				{ "variable", {name="color_changer_ingame", equals=color_changer_ingame_boolean()} }
-			} },
+			description = "Color changer",
 			{ "filter_location", {
 				{ "filter", { side = wesnoth.current.side} }
 			} },
@@ -427,7 +287,7 @@ on_event("turn refresh", function()
 						local found_race_data = nil
 						
 						if not race_data or not race_data.body_parts then
-							wesnoth.interface.add_chat_message("UCC", "Diese Einheit (" .. unit.type .. ") hat noch keine UCC-Daten.")
+							wesnoth.interface.add_chat_message("UCC", "This Unit (" .. unit.type .. ") isnt supported, yet.")
 							return nil
 						end
 						
@@ -452,59 +312,7 @@ on_event("turn refresh", function()
 						if found_race_data then
 							_G.ucc_open_picker(unit, found_race_data, nil)
 						else
-							wesnoth.interface.add_chat_message("UCC", "Diese Einheit (" .. unit.type .. ") hat noch keine UCC-Daten.")
-						end
-					]]
-				} }
-			} }
-		})
-		wesnoth.wml_actions.set_menu_item({
-			id = "ucc_custom_picker2",
-			description = "Color changer: whole faction",
-			{ "show_if", {
-				{ "variable", {name="color_changer_ingame_side", equals=color_changer_ingame_side_boolean()} }
-			} },
-			{ "filter_location", {
-				{ "filter", { side = wesnoth.current.side} }
-			} },
-			{ "command", {
-				{ "lua", {
-					code = [[
-						local unit = wesnoth.units.get(wesnoth.current.event_context.x1, wesnoth.current.event_context.y1)
-						if not unit or not _G.ucc_race_registry then return end
-
-						-- Suche nach passenden Daten
-						local race_data = _G.ucc_race_registry[unit.race]
-						local found_race_data = nil
-						local whole_faction = wml.variables.color_changer_ingame_side
-						
-						if not race_data or not race_data.body_parts then
-							wesnoth.interface.add_chat_message("UCC", "Diese Einheit (" .. unit.type .. ") hat noch keine UCC-Daten.")
-							return nil
-						end
-						
-						for _, body_part_entry in pairs(race_data.body_parts) do
-							
-							-- Inner Loop: Iterate through archetypes (e.g., "glider, fighter ..")
-							for archetype, archetype_data in pairs(body_part_entry.data) do
-								
-								 -- Check if this sub-group applies to this unit type
-								for _, utype in ipairs(archetype_data.unit_types or {}) do
-									if utype == unit.type then 
-										found_race_data = race_data; 
-										break 
-									end
-									if found_race_data then break end
-								end
-								if found_race_data then break end
-							end
-							if found_race_data then break end
-						end
-								
-						if found_race_data then
-							_G.ucc_open_picker(unit, found_race_data, whole_faction)
-						else
-							wesnoth.interface.add_chat_message("UCC", "Diese Einheit (" .. unit.type .. ") hat noch keine UCC-Daten.")
+							wesnoth.interface.add_chat_message("UCC", "This Unit (" .. unit.type .. ") isnt supported, yet.")
 						end
 					]]
 				} }
@@ -593,7 +401,6 @@ on_event("unit placed", function(ctx)
         if saved_variant then
             target_map[part.name] = saved_variant
             -- Debug Nachricht ist okay, aber nur zum Testen drin lassen
-            -- wesnoth.interface.add_chat_message("Lade Pref: " .. part.name .. "=" .. saved_variant)
             found_preference = true
         end
     end

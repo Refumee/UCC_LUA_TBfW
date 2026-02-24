@@ -42,7 +42,7 @@ end
 function gui.show_picker(unit, race_data)
     
     if not race_data then
-        wesnoth.interface.add_chat_message("UCC", "FEHLER: race_data ist nil! Prüfe _G.ucc_race_registry und unit.race ("..tostring(unit.race)..")")
+        wesnoth.interface.add_chat_message("UCC", "Error: No race data found.")
         return
     end
     -- DEBUG END
@@ -133,9 +133,11 @@ function gui.show_picker(unit, race_data)
                     horizontal_alignment = "left",
                     grow_factor = 1,
                     horizontal_grow = true, vertical_grow = true,
-                    border = "right", border_size = 10,
                     T.grid {
-                        T.row { T.column { T.label { label = "<b>Body Parts</b>", use_markup = true } } },
+                        T.row { 
+							T.column{
+								vertical_alignment = "top", 
+								T.label { label = "<b>Body Parts</b>", use_markup = true } } },
                         T.row {
                             T.column {
 								border = "all",
@@ -236,30 +238,38 @@ function gui.show_picker(unit, race_data)
             dialog.the_image.label = get_preview_image()
         end
 
-        -- A. BODY PARTS LADEN
-        local part_items = {}
-        for i, part in ipairs(race_data.body_parts) do
-            table.insert(part_items, { lbl_part = part.name })
+		local part_items = {}
+        local visible_part_map = {} -- NEU: Merkt sich die echten Indizes
+		local part_map_counter = 0
+
+        for i, part_data in ipairs(race_data.body_parts) do
+            local is_relevant = false
+            
+            -- Prüfen, ob die Einheit in DIESEM Body Part irgendwo existiert
+            for k, archetype_data in pairs(part_data.data) do
+                if archetype_data.unit_types then
+                    for j, u_type in ipairs(archetype_data.unit_types) do
+                        if u_type == unit.type then
+                            is_relevant = true
+                            break -- Bricht die j-Schleife ab
+                        end
+                    end
+                end
+                if is_relevant then break end -- Bricht die k-Schleife ab (Spart Rechenleistung)
+            end
+
+            -- Nur hinzufügen, wenn der Part auch wirklich für diese Unit relevant ist
+            if is_relevant then
+				part_map_counter = part_map_counter + 1
+				dialog.list_parts:find(part_map_counter, "lbl_part").label = part_data.name
+                table.insert(visible_part_map, i) -- Speichert z.B.: GUI Item 2 entspricht Data Item 4 (Skin)
+            end
         end
-        
-        -- wesnoth.interface.add_chat_message("UCC", "Setze Parts Liste mit " .. #part_items .. " Einträgen.")
-		-- for i, part_data in pairs(race_data.body_parts) do
-			-- for k, archetype_data in pairs(part_data.data) do
-				-- if archetype_data.unit_types then
-					-- for j, u_type in ipairs(archetype_data.unit_types) do
-						-- if u_type == unit.type then
-						-- table.insert(part_items, { lbl_part = part_data.name })
-						-- dialog.list_parts:find(i, "lbl_part").label = part_data.name; break end
-					-- end
-				-- end
-			-- end
-		-- end
 		
-        for i, part in ipairs(race_data.body_parts) do
-			dialog.list_parts:find(i, "lbl_part").label = part.name
-		end
-        
-        if #part_items > 0 then
+		-- Gefilterte Liste an die GUI übergeben
+        --dialog.list_parts.set_items(part_items)
+
+        if #visible_part_map > 0 then
             dialog.list_parts.selected_index = 1
         end
 		
@@ -270,7 +280,8 @@ function gui.show_picker(unit, race_data)
             local selected_idx = dialog.list_parts.selected_index
             if selected_idx < 1 then return end
             
-            local part_data = race_data.body_parts[selected_idx]
+			local real_idx = visible_part_map[selected_idx]
+            local part_data = race_data.body_parts[real_idx]
 
             active_variants_cache = {} 
             local variant_items = {}
@@ -300,6 +311,7 @@ function gui.show_picker(unit, race_data)
 						dialog.list_variants:find(j, "lbl_image").label = base_image .. "~PAL(" .. archetype_data.base .. ">" .. variant.colors .. ")" .. team_mod
 						dialog.list_variants:find(j, "lbl_variant").label = variant.name
 					end
+					
                 end
 				
 				-- first reset the biggest_number then counts the current size of variant list, for later removable
@@ -308,8 +320,6 @@ function gui.show_picker(unit, race_data)
 					biggest_number = biggest_number + 1
 				end
             end
-
-            wesnoth.interface.add_chat_message("UCC", "Gefundene Varianten: " .. #variant_items)
             
             -- Selection wiederherstellen
             local current_selection = selections[part_data.name]
@@ -333,7 +343,8 @@ function gui.show_picker(unit, race_data)
             local v_idx = dialog.list_variants.selected_index
             
             if p_idx > 0 and v_idx > 0 and active_variants_cache[v_idx] then
-                local part_name = race_data.body_parts[p_idx].name
+				local real_idx = visible_part_map[p_idx]
+                local part_name = race_data.body_parts[real_idx].name
                 local variant_name = active_variants_cache[v_idx].name
                 selections[part_name] = variant_name
                 update_preview()
@@ -356,7 +367,7 @@ function gui.show_picker(unit, race_data)
     end
 
     if not show_dialog_func then
-        wesnoth.interface.add_chat_message("UCC", "CRITICAL ERROR: Keine show_dialog Funktion gefunden!")
+        wesnoth.interface.add_chat_message("UCC", "CRITICAL ERROR!")
         return
     end
 
