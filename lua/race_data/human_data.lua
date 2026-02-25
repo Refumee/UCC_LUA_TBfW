@@ -115,7 +115,7 @@ local body_parts = {
 					{ name = "TROLL_SANDSTONE", description = "Sandstone", colors = "F8F8A0,FFFFCE,D6D69C,949473,525239,2D2E22,D6D69C,949473,D6D69C" },
 					{ name = "TROLL_TEAMCOLOR", description = "Teamcolor", colors = "F49AC1,EF5BA1,D6007F,9E005D,690039,55002A,D6007F,9E005D,D6007F" },
 					{ name = "TROLL_MOLTEN", description = "Molten", colors = "F7DF8E,E2CD67,F3A62C,AF3C18,8E1A12,6F282B,F3A62C,AF3C18,F3A62C" },
-					{ name = "TROLL_OLDGREEN", description = "1.0 Troll", colors = "90F8B8,6ECD8F,50A070,327855,185030,102810,50A070,327855,50A070" }
+					{ name = "TROLL_OLDGREEN", description = "1.0 Troll", colors = "90F8B8,6ECD8F,50A070,327855,185030,102810,50A070,327855,50A070" },
 					{ name = "TROLL_GRUU", description = "Grüü (SotBE)", colors = "d3bcc1,a8a8a8,817d71,635054,454133,172830,817d71,635054,817d71" }
 				},
 			},
