@@ -305,11 +305,11 @@ function gui.show_picker(unit, race_data)
 					while index <= biggest_number do
 						dialog.list_variants:find(index, "lbl_image").label = "misc/blank-hex.png"
 						dialog.list_variants:find(index, "lbl_variant").label = " \n "
-						index = index + 1				
+						index = index + 1			
 					end
 					for j, variant in ipairs(archetype_data.variants) do
 						dialog.list_variants:find(j, "lbl_image").label = base_image .. "~PAL(" .. archetype_data.base .. ">" .. variant.colors .. ")" .. team_mod
-						dialog.list_variants:find(j, "lbl_variant").label = variant.name
+						dialog.list_variants:find(j, "lbl_variant").label = variant.description
 					end
 					
                 end
