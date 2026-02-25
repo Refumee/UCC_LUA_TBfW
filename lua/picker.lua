@@ -210,10 +210,9 @@ _G.ucc_open_picker = function(unit)
                     apply_ucc_to_unit(u, new_data, u_old_id)
                 end
             end
+			wesnoth.wml_actions.redraw {}
         end
         
-        -- Da oben ein logisches Loch war (generate vs apply), hier die saubere Lösung für den Loop:
-        -- Ich schreibe dir unten die KORRIGIERTE generate_ucc_data Funktion, die du ersetzen musst.
     end
 end
 
