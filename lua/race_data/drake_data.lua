@@ -100,7 +100,7 @@ local body_parts = {
 					--morph
 					{ name = "ASHEN_DRAKE", description = "Ashen Hearts Drake", colors = "433636,42362E,51403E,1C2F37,B0A99C,87776E,51403E"},
 					{ name = "GSE_DRAKE", description = "Great Steppe Era Drake", colors = "1B0903,2E1B27,2E1B27,2E1B27,84747F,67515F,483240"},
-					{ name = "FIRE_DRAKE", colors = "65564B,324634,AF3C18,1C2F37,E2CD67,DB9B24,984824"},
+					{ name = "FIREDRAKE_DRAKE", description = "Fire Drake", colors = "65564B,324634,AF3C18,1C2F37,E2CD67,DB9B24,984824"},
 					{ name = "INFERNO_DRAKE", description = "Inferno Drake", colors = "6F282B,6F282B,AF3C18,2C2E12,C79962,AF3C18,8E1A12"},
 					{ name = "ARMAGEDDON_DRAKE", description = "Armageddon Drake", colors = "8E1A12,6F282B,AF3C18,2C2E12,F3A62C,F55711,984824"},
 					--albino
@@ -114,7 +114,7 @@ local body_parts = {
 					{ name = "GLIDER_DRAKE", description = "Glider Drake", colors = "E2CD67,C1D553,86AC53,40513C,324634,2C2E12"},
 					{ name = "FIGHTER_DRAKE", description = "Fighter Drake", colors = "C7D95E,86AC53,65564B,573D2D,324634,2C2E12"},
 					{ name = "BURNER_DRAKE", description = "Burner Drake", colors = "DEB099,A5876D,745B52,65564B,4C3324,2C2E12"},
-					{ name = "BROWNGREEN_DRAKE ", colors = "D6D69C,949473,40513C,283028,525239,2C2E12"},
+					{ name = "BROWNGREEN_DRAKE ", description = "Browngreen Drake", colors = "D6D69C,949473,40513C,283028,525239,2C2E12"},
 					{ name = "BROWN_DRAKE", description = "Brown Drake", colors = "B7A88E,937362,5D3B38,4C3233,4C3324,2C2E12"},
 					{ name = "SAURIAN_DRAKE", description = "Saurian Drake", colors = "85D64F,3F8B34,0D4218,324634,324634,2C2E12"},
 					{ name = "NAGA_DRAKE", description = "Naga Drake", colors = "9EDB5E,56963D,124E24,324634,324634,2C2E12"},
@@ -137,7 +137,7 @@ local body_parts = {
 					{ name = "GLIDER_DRAKE", description = "Glider Drake", colors = "E2CD67,C1D553,86AC53,86AC53,40513C,324634,2C2E12"},
 					{ name = "FIGHTER_DRAKE", description = "Fighter Drake", colors = "C7D95E,86AC53,65564B,65564B,573D2D,324634,2C2E12"},
 					{ name = "BURNER_DRAKE", description = "Burner Drake", colors = "DEB099,A5876D,745B52,745B52,65564B,4C3324,2C2E12"},
-					{ name = "BROWNGREEN_DRAKE ", colors = "D6D69C,949473,40513C,40513C,283028,525239,2C2E12"},
+					{ name = "BROWNGREEN_DRAKE ", description = "Browngreen Drake", colors = "D6D69C,949473,40513C,40513C,283028,525239,2C2E12"},
 					{ name = "BROWN_DRAKE", description = "Brown Drake", colors = "B7A88E,937362,5D3B38,5D3B38,4C3233,4C3324,2C2E12"},
 					{ name = "SAURIAN_DRAKE", description = "Saurian Drake", colors = "85D64F,3F8B34,0D4218,0D4218,324634,324634,2C2E12"},
 					{ name = "NAGA_DRAKE", description = "Naga Drake", colors = "9EDB5E,56963D,124E24,124E24,324634,324634,2C2E12"},

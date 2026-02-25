@@ -1,7 +1,7 @@
 -- human_data.lua
 local body_parts = {
 	{
-		name = "Metal armour", -- body_part
+		name = "Metal", -- body_part
 		data = {
 			infantry = {
 				-- Hier sind jetzt die spezifischen Typen für diesen Part
@@ -551,7 +551,7 @@ local body_parts = {
 		}
 	},
 	{
-		name = "Leather armour", -- body_part
+		name = "Leather", -- body_part
 		data = {
 			human = { -- archtype
                 unit_types = { 
