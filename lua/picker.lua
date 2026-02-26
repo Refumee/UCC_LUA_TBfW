@@ -1,12 +1,6 @@
 local on_event = wesnoth.require("on_event")
 local gui = wesnoth.require("~add-ons/UCC_LUA/lua/gui.lua")
 
--- local function color_changer_ingame_boolean()
-	-- return wml.variables.color_changer_ingame
--- end
--- local function color_changer_ingame_side_boolean()
-	-- return wml.variables.color_changer_ingame_side
--- end
 local function color_changer_ingame_allsides_boolean()
 	return wml.variables.color_changer_ingame_allsides
 end
@@ -139,10 +133,33 @@ _G.ucc_open_picker = function(unit)
         wesnoth.interface.add_chat_message("UCC", "Error: No race data found.")
         return 
     end
-
+	
+	function dump(o)
+	   if type(o) == 'table' then
+		  local s = '{ '
+		  for k,v in pairs(o) do
+			 if type(k) ~= 'number' then k = '"'..k..'"' end
+			 s = s .. '['..k..'] = ' .. dump(v) .. ','
+		  end
+		  return s .. '} '
+	   else
+		  return tostring(o)
+	   end
+	end	
+	
+	local final_selections = nil
+	local whole_faction = false
+	
     -- 2. GUI öffnen und auf Ergebnis warten
-    local final_selections, whole_faction = gui.show_picker(unit, race_data)
-
+	local dialog_result = wesnoth.sync.evaluate_single("unit color selection",function()
+        -- Alles hier drin passiert NUR lokal beim aktiven Spieler
+        local final_selections = gui.show_picker(unit, race_data)
+        -- Das hier wird an alle gesendet
+		return final_selections
+    end)
+	local final_selections = dialog_result
+	local whole_faction = dialog_result.boolean
+	
     -- 3. Wenn "Apply" geklickt wurde
     if final_selections then
         

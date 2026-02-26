@@ -375,13 +375,10 @@ function gui.show_picker(unit, race_data)
 
     -- 5. Rückgabe
     if res == 1 or res == -1 then -- Standard OK Buttons
-        if whole_faction_check then
-            return selections, true 
-        else
-            return selections, false
-        end
+		selections["boolean"]=whole_faction_check
+		return selections
     else
-        return nil, false
+        return {}
     end
 end
 
