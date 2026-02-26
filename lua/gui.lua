@@ -80,7 +80,7 @@ function gui.show_picker(unit, race_data)
                 end
             end
         end
-        return base_image .. img_mod .. team_mod .. "~SCALE(216,216)"
+        return base_image .. img_mod .. team_mod .. "~SCALE_SHARP(216,216)"
     end
 
     -- 2. GUI Definition (WML Table)
