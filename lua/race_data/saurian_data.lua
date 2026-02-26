@@ -9,7 +9,6 @@ local body_parts = {
 								"Afterlife Saurian Soothsayer", "Afterlife Saurian Oracle", "Afterlife Saurian Seer", "Afterlife Saurian Prophet",
 								"Wild Saurian","Beast Saurian"
 				},
-				-- Your DEFAULT_WOSE_BARK
 				base = "cff521,22d22f,85d64f,98d858,3f8b34,4d8d38,26882e,0d4218", 
 				variants = {
 					-- Default Green Saurian (color 2, 4, 5 and 6 from talentless saurians having old saurian pixel color, last two colors swamp alchemist)

@@ -8,7 +8,6 @@ local body_parts = {
 								"Afterlife Troll", "Afterlife Troll Whelp", "Afterlife Troll Rocklobber", "Afterlife Troll Warrior", "Great Afterlife Troll", "Afterlife Troll Shaman", "Afterlife Troll Hero",
 								"Troll Initiate","Troll Earth-Shaker"
 				},
-				-- Your DEFAULT_WOSE_BARK
 				base = "d0cfbf,a8a8a8,747f73,616153,374336,172830", 
 				variants = {
 					-- Default grey troll

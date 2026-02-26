@@ -4,7 +4,6 @@ local body_parts = {
 		name = "Scales", -- body_part
 		data = {
 			glider = {
-				-- Hier sind jetzt die spezifischen Typen für diesen Part
 				unit_types = { 
 					"Drake Glider", "Sky Drake", "Hurricane Drake","Afterlife Drake Glider", "Afterlife Sky Drake", "Afterlife Hurricane Drake",
 					"WoF Sky Drake","WoF Hurricane Drake"

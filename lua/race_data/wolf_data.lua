@@ -4,7 +4,6 @@ local body_parts = {
 		name = "Fur", -- body_part
 		data = {
 			wolf = {
-				-- Hier sind jetzt die spezifischen Typen für diesen Part
 				unit_types = { "Wolf Rider", "Wolf", "Afterlife Wolf Rider" },
 				base = "f0e9ae,f3c274,a59077,796433,494a46,4d1d08", 
 				variants = {

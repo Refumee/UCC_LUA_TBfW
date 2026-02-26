@@ -3,7 +3,7 @@ local T = wml.tag
 
 local gui = {}
 
--- HELPER: Bild sicher holen
+-- HELPER: Safely retrieve the base image of a unit
 local function get_unit_base_image(unit)
     if unit.__cfg.image then return unit.__cfg.image end
     local ut = wesnoth.unit_types[unit.type]
@@ -45,8 +45,8 @@ function gui.show_picker(unit, race_data)
         wesnoth.interface.add_chat_message("UCC", "Error: No race data found.")
         return
     end
-    -- DEBUG END
 
+	-- State variables
     local selections = {} 
     local active_variants_cache = {} 
     local whole_faction_check = false
@@ -54,15 +54,16 @@ function gui.show_picker(unit, race_data)
 	local unit_side = unit.__cfg["side"]
 	local team_mod = "~RC(magenta>" .. unit_side .. ")"
 	
-    -- 1. Bild-Vorschau Logik
+    -- 1. Image Preview Logic
     local function get_preview_image()
         local img_mod = ""
+		-- Iterate through all currently selected variations
         for part_name, var_name in pairs(selections) do
             for _, part in ipairs(race_data.body_parts) do
                 if part.name == part_name then
                     for _, arch in pairs(part.data) do
                          local match = false
-                         -- Prüfen ob Unit Type passt
+                         -- Check if this archetype applies to the current unit type
                          for _, ut in ipairs(arch.unit_types or {}) do
                              if ut == unit.type then match = true; break end
                          end
@@ -70,7 +71,7 @@ function gui.show_picker(unit, race_data)
                          if match then
                              for _, v in ipairs(arch.variants) do
                                  if v.name == var_name then
-                                     -- ~PAL String bauen
+                                     -- Append the color shift to the image modification string
                                      img_mod = img_mod .. "~PAL(" .. arch.base .. ">" .. v.colors .. ")"
                                  end
                              end
@@ -82,7 +83,7 @@ function gui.show_picker(unit, race_data)
         return base_image .. img_mod .. team_mod .. "~SCALE(216,216)"
     end
 
-    -- 2. GUI Definition
+    -- 2. GUI Definition (WML Table)
     local definition = {
 		maximum_height = 700,
 		maximum_width = 900,
@@ -92,7 +93,6 @@ function gui.show_picker(unit, race_data)
 		
         T.grid {
             T.row {
-                -- SPALTE 1: VORSCHAU & BUTTONS
                 T.column {
                     vertical_alignment = "top",
                     border = "right", border_size = 10,
@@ -109,7 +109,6 @@ function gui.show_picker(unit, race_data)
                             } 
                         }},
                         T.row { T.column { T.spacer { height = 20 } } },
-						-- UNTERE LEISTE: BUTTONS
 						T.row {
 							T.column {
 								grid_width = 3, 
@@ -127,7 +126,6 @@ function gui.show_picker(unit, race_data)
                     }
                 },
                 
-                -- SPALTE 2: BODY PARTS (LISTE)
                 T.column {
                     vertical_alignment = "top",
                     horizontal_alignment = "left",
@@ -173,7 +171,6 @@ function gui.show_picker(unit, race_data)
                     }
                 },
 
-                -- SPALTE 3: COLORS / VARIANTS (LISTE)
                 T.column {
                     vertical_alignment = "top",
                     horizontal_alignment = "left",
@@ -200,7 +197,6 @@ function gui.show_picker(unit, race_data)
                                                     T.grid {
                                                         T.row {
 															grow_factor = 1,
-                                                            -- Icon Spalte
                                                             T.column { 
 																border = "all",
 																border_size = 5,
@@ -232,42 +228,38 @@ function gui.show_picker(unit, race_data)
         }
     }
 
-    -- 3. Preshow Funktion
+    -- 3. Preshow Logic (Dynamic data loading)
     local function preshow(dialog)
         local function update_preview()
             dialog.the_image.label = get_preview_image()
         end
 
 		local part_items = {}
-        local visible_part_map = {} -- NEU: Merkt sich die echten Indizes
+        local visible_part_map = {} -- Mapping GUI index to actual data index
 		local part_map_counter = 0
-
+		
+		-- A. LOAD BODY PARTS
         for i, part_data in ipairs(race_data.body_parts) do
             local is_relevant = false
             
-            -- Prüfen, ob die Einheit in DIESEM Body Part irgendwo existiert
             for k, archetype_data in pairs(part_data.data) do
                 if archetype_data.unit_types then
                     for j, u_type in ipairs(archetype_data.unit_types) do
                         if u_type == unit.type then
                             is_relevant = true
-                            break -- Bricht die j-Schleife ab
+                            break
                         end
                     end
                 end
-                if is_relevant then break end -- Bricht die k-Schleife ab (Spart Rechenleistung)
+                if is_relevant then break end
             end
 
-            -- Nur hinzufügen, wenn der Part auch wirklich für diese Unit relevant ist
             if is_relevant then
 				part_map_counter = part_map_counter + 1
 				dialog.list_parts:find(part_map_counter, "lbl_part").label = part_data.name
-                table.insert(visible_part_map, i) -- Speichert z.B.: GUI Item 2 entspricht Data Item 4 (Skin)
+                table.insert(visible_part_map, i) -- Stores for example: GUI Item 2 corresponds to Data Item 4 (Skin)
             end
         end
-		
-		-- Gefilterte Liste an die GUI übergeben
-        --dialog.list_parts.set_items(part_items)
 
         if #visible_part_map > 0 then
             dialog.list_parts.selected_index = 1
@@ -275,7 +267,7 @@ function gui.show_picker(unit, race_data)
 		
 		local biggest_number = 0
 		
-        -- B. WENN PART GEWÄHLT -> VARIANTEN LADEN
+		-- B. IF PART SELECTED -> LOAD VARIANTS
         local function load_variants_for_selected_part()
             local selected_idx = dialog.list_parts.selected_index
             if selected_idx < 1 then return end
@@ -321,7 +313,7 @@ function gui.show_picker(unit, race_data)
 				end
             end
             
-            -- Selection wiederherstellen
+            -- Selection restoration 
             local current_selection = selections[part_data.name]
             if current_selection then
                 for i, v in ipairs(active_variants_cache) do
@@ -355,12 +347,11 @@ function gui.show_picker(unit, race_data)
              whole_faction_check = dialog.chk_faction.selected
         end
 
-        -- Initial laden
         load_variants_for_selected_part()
         update_preview()
     end
 
-    -- 4. Dialog anzeigen (Safe Wrapper)
+    -- 4. Display Dialog (Safe Wrapper)
     local show_dialog_func = wesnoth.show_dialog
     if wesnoth.gui and wesnoth.gui.show_dialog then
         show_dialog_func = wesnoth.gui.show_dialog
@@ -373,7 +364,7 @@ function gui.show_picker(unit, race_data)
 
     local res = show_dialog_func(definition, preshow)
 
-    -- 5. Rückgabe
+    -- 5. return picked data
     if res == 1 or res == -1 then -- Standard OK Buttons
 		selections["boolean"]=whole_faction_check
 		return selections

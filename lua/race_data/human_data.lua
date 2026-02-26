@@ -4,7 +4,6 @@ local body_parts = {
 		name = "Metal", -- body_part
 		data = {
 			infantry = {
-				-- Hier sind jetzt die spezifischen Typen für diesen Part
                 unit_types = { 
                     "Battle Princess", "Princess", "Cavalryman", "Horseman", "Dragoon", "Spearman", "Master at Arms", 
 					"Bowman", "Swordsman", "General", "Longbowman", "Grand Marshal", "Sergeant", "Lieutenant", "Master Bowman", 
@@ -553,7 +552,7 @@ local body_parts = {
 	{
 		name = "Leather", -- body_part
 		data = {
-			human = { -- archtype
+			human = { -- archetype
                 unit_types = { 
                     "Battle Princess", "Princess", "Cavalryman", "Horseman", "Dragoon", "Spearman", "Master at Arms", 
 					"Bowman", "Swordsman", "General", "Longbowman", "Grand Marshal", "Sergeant", "Lieutenant", "Master Bowman", 

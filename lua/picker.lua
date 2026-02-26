@@ -5,17 +5,21 @@ local function color_changer_ingame_allsides_boolean()
 	return wml.variables.color_changer_ingame_allsides
 end
 
--- Hilfsfunktion: Prüft, ob die Einheit schon visuell verändert wurde
+-- Helper function: Checks if the unit has already been visually modified
 local function has_visual_mods(unit)
     local modifications = wml.get_child(unit.__cfg, "modifications")
     if not modifications then return false end
 
     for obj in wml.child_range(modifications, "object") do
-        for eff in wml.child_range(obj, "effect") do
-            if eff.apply_to == "image_mod" then
-                return true
-            end
-        end
+		if obj.ucv_color_id then
+			return false
+		else
+			for eff in wml.child_range(obj, "effect") do
+				if eff.apply_to == "image_mod" then
+					return true
+				end
+			end
+		end
     end
     return false
 end
@@ -58,7 +62,7 @@ local function generate_ucc_data(unit, selection_map, race_data)
     local final_color_table = {}
 
     for part_name, variant_name in pairs(selection_map) do
-        -- 1. Archetype finden
+        -- 1. find archetype
         local found_arch_data = nil
         local found_arch_name = nil
         
@@ -78,7 +82,7 @@ local function generate_ucc_data(unit, selection_map, race_data)
             if found_arch_data then break end
         end
 
-        -- 2. Farben mappen
+        -- 2. color mapping
         if found_arch_data then
             local found_colors = nil
             for _, v in ipairs(found_arch_data.variants) do
@@ -98,7 +102,7 @@ local function generate_ucc_data(unit, selection_map, race_data)
 
     table.sort(id_parts)
     
-    -- WICHTIG: Tabelle zurückgeben, keinen String!
+    -- Return table
     return {
         id = table.concat(id_parts, "--"),
         base_colors = table.concat(final_base_table, ","),
@@ -117,73 +121,58 @@ local function apply_ucc_to_unit(unit, data, old_combined_id)
         ucc_color_id = data.id,
         { "effect", {
             apply_to = "image_mod",
-            -- Wir nutzen String-Concatenation für Sicherheit
             replace = "~PAL(" .. data.base_colors .. ">" .. data.new_colors .. ")"
         }}
     }
     
-    -- 3. Anwenden
     unit:add_modification("object", mod_cfg)
 end
 
 _G.ucc_open_picker = function(unit)
-    -- 1. Daten holen
+    -- 1. get data
     local race_data = _G.ucc_race_registry[unit.race]
     if not race_data then 
         wesnoth.interface.add_chat_message("UCC", "Error: No race data found.")
         return 
     end
 	
-	function dump(o)
-	   if type(o) == 'table' then
-		  local s = '{ '
-		  for k,v in pairs(o) do
-			 if type(k) ~= 'number' then k = '"'..k..'"' end
-			 s = s .. '['..k..'] = ' .. dump(v) .. ','
-		  end
-		  return s .. '} '
-	   else
-		  return tostring(o)
-	   end
-	end	
-	
 	local final_selections = nil
 	local whole_faction = false
 	
-    -- 2. GUI öffnen und auf Ergebnis warten
+    -- 2. open gui and mp.sync
 	local dialog_result = wesnoth.sync.evaluate_single("unit color selection",function()
-        -- Alles hier drin passiert NUR lokal beim aktiven Spieler
+        -- only availabe to the active player
         local final_selections = gui.show_picker(unit, race_data)
-        -- Das hier wird an alle gesendet
+        -- sends data to all players
 		return final_selections
     end)
-	local final_selections = dialog_result
-	local whole_faction = dialog_result.boolean
 	
-    -- 3. Wenn "Apply" geklickt wurde
+	local whole_faction = dialog_result.boolean
+	-- removes the boolean value from the table
+	dialog_result.boolean = nil
+	local final_selections = dialog_result
+
+    -- 3. If the player chose a color, continue here
     if final_selections then
         
-        -- A) Liste der zu bearbeitenden Einheiten erstellen
         local units_to_process = {}
         
+		-- checks if all units should be changed
         if whole_faction then
-             -- Variable speichern
              for part, variant in pairs(final_selections) do
                  local var_name = "ucc_pref_side_" .. unit.side .. "_" .. part
                  wml.variables[var_name] = variant
              end
              
-             -- Alle Einheiten der Seite finden
              units_to_process = wesnoth.units.find_on_map({ side = unit.side })
         else
-             -- Nur die eine Einheit
              units_to_process = { unit }
         end
 
-        -- B) Schleife über alle betroffenen Einheiten
+        -- looping through all affected units
         for _, u in ipairs(units_to_process) do
             
-            -- Alte ID der jeweiligen Einheit holen
+            -- get old image_mods, so we can delete them
             local u_modifications = wml.get_child(u.__cfg, "modifications")
             local u_old_id = nil
             
@@ -193,37 +182,27 @@ _G.ucc_open_picker = function(unit)
                         u_old_id = obj.ucc_color_id
                         break 
                     elseif obj.ucv_color_id then 
-                        -- Fremde UCV Mods entfernen wir direkt
                         u:remove_modifications({ ucv_color_id = obj.ucv_color_id }, "object")
-                        -- u_old_id bleibt nil, damit wir sauber neu aufsetzen
                         break 
                     end
                 end
             end
 
-            -- Bestimmen, welche Varianten diese Einheit bekommen soll
-            -- (Mix aus alten Werten und neuer Auswahl)
             local current_map = {}
             if u_old_id then
                 current_map = parse_composite_id(u_old_id)
             end
             
-            -- Neue Auswahl drüberlegen
             for part, variant in pairs(final_selections) do
                 current_map[part] = variant
             end
 
-            -- WICHTIG: Die Race-Data der jeweiligen Einheit holen (nicht zwingend die vom Picker-Start!)
-            -- Falls z.B. ein Wolf Rider und ein Troll in der gleichen Fraktion sind.
             local u_race_data = _G.ucc_race_registry[u.race]
             
-            -- Nur anwenden, wenn die Einheit zur Rasse passt (oder wir erzwingen wollen)
-            -- Hier nutzen wir u_race_data, damit generate_ucc_data funktioniert
             if u_race_data then
                 local new_data = generate_ucc_data(u, current_map, u_race_data)
                 
-                -- Nur anwenden wenn valide Daten rauskamen
-                if new_data and new_data ~= "" then -- generate_ucc_data gibt String zurück in deiner Version? 
+                if new_data and new_data ~= "" then
                     apply_ucc_to_unit(u, new_data, u_old_id)
                 end
             end
@@ -233,9 +212,11 @@ _G.ucc_open_picker = function(unit)
     end
 end
 
--- 4. Das Preload Event (Sicher verpackt)
+-- relevant events for the color changer
+-- turn refresh for menu_item
+-- post advance if a unit advances and needs new colors
+-- unit placed  if a new unit is generated
 on_event("turn refresh", function()
-	--local allsides = 
 	if color_changer_ingame_allsides_boolean() then
 		wesnoth.wml_actions.set_menu_item({
 			id = "ucc_custom_picker",
@@ -340,13 +321,11 @@ end)
 on_event("post advance", function(ctx)
     local unit = wesnoth.units.get(ctx.x1, ctx.y1)
 
-    -- 1. Suche nach der gespeicherten UCC-ID in den Modifikationen der Einheit
     local old_combined_id = nil
     local modifications = wml.get_child(unit.__cfg, "modifications")
     
     if modifications then
         for obj in wml.child_range(modifications, "object") do
-            -- Wir suchen nach unserer speziellen UCC-ID
             if obj.ucc_color_id then
                 old_combined_id = obj.ucc_color_id
                 break
@@ -355,18 +334,12 @@ on_event("post advance", function(ctx)
     end
 	
 	
-    -- 2. Wenn wir eine ID gefunden haben, wenden wir sie auf die neue Form an
     if old_combined_id then
-        -- Wir suchen die passende Race-Data für den NEUEN Unit-Typ
 		local race_data = _G.ucc_race_registry[unit.race]
         local found_race_data = nil
 		
 		for _, body_part_entry in pairs(race_data.body_parts) do
-			
-			-- Inner Loop: Iterate through archetypes (e.g., "glider, fighter ..")
 			for archetype, archetype_data in pairs(body_part_entry.data) do
-				
-				 -- Check if this sub-group applies to this unit type
 				for _, utype in ipairs(archetype_data.unit_types or {}) do
 					if utype == unit.type then 
 						found_race_data = race_data; 
@@ -378,11 +351,8 @@ on_event("post advance", function(ctx)
 			end
 			if found_race_data then break end
 		end
-		
 
-        -- Wenn der neue Typ auch UCC unterstützt, wenden wir die alten Farben an
         if found_race_data and old_combined_id then
-            -- Hier nutzen wir die Logik deiner apply-Funktion
 			local old_variants = parse_composite_id(old_combined_id)
 			local data = generate_ucc_data(unit, old_variants, found_race_data)
             apply_ucc_to_unit(unit, data, old_combined_id)
@@ -391,22 +361,16 @@ on_event("post advance", function(ctx)
 end)
 
 on_event("unit placed", function(ctx)
-    -- 1. Basics prüfen
-    -- WICHTIG: Wir prüfen nur, ob das Feature an ist. NICHT auf ucc_choice prüfen!
-    -- Wir vergleichen mit "yes", da WML-Variablen Strings sind.
     if not wml.variables.color_changer_ingame_side == "yes" then return end
 
     local unit = wesnoth.units.get(ctx.x1, ctx.y1)
     if not unit then return end
     
-    -- 2. Sicherheits-Check: Hat die Einheit schon Mods?
 	if has_visual_mods(unit) then return end
 			
-    -- 3. Daten für die Rasse holen
     local race_data = _G.ucc_race_registry[unit.race]
     if not race_data then return end
 
-    -- 4. Prüfen, ob für diese Seite gespeicherte Präferenzen existieren
     local target_map = {}
     local found_preference = false
 
@@ -416,18 +380,14 @@ on_event("unit placed", function(ctx)
         
         if saved_variant then
             target_map[part.name] = saved_variant
-            -- Debug Nachricht ist okay, aber nur zum Testen drin lassen
             found_preference = true
         end
     end
 
-    -- 5. Wenn wir Präferenzen gefunden haben, anwenden!
     if found_preference then
         local new_data = generate_ucc_data(unit, target_map, race_data)
 
-        -- Checken ob Daten da sind
         if new_data and new_data.id ~= "" then
-            -- WICHTIG: Wir übergeben 'new_data' (die Tabelle), NICHT 'new_data.id'!
             apply_ucc_to_unit(unit, new_data, nil)
         end
     end

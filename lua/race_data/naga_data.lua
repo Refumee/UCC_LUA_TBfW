@@ -58,7 +58,7 @@ local body_parts = {
 	{
 		name = "Belly", -- body_part
 		data = {
-			naga = { -- archtype
+			naga = { -- archetype
                  unit_types = {	"Naga Fighter", "Naga Warrior", "Naga Myrmidon", "Naga Guard", "Naga Shield Guard", "Naga High Guard",
 								"Naga Dirkfang", "Naga Ringcaster", "Naga Ophidian", "Naga Sicarius", "Naga Zephyr", "Afterlife Naga Fighter",
 								"Afterlife Naga Warrior", "Afterlife Naga Myrmidon", "Afterlife Naga Guard", "Afterlife Naga Shield Guard",
