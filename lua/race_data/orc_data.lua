@@ -5,7 +5,7 @@ local body_parts = {
 		data = {
 			orc = {
                 unit_types = { 
-                    "Orcish Grunt", "Orcish Warrior", "Orcish Warlord", 
+                    "Orcish Grunt", "Orcish Warrior", "Orcish Warlord", "Sea Orc",
                     "Orcish Archer","Orcish Crossbowman", "Orcish Slurbow",
                     "Orcish Leader", "Orcish Ruler", "Orcish Sovereign",
                     "Afterlife Orcish Grunt", "Afterlife Orcish Warrior", "Afterlife Orcish Warlord", 
@@ -146,7 +146,7 @@ local body_parts = {
 		data = {
 			orc = {
                 unit_types = { 
-                    "Orcish Grunt", "Orcish Warrior", "Orcish Warlord", 
+                    "Orcish Grunt", "Orcish Warrior", "Orcish Warlord", "Sea Orc",
                     "Orcish Archer","Orcish Crossbowman", "Orcish Slurbow",
                     "Orcish Leader", "Orcish Ruler", "Orcish Sovereign",
                     "Afterlife Orcish Grunt", "Afterlife Orcish Warrior", "Afterlife Orcish Warlord", 
