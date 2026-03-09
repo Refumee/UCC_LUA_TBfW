@@ -1,7 +1,8 @@
 -- goblin_data.lua
 local body_parts = {
 	{
-		name = "Armor", -- body_part
+		name = "goblin_armour", -- body_part
+		description = "Armor",
 		data = {
 			goblin = {
 				unit_types = { "Goblin Spearman","Goblin Impaler","Goblin Rouser", "Afterlife Goblin Spearman","Afterlife Goblin Impaler","Afterlife Goblin Rouser" },

@@ -1,7 +1,8 @@
 -- troll_data.lua
 local body_parts = {
 	{
-		name = "Skin", -- body_part
+		name = "troll_skin", -- body_part
+		description = "Skin",
 		data = {
 			wose = {
 				unit_types = {	"Troll", "Troll Whelp", "Troll Rocklobber", "Troll Warrior", "Great Troll", "Troll Shaman", "Troll Hero",

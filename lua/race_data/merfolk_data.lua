@@ -1,7 +1,8 @@
 -- merfolk_data.lua
 local body_parts = {
 	{
-		name = "Body", -- body_part
+		name = "merfolk_body", -- body_part
+		description = "Body",
 		data = {
 			merman = {
 				unit_types = { 
@@ -9,7 +10,7 @@ local body_parts = {
                     "Merman Hunter", "Merman Spearman", "Merman Javelineer", 
                     "Merman Brawler", "Merman Citizen",
                     "Merman Netcaster", "Merman Entangler",
-					"Child King", "Merman Young King", "Soldier King", "Merman Warrior King",
+					"Merman Child King", "Merman Young King", "Merman Soldier King", "Merman Warrior King",
 					"Afterlife Merman Fighter", "Afterlife Merman Warrior", "Afterlife Merman Triton", "Afterlife Merman Hoplite",
                     "Afterlife Merman Hunter", "Afterlife Merman Spearman", "Afterlife Merman Javelineer", 
                     "Afterlife Merman Brawler", "Afterlife Merman Citizen",
@@ -84,7 +85,8 @@ local body_parts = {
 		}
 	},
 	{
-		name = "Hair", -- body_part
+		name = "merfolk_hair", -- body_part
+		description = "Hair",
 		data = {
 			merman = {
 				unit_types = { 
@@ -92,7 +94,7 @@ local body_parts = {
                     "Merman Hunter", "Merman Spearman", "Merman Javelineer", 
                     "Merman Brawler", "Merman Citizen",
                     "Merman Netcaster", "Merman Entangler",
-					"Child King", "Merman Young King", "Soldier King", "Merman Warrior King",
+					"Merman Child King", "Merman Young King", "Merman Soldier King", "Merman Warrior King",
 					"Afterlife Merman Fighter", "Afterlife Merman Warrior", "Afterlife Merman Triton", "Afterlife Merman Hoplite",
                     "Afterlife Merman Hunter", "Afterlife Merman Spearman", "Afterlife Merman Javelineer", 
                     "Afterlife Merman Brawler", "Afterlife Merman Citizen",
@@ -179,7 +181,8 @@ local body_parts = {
 		}
 	},
 	{
-		name = "Armour", -- body_part
+		name = "merfolk_armor", -- body_part
+		description = "Armor",
 		data = {
 			merman = {
 				unit_types = { 
@@ -187,7 +190,7 @@ local body_parts = {
                     "Merman Hunter", "Merman Spearman", "Merman Javelineer", 
                     "Merman Brawler", "Merman Citizen",
                     "Merman Netcaster", "Merman Entangler",
-					"Child King", "Merman Young King", "Soldier King", "Merman Warrior King",
+					"Merman Child King", "Merman Young King", "Merman Soldier King", "Merman Warrior King",
 					"Afterlife Merman Fighter", "Afterlife Merman Warrior", "Afterlife Merman Triton", "Afterlife Merman Hoplite",
                     "Afterlife Merman Hunter", "Afterlife Merman Spearman", "Afterlife Merman Javelineer", 
                     "Afterlife Merman Brawler", "Afterlife Merman Citizen",

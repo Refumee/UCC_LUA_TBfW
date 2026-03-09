@@ -1,7 +1,8 @@
 -- naga_data.lua
 local body_parts = {
 	{
-		name = "Top", -- body_part
+		name = "naga_top", -- body_part
+		description = "Top",
 		data = {
 			naga = {
                 unit_types = {	"Naga Fighter", "Naga Warrior", "Naga Myrmidon", "Naga Guard", "Naga Shield Guard", "Naga High Guard",
@@ -56,7 +57,8 @@ local body_parts = {
 		}
 	},
 	{
-		name = "Belly", -- body_part
+		name = "naga_belly", -- body_part
+		description = "Belly",
 		data = {
 			naga = { -- archetype
                  unit_types = {	"Naga Fighter", "Naga Warrior", "Naga Myrmidon", "Naga Guard", "Naga Shield Guard", "Naga High Guard",

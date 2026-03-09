@@ -1,7 +1,8 @@
 -- human_data.lua
 local body_parts = {
 	{
-		name = "Metal", -- body_part
+		name = "human_metal", -- body_part
+		description = "Metal",
 		data = {
 			infantry = {
                 unit_types = { 
@@ -550,7 +551,8 @@ local body_parts = {
 		}
 	},
 	{
-		name = "Leather", -- body_part
+		name = "human_leather", -- body_part
+		description = "Leather",
 		data = {
 			human = { -- archetype
                 unit_types = { 

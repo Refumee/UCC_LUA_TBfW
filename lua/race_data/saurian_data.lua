@@ -1,7 +1,8 @@
 -- saurian_data.lua
 local body_parts = {
 	{
-		name = "Scales", -- body_part
+		name = "saurian_scales", -- body_part
+		description = "Scales",
 		data = {
 			wose = {
 				unit_types = {	"Saurian Skirmisher", "Saurian Ambusher", "Saurian Spearthrower", "Saurian Javelineer", "Saurian Flanker", "Saurian Augur", "Saurian Soothsayer", "Saurian Oracle", "Saurian Seer", "Saurian Prophet",

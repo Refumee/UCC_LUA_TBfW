@@ -1,7 +1,8 @@
 -- drake_data.lua
 local body_parts = {
 	{
-		name = "Scales", -- body_part
+		name = "drake_scales", -- body_part
+		description = "Scales",
 		data = {
 			glider = {
 				unit_types = { 
@@ -155,7 +156,8 @@ local body_parts = {
 		}
 	},
 	{
-		name = "Eyes", -- body_part
+		name = "drake_eyes", -- body_part
+		description = "Eyes",
 		data = {
 			glider = { -- archtype
 				unit_types = { 

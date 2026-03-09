@@ -1,7 +1,8 @@
 -- wose_data.lua
 local body_parts = {
 	{
-		name = "Bark", -- body_part
+		name = "wose_bark", -- body_part
+		description = "Bark",
 		data = {
 			wose = {
 				unit_types = { "Wose Sapling", "Wose", "Elder Wose", "Ancient Wose", "Wose Shaman","Afterlife Wose Sapling", "Afterlife Wose", "Afterlife Elder Wose", "Afterlife Ancient Wose", "Afterlife Wose Shaman" },
@@ -46,7 +47,8 @@ local body_parts = {
 		}
 	},
 	{
-		name = "Leaf", -- body_part
+		name = "wose_leaf", -- body_part
+		description = "Leaf",
 		data = {
 			wose = { -- archtype
 				unit_types = { "Wose Sapling", "Wose", "Elder Wose", "Ancient Wose", "Wose Shaman","Afterlife Wose Sapling", "Afterlife Wose", "Afterlife Elder Wose", "Afterlife Ancient Wose", "Afterlife Wose Shaman" },

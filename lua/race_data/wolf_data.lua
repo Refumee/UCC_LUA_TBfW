@@ -1,7 +1,8 @@
 -- wolf_data.lua
 local body_parts = {
 	{
-		name = "Fur", -- body_part
+		name = "wolf_fur", -- body_part
+		description = "Fur",
 		data = {
 			wolf = {
 				unit_types = { "Wolf Rider", "Wolf", "Afterlife Wolf Rider" },
@@ -146,7 +147,8 @@ local body_parts = {
 		}
 	},
 	{
-		name = "Armour", -- body_part
+		name = "wolf_armor", -- body_part
+		description = "Armour",
 		data = {
 			goblinrider = { -- archtype
 				unit_types = { "Wolf Rider","Afterlife Wolf Rider","Goblin Knight","Afterlife Goblin Knight","Goblin Pillager","Afterlife Goblin Pillager","Direwolf Rider","Direwolf","Afterlife Direwolf Rider" },

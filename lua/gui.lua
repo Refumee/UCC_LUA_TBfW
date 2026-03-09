@@ -256,7 +256,7 @@ function gui.show_picker(unit, race_data)
 
             if is_relevant then
 				part_map_counter = part_map_counter + 1
-				dialog.list_parts:find(part_map_counter, "lbl_part").label = part_data.name
+				dialog.list_parts:find(part_map_counter, "lbl_part").label = part_data.description
                 table.insert(visible_part_map, i) -- Stores for example: GUI Item 2 corresponds to Data Item 4 (Skin)
             end
         end

@@ -1,7 +1,8 @@
 -- orc_data.lua
 local body_parts = {
 	{
-		name = "Armour", -- body_part
+		name = "orc_armor", -- body_part
+		description = "Armor",
 		data = {
 			orc = {
                 unit_types = { 
@@ -70,7 +71,8 @@ local body_parts = {
 		}
 	},
 	{
-		name = "Cloth", -- body_part
+		name = "orc_assassin_cloth", -- body_part
+		description = "Cloth (Assassin)",
 		data = {
 			assassin = {
                 unit_types = { "Orcish Assassin", "Orcish Slayer", "Orcish Nightblade", "Afterlife Orcish Assassin", "Afterlife Orcish Slayer", "Afterlife Orcish Nightblade" },
@@ -101,7 +103,8 @@ local body_parts = {
 		}
 	},
 	{
-		name = "Cloth", -- body_part
+		name = "orc_shaman_cloth", -- body_part
+		description = "Cloth (Shaman)",
 		data = {
 			shaman = {
                 unit_types = { "Orcish Shaman", "Orcish Adept", "Orcish Sorceress", "Afterlife Orcish Elder Witch2", "Afterlife Orcish Elder Witch2", "Afterlife Orcish Shamaness2" },
@@ -142,7 +145,8 @@ local body_parts = {
 		}
 	},
 	{
-		name = "Skin", -- body_part
+		name = "orc_skin", -- body_part
+		description = "Skin",
 		data = {
 			orc = {
                 unit_types = { 
