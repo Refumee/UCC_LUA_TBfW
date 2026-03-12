@@ -39,7 +39,14 @@ local body_parts = {
 					{ name = "BONE_OVERGROWN", description = "Overgrown Roots", colors = "E6E6A3,A3B86C,66803D,384D1A,1A260A"},
 					{ name = "BONE_OBSIDIAN", description = "Obsidian Glass", colors = "A8A8BA,5C5C6E,333340,1A1A24,0A0A0F"},
 					{ name = "BONE_ROYAL_GOLD", description = "Royal Gold", colors = "FFEA7A,D6B036,99751A,57400A,291C02"},
-					{ name = "BONE_SOULFIRE", description = "Soulfire Glow", colors = "E6FFFF,66E6CC,1AA3A3,005C5C,002929"}
+					{ name = "BONE_SOULFIRE", description = "Soulfire Glow", colors = "E6FFFF,66E6CC,1AA3A3,005C5C,002929"},
+					-- new 2
+					{ name = "BONE_WOOD_OAK", description = "Carved Oak", colors = "E0B986,B88D54,855C26,52330D,241400"},
+					{ name = "BONE_WOOD_DRIFT", description = "Driftwood", colors = "D6D1C4,A8A291,7A7461,4F4938,262216"},
+					{ name = "BONE_MIX_BLOOD_SHADOWS", description = "Blood in Crevices", colors = "FFFFCE,D6D69C,A84B4B,661C1C,2E0A0A"},
+					{ name = "BONE_MIX_BLOOD_HIGHLIGHTS", description = "Fresh Blood Splatter", colors = "FF5C5C,C23030,949473,525239,2D2E22"},
+					{ name = "BONE_MIX_MOSS_SHADOWS", description = "Mossy Crevices", colors = "FFFFCE,D6D69C,66803D,384D1A,1A260A"},
+					{ name = "BONE_MIX_MOSS_HIGHLIGHTS", description = "Moss on Top", colors = "D4FF66,8EB340,949473,525239,2D2E22"},
 				},
 			},
 			skeleton_rider = {
@@ -55,6 +62,7 @@ local body_parts = {
 					{ name = "BONE_DARK_FOSSIL", description = "Fossilized Bone", colors = "C2C29B,9C9C73,6E6E4D,3B3B26,1C1C12"},
 					{ name = "BONE_DARK_CHARRED", description = "Charred Bone", colors = "949473,6E6E52,454533,26261A,12120C"},
 					{ name = "BONE_ICY", description = "Frozen ToM", colors = "F2FFFF,BFFFED,9AC2B4,617FB1,3E4F6C"},
+					-- new
 					{ name = "BONE_BLOOD_SMEARED", description = "Blood-Smeared", colors = "FFE5D6,D69C9C,A84B4B,661C1C,2E0A0A"},
 					{ name = "BONE_TOXIC_GLOW", description = "Toxic Glowing", colors = "D4FF66,85E640,479921,245214,0F240A"},
 					{ name = "BONE_CRYSTAL_AMETHYST", description = "Amethyst Crystal", colors = "FFFFFF,E6CCFF,B366FF,6600CC,26004D"},
@@ -63,7 +71,14 @@ local body_parts = {
 					{ name = "BONE_OVERGROWN", description = "Overgrown Roots", colors = "E6E6A3,A3B86C,66803D,384D1A,1A260A"},
 					{ name = "BONE_OBSIDIAN", description = "Obsidian Glass", colors = "A8A8BA,5C5C6E,333340,1A1A24,0A0A0F"},
 					{ name = "BONE_ROYAL_GOLD", description = "Royal Gold", colors = "FFEA7A,D6B036,99751A,57400A,291C02"},
-					{ name = "BONE_SOULFIRE", description = "Soulfire Glow", colors = "E6FFFF,66E6CC,1AA3A3,005C5C,002929"}
+					{ name = "BONE_SOULFIRE", description = "Soulfire Glow", colors = "E6FFFF,66E6CC,1AA3A3,005C5C,002929"},
+					-- new 2
+					{ name = "BONE_WOOD_OAK", description = "Carved Oak", colors = "E0B986,B88D54,855C26,52330D,241400"},
+					{ name = "BONE_WOOD_DRIFT", description = "Driftwood", colors = "D6D1C4,A8A291,7A7461,4F4938,262216"},
+					{ name = "BONE_MIX_BLOOD_SHADOWS", description = "Blood in Crevices", colors = "FFFFCE,D6D69C,A84B4B,661C1C,2E0A0A"},
+					{ name = "BONE_MIX_BLOOD_HIGHLIGHTS", description = "Fresh Blood Splatter", colors = "FF5C5C,C23030,949473,525239,2D2E22"},
+					{ name = "BONE_MIX_MOSS_SHADOWS", description = "Mossy Crevices", colors = "FFFFCE,D6D69C,66803D,384D1A,1A260A"},
+					{ name = "BONE_MIX_MOSS_HIGHLIGHTS", description = "Moss on Top", colors = "D4FF66,8EB340,949473,525239,2D2E22"},
 				},
 			},
 			skeleton_revenant = {
@@ -79,6 +94,7 @@ local body_parts = {
 					{ name = "BONE_DARK_FOSSIL", description = "Fossilized Bone", colors = "9C9C73,9C9C73,6E6E4D,3B3B26,1C1C12"},
 					{ name = "BONE_DARK_CHARRED", description = "Charred Bone", colors = "6E6E52,6E6E52,454533,26261A,12120C"},
 					{ name = "BONE_ICY", description = "Frozen ToM", colors = "BFFFED,BFFFED,9AC2B4,617FB1,3E4F6C"},
+					-- new
 					{ name = "BONE_BLOOD_SMEARED", description = "Blood-Smeared", colors = "D69C9C,D69C9C,A84B4B,661C1C,2E0A0A"},
 					{ name = "BONE_TOXIC_GLOW", description = "Toxic Glowing", colors = "85E640,85E640,479921,245214,0F240A"},
 					{ name = "BONE_CRYSTAL_AMETHYST", description = "Amethyst Crystal", colors = "E6CCFF,E6CCFF,B366FF,6600CC,26004D"},
@@ -87,7 +103,14 @@ local body_parts = {
 					{ name = "BONE_OVERGROWN", description = "Overgrown Roots", colors = "A3B86C,A3B86C,66803D,384D1A,1A260A"},
 					{ name = "BONE_OBSIDIAN", description = "Obsidian Glass", colors = "5C5C6E,5C5C6E,333340,1A1A24,0A0A0F"},
 					{ name = "BONE_ROYAL_GOLD", description = "Royal Gold", colors = "D6B036,D6B036,99751A,57400A,291C02"},
-					{ name = "BONE_SOULFIRE", description = "Soulfire Glow", colors = "66E6CC,66E6CC,1AA3A3,005C5C,002929"}
+					{ name = "BONE_SOULFIRE", description = "Soulfire Glow", colors = "66E6CC,66E6CC,1AA3A3,005C5C,002929"},
+					-- new 2
+					{ name = "BONE_WOOD_OAK", description = "Carved Oak", colors = "B88D54,B88D54,855C26,52330D,241400"},
+					{ name = "BONE_WOOD_DRIFT", description = "Driftwood", colors = "A8A291,A8A291,7A7461,4F4938,262216"},
+					{ name = "BONE_MIX_BLOOD_SHADOWS", description = "Blood in Crevices", colors = "D6D69C,D6D69C,A84B4B,661C1C,2E0A0A"},
+					{ name = "BONE_MIX_BLOOD_HIGHLIGHTS", description = "Fresh Blood Splatter", colors = "C23030,C23030,949473,525239,2D2E22"},
+					{ name = "BONE_MIX_MOSS_SHADOWS", description = "Mossy Crevices", colors = "D6D69C,D6D69C,66803D,384D1A,1A260A"},
+					{ name = "BONE_MIX_MOSS_HIGHLIGHTS", description = "Moss on Top", colors = "8EB340,8EB340,949473,525239,2D2E22"},
 				},
 			},
 			skeleton_deathblade = {
@@ -103,6 +126,7 @@ local body_parts = {
 					{ name = "BONE_DARK_FOSSIL", description = "Fossilized Bone", colors = "C2C29B,9C9C73,6E6E4D,3B3B26,1C1C12,12120C"},
 					{ name = "BONE_DARK_CHARRED", description = "Charred Bone", colors = "949473,6E6E52,454533,26261A,12120C,050504"},
 					{ name = "BONE_ICY", description = "Frozen ToM", colors = "F2FFFF,BFFFED,9AC2B4,617FB1,3E4F6C,2A374D"},
+					-- new
 					{ name = "BONE_BLOOD_SMEARED", description = "Blood-Smeared", colors = "FFE5D6,D69C9C,A84B4B,661C1C,2E0A0A,1B0808"},
 					{ name = "BONE_TOXIC_GLOW", description = "Toxic Glowing", colors = "D4FF66,85E640,479921,245214,0F240A,091407"},
 					{ name = "BONE_CRYSTAL_AMETHYST", description = "Amethyst Crystal", colors = "FFFFFF,E6CCFF,B366FF,6600CC,26004D,1E0437"},
@@ -111,7 +135,14 @@ local body_parts = {
 					{ name = "BONE_OVERGROWN", description = "Overgrown Roots", colors = "E6E6A3,A3B86C,66803D,384D1A,1A260A,101707"},
 					{ name = "BONE_OBSIDIAN", description = "Obsidian Glass", colors = "A8A8BA,5C5C6E,333340,1A1A24,0A0A0F,08080A"},
 					{ name = "BONE_ROYAL_GOLD", description = "Royal Gold", colors = "FFEA7A,D6B036,99751A,57400A,291C02,160F03"},
-					{ name = "BONE_SOULFIRE", description = "Soulfire Glow", colors = "E6FFFF,66E6CC,1AA3A3,005C5C,002929,021717"}
+					{ name = "BONE_SOULFIRE", description = "Soulfire Glow", colors = "E6FFFF,66E6CC,1AA3A3,005C5C,002929,021717"},
+					-- new 2
+					{ name = "BONE_WOOD_OAK", description = "Carved Oak", colors = "E0B986,B88D54,855C26,52330D,241400,090501"},
+					{ name = "BONE_WOOD_DRIFT", description = "Driftwood", colors = "D6D1C4,A8A291,7A7461,4F4938,262216,15140E"},
+					{ name = "BONE_MIX_BLOOD_SHADOWS", description = "Blood in Crevices", colors = "FFFFCE,D6D69C,A84B4B,661C1C,2E0A0A,1B0808"},
+					{ name = "BONE_MIX_BLOOD_HIGHLIGHTS", description = "Fresh Blood Splatter", colors = "FF5C5C,C23030,949473,525239,2D2E22,1A1B16"},
+					{ name = "BONE_MIX_MOSS_SHADOWS", description = "Mossy Crevices", colors = "FFFFCE,D6D69C,66803D,384D1A,1A260A,101707"},
+					{ name = "BONE_MIX_MOSS_HIGHLIGHTS", description = "Moss on Top", colors = "D4FF66,8EB340,949473,525239,2D2E22,1A1B16"},
 				},
 			},
 			ghost = {
@@ -127,6 +158,7 @@ local body_parts = {
 					{ name = "BONE_DARK_FOSSIL", description = "Fossilized Bone", colors = "9C9C73,6E6E4D,3B3B26"},
 					{ name = "BONE_DARK_CHARRED", description = "Charred Bone", colors = "6E6E52,454533,26261A"},
 					{ name = "BONE_ICY", description = "Frozen ToM", colors = "BFFFED,9AC2B4,617FB1"},
+					--new
 					{ name = "BONE_BLOOD_SMEARED", description = "Blood-Smeared", colors = "D69C9C,A84B4B,661C1C"},
 					{ name = "BONE_TOXIC_GLOW", description = "Toxic Glowing", colors = "85E640,479921,245214"},
 					{ name = "BONE_CRYSTAL_AMETHYST", description = "Amethyst Crystal", colors = "E6CCFF,B366FF,6600CC"},
@@ -135,7 +167,14 @@ local body_parts = {
 					{ name = "BONE_OVERGROWN", description = "Overgrown Roots", colors = "A3B86C,66803D,384D1A"},
 					{ name = "BONE_OBSIDIAN", description = "Obsidian Glass", colors = "5C5C6E,333340,1A1A24"},
 					{ name = "BONE_ROYAL_GOLD", description = "Royal Gold", colors = "D6B036,99751A,57400A"},
-					{ name = "BONE_SOULFIRE", description = "Soulfire Glow", colors = "66E6CC,1AA3A3,005C5C"}
+					{ name = "BONE_SOULFIRE", description = "Soulfire Glow", colors = "66E6CC,1AA3A3,005C5C"},
+					-- new 2
+					{ name = "BONE_WOOD_OAK", description = "Carved Oak", colors = "B88D54,855C26,52330D"},
+					{ name = "BONE_WOOD_DRIFT", description = "Driftwood", colors = "A8A291,7A7461,4F4938"},
+					{ name = "BONE_MIX_BLOOD_SHADOWS", description = "Blood in Crevices", colors = "D6D69C,A84B4B,661C1C"},
+					{ name = "BONE_MIX_BLOOD_HIGHLIGHTS", description = "Fresh Blood Splatter", colors = "C23030,949473,525239"},
+					{ name = "BONE_MIX_MOSS_SHADOWS", description = "Mossy Crevices", colors = "D6D69C,66803D,384D1A"},
+					{ name = "BONE_MIX_MOSS_HIGHLIGHTS", description = "Moss on Top", colors = "8EB340,949473,525239"},
 				},
 			},
 			lich = {
@@ -152,6 +191,7 @@ local body_parts = {
 					{ name = "BONE_DARK_FOSSIL", description = "Fossilized Bone", colors = "C2C29B,9C9C73,6E6E4D,3B3B26"},
 					{ name = "BONE_DARK_CHARRED", description = "Charred Bone", colors = "949473,6E6E52,454533,26261A"},
 					{ name = "BONE_ICY", description = "Frozen ToM", colors = "F2FFFF,BFFFED,9AC2B4,617FB1"},
+					--new
 					{ name = "BONE_BLOOD_SMEARED", description = "Blood-Smeared", colors = "FFE5D6,D69C9C,A84B4B,661C1C"},
 					{ name = "BONE_TOXIC_GLOW", description = "Toxic Glowing", colors = "D4FF66,85E640,479921,245214"},
 					{ name = "BONE_CRYSTAL_AMETHYST", description = "Amethyst Crystal", colors = "FFFFFF,E6CCFF,B366FF,6600CC"},
@@ -160,7 +200,14 @@ local body_parts = {
 					{ name = "BONE_OVERGROWN", description = "Overgrown Roots", colors = "E6E6A3,A3B86C,66803D,384D1A"},
 					{ name = "BONE_OBSIDIAN", description = "Obsidian Glass", colors = "A8A8BA,5C5C6E,333340,1A1A24"},
 					{ name = "BONE_ROYAL_GOLD", description = "Royal Gold", colors = "FFEA7A,D6B036,99751A,57400A"},
-					{ name = "BONE_SOULFIRE", description = "Soulfire Glow", colors = "E6FFFF,66E6CC,1AA3A3,005C5C"}
+					{ name = "BONE_SOULFIRE", description = "Soulfire Glow", colors = "E6FFFF,66E6CC,1AA3A3,005C5C"},
+					-- new 2
+					{ name = "BONE_WOOD_OAK", description = "Carved Oak", colors = "E0B986,B88D54,855C26,52330D"},
+					{ name = "BONE_WOOD_DRIFT", description = "Driftwood", colors = "D6D1C4,A8A291,7A7461,4F4938"},
+					{ name = "BONE_MIX_BLOOD_SHADOWS", description = "Blood in Crevices", colors = "FFFFCE,D6D69C,A84B4B,661C1C"},
+					{ name = "BONE_MIX_BLOOD_HIGHLIGHTS", description = "Fresh Blood Splatter", colors = "FF5C5C,C23030,949473,525239"},
+					{ name = "BONE_MIX_MOSS_SHADOWS", description = "Mossy Crevices", colors = "FFFFCE,D6D69C,66803D,384D1A"},
+					{ name = "BONE_MIX_MOSS_HIGHLIGHTS", description = "Moss on Top", colors = "D4FF66,8EB340,949473,525239"},
 				},
 			},
 			skeleton_dragon = {
@@ -176,6 +223,7 @@ local body_parts = {
 					{ name = "BONE_DARK_FOSSIL", description = "Fossilized Bone", colors = "C2C29B,9C9C73,6E6E4D,3B3B26,1C1C12"},
 					{ name = "BONE_DARK_CHARRED", description = "Charred Bone", colors = "949473,6E6E52,454533,26261A,12120C"},
 					{ name = "BONE_ICY", description = "Frozen ToM", colors = "F2FFFF,BFFFED,9AC2B4,617FB1,3E4F6C"},
+					--new
 					{ name = "BONE_BLOOD_SMEARED", description = "Blood-Smeared", colors = "FFE5D6,D69C9C,A84B4B,661C1C,2E0A0A"},
 					{ name = "BONE_TOXIC_GLOW", description = "Toxic Glowing", colors = "D4FF66,85E640,479921,245214,0F240A"},
 					{ name = "BONE_CRYSTAL_AMETHYST", description = "Amethyst Crystal", colors = "FFFFFF,E6CCFF,B366FF,6600CC,26004D"},
@@ -184,7 +232,14 @@ local body_parts = {
 					{ name = "BONE_OVERGROWN", description = "Overgrown Roots", colors = "E6E6A3,A3B86C,66803D,384D1A,1A260A"},
 					{ name = "BONE_OBSIDIAN", description = "Obsidian Glass", colors = "A8A8BA,5C5C6E,333340,1A1A24,0A0A0F"},
 					{ name = "BONE_ROYAL_GOLD", description = "Royal Gold", colors = "FFEA7A,D6B036,99751A,57400A,291C02"},
-					{ name = "BONE_SOULFIRE", description = "Soulfire Glow", colors = "E6FFFF,66E6CC,1AA3A3,005C5C,002929"}
+					{ name = "BONE_SOULFIRE", description = "Soulfire Glow", colors = "E6FFFF,66E6CC,1AA3A3,005C5C,002929"},
+					-- new 2
+					{ name = "BONE_WOOD_OAK", description = "Carved Oak", colors = "E0B986,B88D54,855C26,52330D,241400"},
+					{ name = "BONE_WOOD_DRIFT", description = "Driftwood", colors = "D6D1C4,A8A291,7A7461,4F4938,262216"},
+					{ name = "BONE_MIX_BLOOD_SHADOWS", description = "Blood in Crevices", colors = "FFFFCE,D6D69C,A84B4B,661C1C,2E0A0A"},
+					{ name = "BONE_MIX_BLOOD_HIGHLIGHTS", description = "Fresh Blood Splatter", colors = "FF5C5C,C23030,949473,525239,2D2E22"},
+					{ name = "BONE_MIX_MOSS_SHADOWS", description = "Mossy Crevices", colors = "FFFFCE,D6D69C,66803D,384D1A,1A260A"},
+					{ name = "BONE_MIX_MOSS_HIGHLIGHTS", description = "Moss on Top", colors = "D4FF66,8EB340,949473,525239,2D2E22"},
 				},
 			},
 		}

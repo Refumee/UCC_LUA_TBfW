@@ -9,7 +9,8 @@ local body_parts = {
 								"Naga Dirkfang", "Naga Ringcaster", "Naga Ophidian", "Naga Sicarius", "Naga Zephyr", "Afterlife Naga Fighter",
 								"Afterlife Naga Warrior", "Afterlife Naga Myrmidon", "Afterlife Naga Guard", "Afterlife Naga Shield Guard",
 								"Afterlife Naga High Guard", "Afterlife Naga Dirkfang", "Afterlife Naga Ringcaster", "Afterlife Naga Ophidian",
-								"Afterlife Naga Sicarius", "Afterlife Naga Zephyr"
+								"Afterlife Naga Sicarius", "Afterlife Naga Zephyr",
+								"Naga Centurion","Naga Hunter","Naga Guardian","Naga Warden","Naga Sentinel"
 				},
 				base = "9edb5e,56963d,24753c,4c5b4c,124e24", 
 				variants = {
@@ -65,7 +66,8 @@ local body_parts = {
 								"Naga Dirkfang", "Naga Ringcaster", "Naga Ophidian", "Naga Sicarius", "Naga Zephyr", "Afterlife Naga Fighter",
 								"Afterlife Naga Warrior", "Afterlife Naga Myrmidon", "Afterlife Naga Guard", "Afterlife Naga Shield Guard",
 								"Afterlife Naga High Guard", "Afterlife Naga Dirkfang", "Afterlife Naga Ringcaster", "Afterlife Naga Ophidian",
-								"Afterlife Naga Sicarius", "Afterlife Naga Zephyr"
+								"Afterlife Naga Sicarius", "Afterlife Naga Zephyr",
+								"Naga Centurion","Naga Hunter","Naga Guardian","Naga Warden","Naga Sentinel"
 				},
 				base = "eaf89e,c1a77e,90765c,784838,562d1c",
 				variants = {
