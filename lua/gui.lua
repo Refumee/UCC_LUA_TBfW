@@ -50,6 +50,7 @@ function gui.show_picker(unit, race_data)
     local selections = {} 
     local active_variants_cache = {} 
     local whole_faction_check = false
+	local unit_type_check = false
     local base_image = get_unit_base_image(unit)
 	local unit_side = unit.__cfg["side"]
 	local team_mod = "~RC(magenta>" .. unit_side .. ")"
@@ -101,13 +102,18 @@ function gui.show_picker(unit, race_data)
                         T.row { T.column { T.label { label = "<b>Preview</b>", use_markup = true } } },
                         T.row { T.column { T.image { id = "the_image", label = base_image } } },
                         T.row { T.column { T.spacer { height = 20 } } },
-                        T.row { T.column { 
-                            T.toggle_button { 
-                                id = "chk_faction", 
-                                label = "Whole Faction",
-                                tooltip = "Apply to all units of this race"
-                            } 
-                        }},
+                        T.row { T.column {
+							grid_width = 3, 
+							horizontal_alignment = "right",
+							border = "top", border_size = 10,
+							T.grid {
+								T.row {
+									T.column { T.toggle_button { id = "chk_faction", label = "Whole Faction", tooltip = "Apply to all units and recruits of this faction" } },
+									T.column { T.spacer { width = 10 } },
+									T.column { T.toggle_button { id = "chk_ut", label = "Unit Type only", tooltip = "Apply to all units of this unit type" } }
+								}
+							}
+						}},
                         T.row { T.column { T.spacer { height = 20 } } },
 						T.row {
 							T.column {
@@ -346,7 +352,11 @@ function gui.show_picker(unit, race_data)
         dialog.chk_faction.on_modified = function()
              whole_faction_check = dialog.chk_faction.selected
         end
-
+		
+        dialog.chk_ut.on_modified = function()
+             unit_type_check = dialog.chk_ut.selected
+        end
+		
         load_variants_for_selected_part()
         update_preview()
     end
@@ -367,6 +377,7 @@ function gui.show_picker(unit, race_data)
     -- 5. return picked data
     if res == 1 or res == -1 then -- Standard OK Buttons
 		selections["boolean"]=whole_faction_check
+		selections["ut"]=unit_type_check
 		return selections
     else
         return {}

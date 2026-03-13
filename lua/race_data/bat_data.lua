@@ -20,7 +20,10 @@ local body_parts = {
 					{ name = "BAT_ALBINO", description = "Albino Cave Bat", colors = "FFF0F0,EBC3C3,C28F8F,A86677,733D50" },
 					{ name = "BAT_PLAGUE", description = "Plague Bat", colors = "C2B58A,948A63,635C40,5C454B,3B262E" },
 					{ name = "BAT_NETHER", description = "Nether Bat", colors = "5C5C7A,3D3D5C,24243D,24243D,0F0F1A" },
-					{ name = "BAT_DUSK", description = "Wild Dusk Bat", colors = "9E7A5A,7A593E,573D29,422C1C,26180E" }
+					{ name = "BAT_DUSK", description = "Wild Dusk Bat", colors = "9E7A5A,7A593E,573D29,422C1C,26180E" },
+					-- test
+					--{ name = "BAT_RAVEN", description = "Raven Bat", colors = "A0A7FB,A59BB7,8D83A0,716587,5C5073,493C61,2B194C" },
+					{ name = "BAT_RAVEN", description = "Raven Bat", colors = "A59BB7,8D83A0,716587,5C5073,2B194C" },
 				},
 			},
 			blood_bat = {
@@ -39,7 +42,9 @@ local body_parts = {
 					{ name = "BAT_ALBINO", description = "Albino Cave Bat", colors = "FFF0F0,EBC3C3,C28F8F,733D50" },
 					{ name = "BAT_PLAGUE", description = "Plague Bat", colors = "C2B58A,948A63,635C40,3B262E" },
 					{ name = "BAT_NETHER", description = "Nether Bat", colors = "5C5C7A,3D3D5C,24243D,0F0F1A" },
-					{ name = "BAT_DUSK", description = "Wild Dusk Bat", colors = "9E7A5A,7A593E,573D29,26180E" }
+					{ name = "BAT_DUSK", description = "Wild Dusk Bat", colors = "9E7A5A,7A593E,573D29,26180E" },
+					-- test
+					{ name = "BAT_RAVEN", description = "Raven Bat", colors = "A59BB7,716587,5C5073,2B194C" },
 				},
 			},
 			dread_bat = {
@@ -58,7 +63,10 @@ local body_parts = {
 					{ name = "BAT_ALBINO", description = "Albino Cave Bat", colors = "FFF0F0,EBC3C3,C28F8F,733D50" },
 					{ name = "BAT_PLAGUE", description = "Plague Bat", colors = "C2B58A,948A63,635C40,3B262E" },
 					{ name = "BAT_NETHER", description = "Nether Bat", colors = "5C5C7A,3D3D5C,24243D,0F0F1A" },
-					{ name = "BAT_DUSK", description = "Wild Dusk Bat", colors = "9E7A5A,7A593E,573D29,26180E" }				},
+					{ name = "BAT_DUSK", description = "Wild Dusk Bat", colors = "9E7A5A,7A593E,573D29,26180E" },
+					--test
+					{ name = "BAT_RAVEN", description = "Raven Bat", colors = "A59BB7,716587,5C5073,2B194C" },
+				},
 			},
 		}
 	}
