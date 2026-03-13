@@ -510,7 +510,312 @@ local royal_warrior_variants = {
 					{ name = "TROLL_OLDGREEN", description = "1.0 Troll", colors = "90F8B8,90F8B8,6ECD8F,50A070,327855,185030,102810" },
 					{ name = "TROLL_GRUU", description = "Grüü (SotBE)", colors = "d3bcc1,d3bcc1,a8a8a8,817d71,635054,454133,172830" }
 				}
+				
+local king_variants = {
+						-- blue armour
+						{ name = "LOYALIST_BLUE", description = "Loyalist Blue", colors = "ffffff,ffffff,c6e7e7,94c6c6,638c94,31526b,182931,FFFFFF,FFFFFF,C6E7E7,94C6C6,638C94,31526B,182931" },
+						{ name = "LOYALIST_CAVALIER", description = "Cavalier", colors = "ececec,ececec,c6e7e7,a0b9B8,6e8387,3f505c,182931,FFFFFF,ECECEC,C6E7E7,A0B9B8,6E8387,3F505C,182931" },
+						{ name = "LOYALIST_GRAND_KNIGHT", description = "Grand Knight", colors = "ffffff,ffffff,c6e7e7,c5cfda,8f8895,3f505c,182931,FFFFFF,FFFFFF,C6E7E7,C5CFDA,8F8895,3F505C,182931" },
+						{ name = "LOYALIST_PALADIN", description = "Paladin", colors = "ffffff,ffffff,ececec,c5cfda,66a5b2,31526b,3f505c,FFFFFF,FFFFFF,ECECEC,C5CFDA,66A5B2,31526B,3F505C" },
+						{ name = "KARRAG", description = "Karrag THoT", colors = "dbe6e8,dbe6e8,adccd2,6799a2,3b6c75,213d43,182931,DBE6E8,DBE6E8,ADCCD2,6799A2,3B6C75,213D43,182931" },
+						{ name = "WITNESS", description = "Witness THoT", colors = "ffffff,ffffff,b1ebec,79a9b3,4f6973,507059,1e3038,FFFFFF,FFFFFF,B1EBEC,79A9B3,4F6973,507059,1E3038" },
 
+						-- dark armour
+						{ name = "SIR_GERRIK", description = "Sir Gerrik SG", colors = "c3d2ef,c3d2ef,9faecb,697895,3d4e69,293a55,11203d,C3D2EF,C3D2EF,9FAECB,697895,3D4E69,293A55,11203D" },
+						{ name = "HEAVY_INFANTERY", description = "Heavy Infantry", colors = "ececec,ececec,a8a098,78655a,4d4541,2c2623,191919,ECECEC,ECECEC,A8A098,78655A,4D4541,2C2623,191919" },
+						{ name = "ROYAL_WARRIOR", description = "Royal Warrior", colors = "dccaca,c29ea4,a9a5ab,858086,5a565a,332d32,2c2623,DCCACA,DCCACA,A9A5AB,858086,5A565A,332D32,2C2623" },
+						{ name = "CHEVALIER", description = "Chevalier (Rashy Era)", colors = "ececcf,ececcf,ccc2b9,a8a098,686058,3d3a37,151718,ECECCF,ECECCF,CCC2B9,A8A098,686058,3D3A37,151718" },
+						{ name = "SEACAPTAIN_STEEL", description = "Sea Captain Steel SotA", colors = "ffffff,ffffff,dcdbdf,b6b4ba,7b7b85,53535b,34343a,FFFFFF,FFFFFF,DCDBDF,B6B4BA,7B7B85,53535B,34343A" },
+						{ name = "BANNERET", description = "Banneret EI", colors = "ECECEC,ECECCF,CCC2B9,A8A098,686058,524E46,3D3A37,ECECEC,ECECEC,CCC2B9,A8A098,686058,524E46,3D3A37" },
+
+						-- gold/bronze armour
+						{ name = "DRAKE", description = "Drake Armour", colors = "ffffff,ffffff,d1e997,c79962,996d24,af3c18,4c3324,FFFFFF,FFFFFF,D1E997,C79962,996D24,AF3C18,4C3324" },
+						{ name = "GOLD_NEW", description = "Gold 1.18", colors = "ffffff,ffffff,ffe38c,ffcc43,c67b02,804018,66211b,FFFFFF,FFFFFF,FFE38C,FFCC43,C67B02,804018,66211B" },
+						{ name = "GOLD_OLD", description = "Gold 1.16", colors = "ffffff,ffffff,ececec,d1b563,985810,512a13,2f1010,FFFFFF,FFFFFF,ECECEC,D1B563,985810,512A13,2F1010" },
+						{ name = "EE_PALADIN", description = "Paladin EI", colors = "ffffff,ffffff,ececec,ffcc43,af7a18,66211b,2f1010,FFFFFF,FFFFFF,ECECEC,FFCC43,AF7A18,66211B,2F1010" },
+						{ name = "BRONZE", description = "Siege Trooper Bronze", colors = "ffffff,ffffff,ccb066,aa6a28,804018,74341c,13262e,FFFFFF,FFFFFF,CCB066,AA6A28,804018,74341C,13262E" },
+
+						-- javeliner leather/orcish/assassin/dunefolk
+						{ name = "LOYALIST_JAVELINEER", description = "Javelineer", colors = "ffffff,ffffff,d6d69c,938d6d,525239,39382d,2f1010,FFFFFF,FFFFFF,D6D69C,938D6D,525239,39382D,2F1010" },
+						{ name = "DUNEFOLK", description = "Dunefolk", colors = "ffffff,ffffff,fff5a0,d6bd8a,888670,5c6339,3d3411,FFFFFF,FFFFFF,FFF5A0,D6BD8A,888670,5C6339,3D3411" },
+						{ name = "ORC", description = "Orc", colors = "ffffd5,ffffd5,ffdd88,aa9966,7f774c,515138,2d2d2d,FFFFD5,FFFFD5,FFDD88,AA9966,7F774C,515138,2D2D2D" },
+						{ name = "ASSASSIN", description = "Assassin", colors = "aac0a0,aac0a0,889880,506858,333d33,273631,1c1b21,AAC0A0,AAC0A0,889880,506858,333D33,273631,1C1B21" },
+
+						-- undead armour
+						{ name = "SKELETON_RIDER", description = "Skeleton Rider", colors = "f8f8a0,f8f8a0,ccb066,aa6a28,74341c,304860,13262e,F8F8A0,F8F8A0,CCB066,AA6A28,74341C,304860,13262E" },
+						{ name = "SKELETON", description = "Skeleton", colors = "ffffff,ffffff,ffffce,d6d69c,c8d090,949473,525239,FFFFFF,FFFFFF,FFFFCE,D6D69C,C8D090,949473,525239" },
+						{ name = "DEATHKNIGHT", description = "Death Knight", colors = "ffffff,ffffff,e0e0e8,a3a7ab,73697e,5e3535,13262e,FFFFFF,FFFFFF,E0E0E8,A3A7AB,73697E,5E3535,13262E" },
+						{ name = "GHOST", description = "Ghost", colors = "ffffff,ffffff,e0e0e8,a3a7ab,73697e,5e3535,283028,FFFFFF,FFFFFF,E0E0E8,A3A7AB,73697E,5E3535,283028" },
+
+						-- GSE
+						{ name = "GSE_MILITA", description = "Great Steppe Era Militia", colors = "ffffff,ffffff,abe5f6,69bbd9,2b52a9,121b5c,140036,FFFFFF,FFFFFF,ABE5F6,69BBD9,2B52A9,121B5C,140036" },
+						{ name = "GSE_CANNONEER", description = "Great Steppe Era Cannoneer", colors = "ffffff,ffffff,92d2bb,5bb19e,2d8569,125756,0a293b,FFFFFF,FFFFFF,92D2BB,5BB19E,2D8569,125756,0A293B" },
+
+						-- wose/elf
+						{ name = "WOSE", description = "Wose", colors = "ffffca,ffffca,e6e6a6,c99462,835c35,573a14,352313,FFFFCA,FFFFCA,E6E6A6,C99462,835C35,53A14,352313" },
+						{ name = "KALIAN_ELF", description = "Kalian Elf TroW", colors = "e8ebe7,e8ebe7,d8c2ad,a28d62,896941,704d1f,47213c,E8EBE7,E8EBE7,D8C2AD,A28D62,896941,704D1F,47213C" },
+						{ name = "ELF_DARKER", description = "Elvish Armour Dark", colors = "e8edd5,e8edd5,a4b496,687862,313b31,252a23,121311,E8EDD5,E8EDD5,A4B496,687862,313B31,252A23,121311" },
+						{ name = "ELF_LIGHTER", description = "Elvish Armour Light", colors = "ffffff,ffffff,e8edd5,a4b496,687862,313b31,252a23,FFFFFF,FFFFFF,E8EDD5,A4B496,687862,313B31,252A23" },
+
+						-- merfolk
+						{ name = "MERFOLK", description = "Merfolk", colors = "ffffff,ffffff,f2f2ea,d8c2ad,b3ae78,484b42,504137,FFFFFF,FFFFFF,F2F2EA,D8C2AD,B3AE78,484B42,504137" },
+						{ name = "MERFOLK_MAGE", description = "Merfolk Siren", colors = "cdf8f8,cdf8f8,f8f8f8,d8c2ad,a28d62,425838,382218,CDF8F8,CDF8F8,F8F8F8,D8C2AD,A28D62,425838,382218" },
+						{ name = "MERFOLK_HOPLITE", description = "Merfolk Hoplite", colors = "ffffff,ffffff,f2f2ea,d8c2ad,b3ae78,484b42,504137,cdf8f8,f2f2ea,b3ae78,a28d62,484b42,504137" },
+						{ name = "AQUANA", description = "Aquana (Rashy Era)", colors = "fefefe,fefefe,e5e2c2,d8ccad,a2a062,746e47,383618,FEFEFE,FEFEFE,E5E2C2,D8CCAD,A2A062,746E47,383618" },
+						{ name = "MERFOLK_JAVELINEER", description = "Merfolk Javelineer", colors = "f2f2ea,f2f2ea,bdbebd,979fa9,4d586d,586164,404444,F2F2EA,F2F2EA,BDBEBD,979FA9,4D586D,586164,404444" },
+
+						-- UTBS
+						{ name = "DAWARF", description = "Dawarf", colors = "f8c8e8,f8c8e8,db98c6,c878b0,905080,583068,301030,F8C8E8,F8C8E8,DB98C6,C878B0,905080,583068,301030" },
+						{ name = "FLESHGOLEM", description = "Fleshgolem", colors = "dbd2a4,dbd2a4,dca993,de8685,ca7559,a85c4e,824143,DBD2A4,DBD2A4,DCA993,DE8685,CA7559,A85C4E,824143" },
+						{ name = "IXTHALA", description = "Ixthala", colors = "ceccea,ceccea,afacd9,8a81b3,5e699c,474a6b,222438,CECCEA,CECCEA,AFACD9,8A81B3,5E699C,474A6B,222438" },
+						{ name = "DARK_ASSASSIN_MASK", description = "Dark Assassin Mask", colors = "ecc3c1,ecc3c1,cc8f8c,9d6b6f,7d303b,57373b,342a29,ECC3C1,ECC3C1,CC8F8C,9D6B6F,7D303B,57373B,342A29" },
+						{ name = "DARK_ASSASSIN_CLOAK", description = "Dark Assassin Cloak", colors = "c3a89f,c3a89f,9c8b8b,8f7a7a,74605d,5c4744,372725,C3A89F,C3A89F,9C8B8B,8F7A7A,74605D,5C4744,372725" },
+						{ name = "UTBS_HUMAN", description = "UtbS Human", colors = "ffffff,ffffff,d1d199,999955,554c26,2c1a09,090602,FFFFFF,FFFFFF,D1D199,999955,554C26,2C1A09,090602" },
+						{ name = "QUENOTH_RED", description = "Quenoth Red", colors = "ffffff,ffffff,d9aea6,bd696e,9f2133,6a343b,3f2a31,FFFFFF,FFFFFF,D9AEA6,BD696E,9F2133,6A343B,3F2A31" },
+						{ name = "QUENOTH_BLUE", description = "Quenoth Blue", colors = "e7ffce,e7ffce,a4f19d,78c1b2,4c91c9,4a707a,4a2e62,E7FFCE,E7FFCE,A4F19D,78C1B2,4C91C9,4A707A,4A2E62" },
+
+						-- animal parts
+						{ name = "JUMPING_SPIDER", description = "Jumping Spider", colors = "ffe6d6,ffe6d6,dcd1ff,bbabed,6b57b9,5e4da1,1e1348,FFE6D6,FFE6D6,DCD1FF,BBABED,6B57B9,5E4DA1,1E1348" },
+						{ name = "SCORPLING", description = "Scorpling", colors = "ffffff,ffffff,dab6c4,c19fa5,a38583,7f615f,491d27,FFFFFF,FFFFFF,DAB6C4,C19FA5,A38583,7F615F,491D27" },
+						{ name = "TENTACLE", description = "Tentacle", colors = "ffffff,ffffff,cdcdcd,94999a,68676f,4a5661,311a16,FFFFFF,FFFFFF,CDCDCD,94999A,68676F,4A5661,311A16" },
+						{ name = "SEASERPENT", description = "Sea Serpent", colors = "d9ffff,d9ffff,adcfcf,87a1a1,5b7f8a,405f72,384247,D9FFFF,D9FFFF,ADCFCF,87A1A1,5B7F8A,405F72,384247" },
+						{ name = "SCARAB", description = "Scarab", colors = "ffffff,ffffff,a5deab,74c67e,6ca26a,657e55,49613b,FFFFFF,FFFFFF,A5DEAB,74C67E,6CA26A,657E55,49613B" },
+						{ name = "SCORPIAN", description = "Scorpion", colors = "cde5fe,cde5fe,b6c8da,8384a3,5f607f,414c5e,1d2c49,CDE5FE,CDE5FE,B6C8DA,8384A3,5F607F,414C5E,1D2C49" },
+						{ name = "CRAB", description = "Crab", colors = "ffffff,ffffff,ddd3cd,b6aca4,917b4d,695937,261f10,FFFFFF,FFFFFF,DDD3CD,B6ACA4,917B4D,695937,261F10" },
+						{ name = "BAT", description = "Vampire Bat", colors = "e5a490,e5a490,ad7569,84495e,794d44,592b3b,1b1b1b,E5A490,E5A490,AD7569,84495E,794D44,592B3B,1B1B1B" },
+						{ name = "BLOODBAT", description = "Blood Bat", colors = "fb9254,fb9254,ec7e3d,ba5520,963718,4d0000,350000,FB9254,FB9254,EC7E3D,BA5520,963718,4D0000,350000" },
+						{ name = "DREADBAT", description = "Dread Bat", colors = "999999,999999,707070,4e4e4e,353535,292929,191919,999999,999999,707070,4E4E4E,353535,292929,191919" },
+						{ name = "DREADBAT_METAL", description = "Dread Bat Metal", colors = "cdcdcd,cdcdcd,707070,4e4e4e,353535,292929,191919,CDCDCD,CDCDCD,707070,4E4E4E,353535,292929,191919" },
+						{ name = "ANT", description = "Ant", colors = "b1d2d6,b1d2d6,90a8b0,907ab5,706993,505870,550022,B1D2D6,B1D2D6,90A8B0,907AB5,706993,505870,550022" },
+						{ name = "FIREANT", description = "Fire Ant", colors = "ffe9b3,ffe9b3,ffc843,ff4301,b02e00,821611,550022,FFE9B3,FFE9B3,FFC843,FF4301,B02E00,821611,550022" },
+
+						-- rashy era
+						{ name = "DARDO", description = "Dardo (Rashy Era)", colors = "eacfc2,eacfc2,bd9785,8b6c71,593a3f,33282a,1f1f1a,eacfc2,eacfc2,bd9785,8b6c71,593a3f,33282a,1f1f1a" },
+						{ name = "MARASHY", description = "Marashy (Rashy Era)", colors = "fdffea,fdffea,bdd6e6,a28d62,3d5a4b,454545,232323,fdffea,fdffea,bdd6e6,a28d62,3d5a4b,454545,232323" },
+						{ name = "LUZ", description = "Paladin Luz (Rashy Era)", colors = "ffffff,ffffff,d6be6b,ad9748,88742f,5e4e1a,2f270a,ffffff,ffffff,d6be6b,ad9748,88742f,5e4e1a,2f270a" },
+
+						-- Default grey troll
+						{ name = "TROLL_GREY", description = "Troll Grey", colors = "d0cfbf,d0cfbf,a8a8a8,747f73,616153,374336,172830,D0CFBF,D0CFBF,A8A8A8,747F73,616153,374336,172830" },
+
+						-- earthen/stone colors
+						{ name = "TROLL_LIGHTEARTHEN", description = "Light Earth", colors = "faf3c9,faf3c9,f6d39b,c5956a,a9794f,7b4231,422110,FAF3C9,FAF3C9,F6D39B,C5956A,A9794F,7B4231,422110" },
+						{ name = "TROLL_WOODENEARTH", description = "Wooden Earth", colors = "e6e6a6,e6e6a6,c99462,835c35,573a14,352313,131414,E6E6A6,E6E6A6,C99462,835C35,573A14,352313,131414" },
+						{ name = "TROLL_EARTHEN", description = "Earth", colors = "d9ac79,d9ac79,bc946b,b3785b,844c1f,462d1f,201810,D9AC79,D9AC79,BC946B,B3785B,844C1F,462D1F,201810" },
+						{ name = "TROLL_GOBLINMUD", description = "Goblinmud", colors = "ffce39,ffce39,c08008,985810,804018,582820,281010,FFCE39,FFCE39,C08008,985810,804018,582820,281010" },
+						{ name = "TROLL_DARKERMUD", description = "Darker Mud", colors = "cbbc7f,cbbc7f,918460,60573c,3c3623,22221a,191911,CBBC7F,CBBC7F,918460,60573C,3C3623,22221A,191911" },
+						{ name = "TROLL_DARKMUD", description = "Dark Mud", colors = "ffd087,ffd087,e2a76f,97663c,574d31,383838,3b3427,FFD087,FFD087,E2A76F,97663C,574D31,383838,3B3427" },
+						{ name = "TROLL_DARKGREEN", description = "Dark Green", colors = "889880,889880,797979,506858,333d33,22221e,191915,889880,889880,797979,506858,333D33,22221E,191915" },
+						{ name = "TROLL_DARKBRIGHTSTONE", description = "Dark Bright Stone", colors = "d5d59b,d5d59b,aa9966,939372,515138,2d2d2d,172830,D5D59B,D5D59B,AA9966,939372,515138,2D2D2D,172830" },
+						{ name = "TROLL_SANDSTONE", description = "Sandstone", colors = "f8f8a0,f8f8a0,ffffce,d6d69c,949473,525239,2d2e22,F8F8A0,F8F8A0,FFFFCE,D6D69C,949473,525239,2D2E22" },
+						{ name = "TROLL_TEAMCOLOR", description = "Teamcolor", colors = "f49ac1,f49ac1,ef5ba1,d6007f,9e005d,690039,55002a,F49AC1,F49AC1,EF5BA1,D6007F,9E005D,690039,55002A" },
+						{ name = "TROLL_MOLTEN", description = "Molten", colors = "f7df8e,f7df8e,e2cd67,f3a62c,af3c18,8e1a12,6f282b,F7DF8E,F7DF8E,E2CD67,F3A62C,AF3C18,8E1A12,6F282B" },
+						{ name = "TROLL_OLDGREEN", description = "1.0 Troll", colors = "90F8B8,90F8B8,6ECD8F,50A070,327855,185030,102810,90F8B8,90F8B8,6ECD8F,50A070,327855,185030,102810" },
+						{ name = "TROLL_GRUU", description = "Grüü (SotBE)", colors = "d3bcc1,d3bcc1,a8a8a8,817d71,635054,454133,172830,d3bcc1,d3bcc1,a8a8a8,817d71,635054,454133,172830" }
+					}
+				
+local maddock_variants = {
+					--blue armour
+					{ name = "LOYALIST_BLUE", description = "Loyalist Blue", colors = "ffffff,c6e7e7,94c6c6,638c94,31526b,182931,94c6c6,638c94,31526b,31526b"},
+					{ name = "LOYALIST_CAVALIER", description = "Cavalier", colors = "ececec,c6e7e7,a0b9B8,6e8387,3f505c,182931,a0b9B8,6e8387,3f505c,3f505c"},
+					{ name = "LOYALIST_GRAND_KNIGHT", description = "Grand Knight", colors = "ffffff,c6e7e7,c5cfda,8f8895,3f505c,182931,c5cfda,8f8895,3f505c,3f505c"},
+					{ name = "LOYALIST_PALADIN", description = "Paladin", colors = "ffffff,ececec,c5cfda,66a5b2,31526b,3f505c,c5cfda,66a5b2,31526b,31526b"},
+					{ name = "KARRAG", description = "Karrag THoT", colors = "dbe6e8,adccd2,6799a2,3b6c75,213d43,182931,6799a2,3b6c75,213d43,213d43"},
+					{ name = "WITNESS", description = "Witness THoT", colors = "ffffff,b1ebec,79a9b3,4f6973,507059,1e3038,79a9b3,4f6973,507059,507059"},
+
+					--dark armour
+					{ name = "SIR_GERRIK", description = "Sir Gerrik SG", colors = "c3d2ef,9faecb,697895,3d4e69,293a55,11203d,697895,3d4e69,293a55,293a55"},
+					{ name = "HEAVY_INFANTERY", description = "Heavy Infantry", colors = "ececec,a8a098,78655a,4d4541,2c2623,191919,78655a,4d4541,2c2623,2c2623"},
+					{ name = "ROYAL_WARRIOR", description = "Royal Warrior", colors = "dccaca,a9a5ab,858086,5a565a,332d32,2c2623,858086,5a565a,332d32,332d32"},
+					{ name = "CHEVALIER", description = "Chevalier (Rashy Era)", colors = "ececcf,ccc2b9,a8a098,686058,3d3a37,151718,a8a098,686058,3d3a37,3d3a37"},
+					{ name = "SEACAPTAIN_STEEL", description = "Sea Captain Steel SotA", colors = "ffffff,dcdbdf,b6b4ba,7b7b85,53535b,34343a,b6b4ba,7b7b85,53535b,53535b"},
+					{ name = "BANNERET", description = "Banneret EI", colors = "ececec,ccc2b9,a8a098,686058,524e46,3d3a37,a8a098,686058,524e46,524e46"},
+
+					--gold/bronze armour
+					{ name = "DRAKE", description = "Drake Armour", colors = "ffffff,d1e997,c79962,996d24,af3c18,4c3324,c79962,996d24,af3c18,af3c18"},
+					{ name = "GOLD_NEW", description = "Gold 1.18", colors = "ffffff,ffe38c,ffcc43,c67b02,804018,66211b,ffcc43,c67b02,804018,804018"},
+					{ name = "GOLD_OLD", description = "Gold 1.16", colors = "ffffff,ececec,d1b563,985810,512a13,2f1010,d1b563,985810,512a13,512a13"},
+					{ name = "EE_PALADIN", description = "Paladin EI", colors = "ffffff,ececec,ffcc43,af7a18,66211b,2f1010,ffcc43,af7a18,66211b,66211b"},
+					{ name = "BRONZE", description = "Siege Trooper Bronze", colors = "ffffff,ccb066,aa6a28,804018,74341c,13262e,aa6a28,804018,74341c,74341c"},
+
+					--javeliner leather/orcish/assassin/dunefolk
+					{ name = "LOYALIST_JAVELINEER", description = "Javelineer", colors = "ffffff,d6d69c,938d6d,525239,39382d,2f1010,938d6d,525239,39382d,39382d"},
+					{ name = "DUNEFOLK", description = "Dunefolk", colors = "ffffff,fff5a0,d6bd8a,888670,5c6339,3d3411,d6bd8a,888670,5c6339,5c6339"},
+					{ name = "ORC", description = "Orc", colors = "ffffd5,ffdd88,aa9966,7f774c,515138,2d2d2d,aa9966,7f774c,515138,515138"},
+					{ name = "ASSASSIN", description = "Assassin", colors = "aac0a0,889880,506858,333d33,273631,1c1b21,506858,333d33,273631,273631"},
+
+					--undead armour
+					{ name = "SKELETON_RIDER", description = "Skeleton Rider", colors = "f8f8a0,ccb066,aa6a28,74341c,304860,13262e,aa6a28,74341c,304860,304860"},
+					{ name = "SKELETON", description = "Skeleton", colors = "ffffff,ffffce,d6d69c,c8d090,949473,525239,d6d69c,c8d090,949473,949473"},
+					{ name = "DEATHKNIGHT", description = "Death Knight", colors = "ffffff,e0e0e8,a3a7ab,73697e,5e3535,13262e,a3a7ab,73697e,5e3535,5e3535"},
+					{ name = "GHOST", description = "Ghost", colors = "ffffff,e0e0e8,a3a7ab,73697e,5e3535,283028,a3a7ab,73697e,5e3535,5e3535"},
+
+					--GSE
+					{ name = "GSE_MILITA", description = "Great Steppe Era Militia", colors = "ffffff,abe5f6,69bbd9,2b52a9,121b5c,140036,69bbd9,2b52a9,121b5c,121b5c"},
+					{ name = "GSE_CANNONEER", description = "Great Steppe Era Cannoneer", colors = "ffffff,92d2bb,5bb19e,2d8569,125756,0a293b,5bb19e,2d8569,125756,125756"},
+
+					--wose/elf
+					{ name = "WOSE", description = "Wose", colors = "ffffca,e6e6a6,c99462,835c35,573a14,352313,c99462,835c35,573a14,573a14"},
+					{ name = "KALIAN_ELF", description = "Kalian Elf TroW", colors = "e8ebe7,d8c2ad,a28d62,896941,704d1f,47213c,a28d62,896941,704d1f,704d1f"},
+					{ name = "ELF_DARKER", description = "Elvish Armour Dark", colors = "e8edd5,a4b496,687862,313b31,252a23,121311,687862,313b31,252a23,252a23"},
+					{ name = "ELF_LIGHTER", description = "Elvish Armour Light", colors = "ffffff,e8edd5,a4b496,687862,313b31,252a23,a4b496,687862,313b31,313b31"},
+
+					--merfolk
+					{ name = "MERFOLK", description = "Merfolk", colors = "ffffff,f2f2ea,d8c2ad,b3ae78,484b42,504137,d8c2ad,b3ae78,484b42,484b42"},
+					{ name = "MERFOLK_MAGE", description = "Merfolk Siren", colors = "cdf8f8,f8f8f8,d8c2ad,a28d62,425838,382218,d8c2ad,a28d62,425838,425838"},
+					{ name = "MERFOLK_HOPLITE", description = "Merfolk Hoplite", colors = "cdf8f8,f2f2ea,b3ae78,a28d62,484b42,504137,b3ae78,a28d62,484b42,484b42"},
+					{ name = "AQUANA", description = "Aquana (Rashy Era)", colors = "fefefe,e5e2c2,d8ccad,a2a062,746e47,383618,d8ccad,a2a062,746e47,746e47"},
+					{ name = "MERFOLK_JAVELINEER", description = "Merfolk Javelineer", colors = "f2f2ea,bdbebd,979fa9,4d586d,586164,404444,979fa9,4d586d,586164,586164"},
+
+					--UTBS
+					{ name = "DAWARF", description = "Dawarf", colors = "f8c8e8,db98c6,c878b0,905080,583068,301030,c878b0,905080,583068,583068"},
+					{ name = "FLESHGOLEM", description = "Fleshgolem", colors = "dbd2a4,dca993,de8685,ca7559,a85c4e,824143,de8685,ca7559,a85c4e,a85c4e"},
+					{ name = "IXTHALA", description = "Ixthala", colors = "ceccea,afacd9,8a81b3,5e699c,474a6b,222438,8a81b3,5e699c,474a6b,474a6b"},
+					{ name = "DARK_ASSASSIN_MASK", description = "Dark Assassin Mask", colors = "ecc3c1,cc8f8c,9d6b6f,7d303b,57373b,342a29,9d6b6f,7d303b,57373b,57373b"},
+					{ name = "DARK_ASSASSIN_CLOAK", description = "Dark Assassin Cloak", colors = "c3a89f,9c8b8b,8f7a7a,74605d,5c4744,372725,8f7a7a,74605d,5c4744,5c4744"},
+					{ name = "UTBS_HUMAN", description = "UtbS Human", colors = "ffffff,d1d199,999955,554c26,2c1a09,090602,999955,554c26,2c1a09,2c1a09"},
+					{ name = "QUENOTH_RED", description = "Quenoth Red", colors = "ffffff,d9aea6,bd696e,9f2133,6a343b,3f2a31,bd696e,9f2133,6a343b,6a343b"},
+					{ name = "QUENOTH_BLUE", description = "Quenoth Blue", colors = "e7ffce,a4f19d,78c1b2,4c91c9,4a707a,4a2e62,78c1b2,4c91c9,4a707a,4a707a"},
+
+					--animal parts
+					{ name = "JUMPING_SPIDER", description = "Jumping Spider", colors = "ffe6d6,dcd1ff,bbabed,6b57b9,5e4da1,1e1348,bbabed,6b57b9,5e4da1,5e4da1"},
+					{ name = "SCORPLING", description = "Scorpling", colors = "ffffff,dab6c4,c19fa5,a38583,7f615f,491d27,c19fa5,a38583,7f615f,7f615f"},
+					{ name = "TENTACLE", description = "Tentacle", colors = "ffffff,cdcdcd,94999a,68676f,4a5661,311a16,94999a,68676f,4a5661,4a5661"},
+					{ name = "SEASERPENT", description = "Sea Serpent", colors = "d9ffff,adcfcf,87a1a1,5b7f8a,405f72,384247,87a1a1,5b7f8a,405f72,405f72"},
+					{ name = "SCARAB", description = "Scarab", colors = "ffffff,a5deab,74c67e,6ca26a,657e55,49613b,74c67e,6ca26a,657e55,657e55"},
+					{ name = "SCORPIAN", description = "Scorpion", colors = "cde5fe,b6c8da,8384a3,5f607f,414c5e,1d2c49,8384a3,5f607f,414c5e,414c5e"},
+					{ name = "CRAB", description = "Crab", colors = "ffffff,ddd3cd,b6aca4,917b4d,695937,261f10,b6aca4,917b4d,695937,695937"},
+					{ name = "BAT", description = "Vampire Bat", colors = "e5a490,ad7569,84495e,794d44,592b3b,1b1b1b,84495e,794d44,592b3b,592b3b"},
+					{ name = "BLOODBAT", description = "Blood Bat", colors = "fb9254,ec7e3d,ba5520,963718,4d0000,350000,ba5520,963718,4d0000,4d0000"},
+					{ name = "DREADBAT", description = "Dread Bat", colors = "999999,707070,4e4e4e,353535,292929,191919,4e4e4e,353535,292929,292929"},
+					{ name = "DREADBAT_METAL", description = "Dread Bat Metal", colors = "cdcdcd,707070,4e4e4e,353535,292929,191919,4e4e4e,353535,292929,292929"},
+					{ name = "ANT", description = "Ant", colors = "b1d2d6,90a8b0,907ab5,706993,505870,550022,907ab5,706993,505870,505870"},
+					{ name = "FIREANT", description = "Fire Ant", colors = "ffe9b3,ffc843,ff4301,b02e00,821611,550022,ff4301,b02e00,821611,821611"},
+
+					--rashy era
+					{ name = "DARDO", description = "Dardo (Rashy Era)", colors = "eacfc2,bd9785,8b6c71,593a3f,33282a,1f1f1a,8b6c71,593a3f,33282a,33282a"},
+					{ name = "MARASHY", description = "Marashy (Rashy Era)", colors = "fdffea,bdd6e6,a28d62,3d5a4b,454545,232323,a28d62,3d5a4b,454545,454545"},
+					{ name = "LUZ", description = "Paladin Luz (Rashy Era)", colors = "ffffff,d6be6b,ad9748,88742f,5e4e1a,2f270a,ad9748,88742f,5e4e1a,5e4e1a"},
+
+					-- Default grey troll
+					{ name = "TROLL_GREY", description = "Troll Grey", colors = "d0cfbf,a8a8a8,747f73,616153,374336,172830,747f73,616153,374336,374336" },
+
+					-- earthen/stone colors for the randomizer 
+					{ name = "TROLL_LIGHTEARTHEN", description = "Light Earth", colors = "faf3c9,f6d39b,c5956a,a9794f,7b4231,422110,c5956a,a9794f,7b4231,7b4231" },
+					{ name = "TROLL_WOODENEARTH", description = "Wooden Earth", colors = "e6e6a6,c99462,835c35,573a14,352313,131414,835c35,573a14,352313,352313" },
+					{ name = "TROLL_EARTHEN", description = "Earth", colors = "d9ac79,bc946b,b3785b,844c1f,462d1f,201810,b3785b,844c1f,462d1f,462d1f" },
+					{ name = "TROLL_GOBLINMUD", description = "Goblinmud", colors = "ffce39,c08008,985810,804018,582820,281010,985810,804018,582820,582820" },
+					{ name = "TROLL_DARKERMUD", description = "Darker Mud", colors = "cbbc7f,918460,60573c,3c3623,22221a,191911,60573c,3c3623,22221a,22221a" },
+					{ name = "TROLL_DARKMUD", description = "Dark Mud", colors = "ffd087,e2a76f,97663c,574d31,383838,3b3427,97663c,574d31,383838,383838" },
+					{ name = "TROLL_DARKGREEN", description = "Dark Green", colors = "889880,797979,506858,333d33,22221e,191915,506858,333d33,22221e,22221e" },
+					{ name = "TROLL_DARKBRIGHTSTONE", description = "Dark Bright Stone", colors = "d5d59b,aa9966,939372,515138,2d2d2d,172830,939372,515138,2d2d2d,2d2d2d" },
+					{ name = "TROLL_SANDSTONE", description = "Sandstone", colors = "f8f8a0,ffffce,d6d69c,949473,525239,2d2e22,d6d69c,949473,525239,525239" },
+					{ name = "TROLL_TEAMCOLOR", description = "Teamcolor", colors = "f49ac1,ef5ba1,d6007f,9e005d,690039,55002a,d6007f,9e005d,690039,690039" },
+					{ name = "TROLL_MOLTEN", description = "Molten", colors = "f7df8e,e2cd67,f3a62c,af3c18,8e1a12,6f282b,f3a62c,af3c18,8e1a12,8e1a12" },
+					{ name = "TROLL_OLDGREEN", description = "1.0 Troll", colors = "90F8B8,6ECD8F,50A070,327855,185030,102810,50A070,327855,185030,185030" },
+					{ name = "TROLL_GRUU", description = "Grüü (SotBE)", colors = "d3bcc1,a8a8a8,817d71,635054,454133,172830,817d71,635054,454133,454133" }
+				}
+
+local gerrik_variants = {
+					--blue armour
+					{ name = "LOYALIST_BLUE", description = "Loyalist Blue", colors = "FFFFFF,FFFFFF,C6E7E7,C6E7E7,94C6C6,638C94,31526B,182931"},
+					{ name = "LOYALIST_CAVALIER", description = "Cavalier", colors = "FFFFFF,ECECEC,C6E7E7,C6E7E7,A0B9B8,6E8387,3F505C,182931"},
+					{ name = "LOYALIST_GRAND_KNIGHT", description = "Grand Knight", colors = "FFFFFF,FFFFFF,C6E7E7,C6E7E7,C5CFDA,8F8895,3F505C,182931"},
+					{ name = "LOYALIST_PALADIN", description = "Paladin", colors = "FFFFFF,FFFFFF,ECECEC,ECECEC,C5CFDA,66A5B2,31526B,3F505C"},
+					{ name = "KARRAG", description = "Karrag THoT", colors = "DBE6E8,DBE6E8,ADCCD2,ADCCD2,6799A2,3B6C75,213D43,182931"},
+					{ name = "WITNESS", description = "Witness THoT", colors = "FFFFFF,FFFFFF,B1EBEC,B1EBEC,79A9B3,4F6973,507059,1E3038"},
+
+					--dark armour
+					{ name = "SIR_GERRIK", description = "Sir Gerrik SG", colors = "E3ECFF,C3D2EF,9FAECB,808FAC,697895,3D4E69,293A55,11203D"},
+					{ name = "HEAVY_INFANTERY", description = "Heavy Infantry", colors = "ECECEC,ECECEC,A8A098,A8A098,78655A,4D4541,2C2623,191919"},
+					{ name = "ROYAL_WARRIOR", description = "Royal Warrior", colors = "DCCACA,DCCACA,A9A5AB,A9A5AB,858086,5A565A,332D32,2C2623"},
+					{ name = "CHEVALIER", description = "Chevalier (Rashy Era)", colors = "ECECCF,ECECCF,CCC2B9,CCC2B9,A8A098,686058,3D3A37,151718"},
+					{ name = "SEACAPTAIN_STEEL", description = "Sea Captain Steel SotA", colors = "FFFFFF,FFFFFF,DCDBDF,DCDBDF,B6B4BA,7B7B85,53535B,34343A"},
+					{ name = "BANNERET", description = "Banneret EI", colors = "ECECEC,ECECEC,CCC2B9,CCC2B9,A8A098,686058,524E46,3D3A37"},
+
+					--gold/bronze armour
+					{ name = "DRAKE", description = "Drake Armour", colors = "FFFFFF,FFFFFF,D1E997,D1E997,C79962,996D24,AF3C18,4C3324"},
+					{ name = "GOLD_NEW", description = "Gold 1.18", colors = "FFFFFF,FFFFFF,FFE38C,FFE38C,FFCC43,C67B02,804018,66211B"},
+					{ name = "GOLD_OLD", description = "Gold 1.16", colors = "FFFFFF,FFFFFF,ECECEC,ECECEC,D1B563,985810,512A13,2F1010"},
+					{ name = "EE_PALADIN", description = "Paladin EI", colors = "FFFFFF,FFFFFF,ECECEC,ECECEC,FFCC43,AF7A18,66211B,2F1010"},
+					{ name = "BRONZE", description = "Siege Trooper Bronze", colors = "FFFFFF,FFFFFF,CCB066,CCB066,AA6A28,804018,74341C,13262E"},
+
+					--javeliner leather/orcish/assassin/dunefolk
+					{ name = "LOYALIST_JAVELINEER", description = "Javelineer", colors = "FFFFFF,FFFFFF,D6D69C,D6D69C,938D6D,525239,39382D,2F1010"},
+					{ name = "DUNEFOLK", description = "Dunefolk", colors = "FFFFFF,FFFFFF,FFF5A0,FFF5A0,D6BD8A,888670,5C6339,3D3411"},
+					{ name = "ORC", description = "Orc", colors = "FFFFD5,FFFFD5,FFDD88,AA9966,AA9966,7F774C,515138,2D2D2D"},
+					{ name = "ASSASSIN", description = "Assassin", colors = "AAC0A0,AAC0A0,889880,889880,506858,333D33,273631,1C1B21"},
+
+					--undead armour
+					{ name = "SKELETON_RIDER", description = "Skeleton Rider", colors = "F8F8A0,F8F8A0,CCB066,CCB066,AA6A28,74341C,304860,13262E"},
+					{ name = "SKELETON", description = "Skeleton", colors = "FFFFFF,FFFFFF,FFFFCE,FFFFCE,D6D69C,C8D090,949473,525239"},
+					{ name = "DEATHKNIGHT", description = "Death Knight", colors = "FFFFFF,FFFFFF,E0E0E8,E0E0E8,A3A7AB,73697E,5E3535,13262E"},
+					{ name = "GHOST", description = "Ghost", colors = "FFFFFF,FFFFFF,E0E0E8,E0E0E8,A3A7AB,73697E,5E3535,283028"},
+
+					--GSE
+					{ name = "GSE_MILITA", description = "Great Steppe Era Militia", colors = "FFFFFF,FFFFFF,ABE5F6,ABE5F6,69BBD9,2B52A9,121B5C,140036"},
+					{ name = "GSE_CANNONEER", description = "Great Steppe Era Cannoneer", colors = "FFFFFF,FFFFFF,92D2BB,92D2BB,5BB19E,2D8569,125756,0A293B"},
+
+					--wose/elf
+					{ name = "WOSE", description = "Wose", colors = "FFFFCA,FFFFCA,E6E6A6,E6E6A6,C99462,835C35,573A14,352313"},
+					{ name = "KALIAN_ELF", description = "Kalian Elf TroW", colors = "E8EBE7,E8EBE7,D8C2AD,D8C2AD,A28D62,896941,704D1F,47213C"},
+					{ name = "ELF_DARKER", description = "Elvish Armour Dark", colors = "E8EDD5,E8EDD5,A4B496,A4B496,687862,313B31,252A23,121311"},
+					{ name = "ELF_LIGHTER", description = "Elvish Armour Light", colors = "FFFFFF,FFFFFF,E8EDD5,E8EDD5,A4B496,687862,313B31,252A23"},
+
+					--merfolk
+					{ name = "MERFOLK", description = "Merfolk", colors = "FFFFFF,FFFFFF,F2F2EA,F2F2EA,D8C2AD,B3AE78,484B42,504137"},
+					{ name = "MERFOLK_MAGE", description = "Merfolk Siren", colors = "CDF8F8,CDF8F8,F8F8F8,F8F8F8,D8C2AD,A28D62,425838,382218"},
+					{ name = "MERFOLK_HOPLITE", description = "Merfolk Hoplite", colors = "cdf8f8,f2f2ea,b3ae78,b3ae78,a28d62,484b42,504137"},
+					{ name = "AQUANA", description = "Aquana (Rashy Era)", colors = "FEFEFE,FEFEFE,E5E2C2,E5E2C2,D8CCAD,A2A062,746E47,383618"},
+					{ name = "MERFOLK_JAVELINEER", description = "Merfolk Javelineer", colors = "F2F2EA,F2F2EA,BDBEBD,BDBEBD,979FA9,4D586D,586164,404444"},
+
+					--UTBS
+					{ name = "DAWARF", description = "Dawarf", colors = "F8C8E8,F8C8E8,DB98C6,DB98C6,C878B0,905080,583068,301030"},
+					{ name = "FLESHGOLEM", description = "Fleshgolem", colors = "DBD2A4,DBD2A4,DCA993,DCA993,DE8685,CA7559,A85C4E,824143"},
+					{ name = "IXTHALA", description = "Ixthala", colors = "CECCEA,CECCEA,AFACD9,AFACD9,8A81B3,5E699C,474A6B,222438"},
+					{ name = "DARK_ASSASSIN_MASK", description = "Dark Assassin Mask", colors = "ECC3C1,ECC3C1,CC8F8C,CC8F8C,9D6B6F,7D303B,57373B,342A29"},
+					{ name = "DARK_ASSASSIN_CLOAK", description = "Dark Assassin Cloak", colors = "C3A89F,C3A89F,9C8B8B,9C8B8B,8F7A7A,74605D,5C4744,372725"},
+					{ name = "UTBS_HUMAN", description = "UtbS Human", colors = "FFFFFF,FFFFFF,D1D199,D1D199,999955,554C26,2C1A09,090602"},
+					{ name = "QUENOTH_RED", description = "Quenoth Red", colors = "FFFFFF,FFFFFF,D9AEA6,D9AEA6,BD696E,9F2133,6A343B,3F2A31"},
+					{ name = "QUENOTH_BLUE", description = "Quenoth Blue", colors = "E7FFCE,E7FFCE,A4F19D,A4F19D,78C1B2,4C91C9,4A707A,4A2E62"},
+
+					--animal parts
+					{ name = "JUMPING_SPIDER", description = "Jumping Spider", colors = "FFE6D6,FFE6D6,DCD1FF,DCD1FF,BBABED,6B57B9,5E4DA1,1E1348"},
+					{ name = "SCORPLING", description = "Scorpling", colors = "FFFFFF,FFFFFF,DAB6C4,DAB6C4,C19FA5,A38583,7F615F,491D27"},
+					{ name = "TENTACLE", description = "Tentacle", colors = "FFFFFF,FFFFFF,CDCDCD,CDCDCD,94999A,68676F,4A5661,311A16"},
+					{ name = "SEASERPENT", description = "Sea Serpent", colors = "D9FFFF,D9FFFF,ADCFCF,ADCFCF,87A1A1,5B7F8A,405F72,384247"},
+					{ name = "SCARAB", description = "Scarab", colors = "FFFFFF,FFFFFF,A5DEAB,A5DEAB,74C67E,6CA26A,657E55,49613B"},
+					{ name = "SCORPIAN", description = "Scorpion", colors = "CDE5FE,CDE5FE,B6C8DA,B6C8DA,8384A3,5F607F,414C5E,1D2C49"},
+					{ name = "CRAB", description = "Crab", colors = "FFFFFF,FFFFFF,DDD3CD,DDD3CD,B6ACA4,917B4D,695937,261F10"},
+					{ name = "BAT", description = "Vampire Bat", colors = "E5A490,E5A490,AD7569,AD7569,84495E,794D44,592B3B,1B1B1B"},
+					{ name = "BLOODBAT", description = "Blood Bat", colors = "FB9254,FB9254,EC7E3D,EC7E3D,BA5520,963718,4D0000,350000"},
+					{ name = "DREADBAT", description = "Dread Bat", colors = "999999,999999,707070,707070,4E4E4E,353535,292929,191919"},
+					{ name = "DREADBAT_METAL", description = "Dread Bat Metal", colors = "CDCDCD,CDCDCD,707070,707070,4E4E4E,353535,292929,191919"},
+					{ name = "ANT", description = "Ant", colors = "B1D2D6,B1D2D6,90A8B0,90A8B0,907AB5,706993,505870,550022"},
+					{ name = "FIREANT", description = "Fire Ant", colors = "FFE9B3,FFE9B3,FFC843,FFC843,FF4301,B02E00,821611,550022"},
+
+					--rashy era
+					{ name = "DARDO", description = "Dardo (Rashy Era)", colors = "eacfc2,eacfc2,bd9785,bd9785,8b6c71,593a3f,33282a,1f1f1a"},
+					{ name = "MARASHY", description = "Marashy (Rashy Era)", colors = "fdffea,fdffea,bdd6e6,bdd6e6,a28d62,3d5a4b,454545,232323"},
+					{ name = "LUZ", description = "Paladin Luz (Rashy Era)", colors = "ffffff,ffffff,d6be6b,d6be6b,ad9748,88742f,5e4e1a,2f270a"},
+
+					--Default grey troll
+					{ name = "TROLL_GREY", description = "Troll Grey", colors = "D0CFBF,D0CFBF,A8A8A8,A8A8A8,747F73,616153,374336,172830" },
+
+					--earthen/stone colors for the randomizer
+					{ name = "TROLL_LIGHTEARTHEN", description = "Light Earth", colors = "FAF3C9,FAF3C9,F6D39B,F6D39B,C5956A,A9794F,7B4231,422110" },
+					{ name = "TROLL_WOODENEARTH", description = "Wooden Earth", colors = "E6E6A6,E6E6A6,C99462,C99462,835C35,573A14,352313,131414" },
+					{ name = "TROLL_EARTHEN", description = "Earth", colors = "D9AC79,D9AC79,BC946B,BC946B,B3785B,844C1F,462D1F,201810" },
+					{ name = "TROLL_GOBLINMUD", description = "Goblinmud", colors = "FFCE39,FFCE39,C08008,C08008,985810,804018,582820,281010" },
+					{ name = "TROLL_DARKERMUD", description = "Darker Mud", colors = "CBBC7F,CBBC7F,918460,918460,60573C,3C3623,22221A,191911" },
+					{ name = "TROLL_DARKMUD", description = "Dark Mud", colors = "FFD087,FFD087,E2A76F,E2A76F,97663C,574D31,383838,3B3427" },
+					{ name = "TROLL_DARKGREEN", description = "Dark Green", colors = "889880,889880,797979,797979,506858,333D33,22221E,191915" },
+					{ name = "TROLL_DARKBRIGHTSTONE", description = "Dark Bright Stone", colors = "D5D59B,D5D59B,AA9966,AA9966,939372,515138,2D2D2D,172830" },
+					{ name = "TROLL_SANDSTONE", description = "Sandstone", colors = "F8F8A0,F8F8A0,FFFFCE,FFFFCE,D6D69C,949473,525239,2D2E22" },
+					{ name = "TROLL_TEAMCOLOR", description = "Teamcolor", colors = "F49AC1,F49AC1,EF5BA1,EF5BA1,D6007F,9E005D,690039,55002A" },
+					{ name = "TROLL_MOLTEN", description = "Molten", colors = "F7DF8E,F7DF8E,E2CD67,E2CD67,F3A62C,AF3C18,8E1A12,6F282B" },
+					{ name = "TROLL_OLDGREEN", description = "1.0 Troll", colors = "90F8B8,90F8B8,6ECD8F,6ECD8F,50A070,327855,185030,102810" },
+					{ name = "TROLL_GRUU", description = "Grüü (SotBE)", colors = "d3bcc1,d3bcc1,a8a8a8,a8a8a8,817d71,635054,454133,172830" }
+				}
 -- leather coloring
 local leather_variants = {
 					--blue armour
@@ -632,6 +937,11 @@ local body_parts = {
 					"Battle Princess", "Princess", "Warrior Princess", "Bound Princess",
 					"Frontier Sergeant","Frontier Lieutenant","Veteran Lieutenant","Veteran Commander",
 					"Mounted Fighter","Mounted Warrior","Horse Lord",
+					"Cavalryman Commander","Dragoon Commander",
+					"Bowman Thea","Longbowman Thea","Master Bowman Thea",
+					"Elite Bowman","Elite Longbowman","Elite Master Bowman","Elite Duelist","Elite Bowman","Elite Master at Arms","Injured Lieutenant",
+					"Prince of Wesnoth", "Veteran Cavalier",
+					"Unarmed Eldred","King Eldred","Crown Prince","Hunker Eldred",
 					"Cavalryman", "Horseman", "Dragoon", "Spearman", "Master at Arms", 
 					"Bowman", "Swordsman", "General", "Longbowman", "Grand Marshal", "Sergeant", "Lieutenant", "Master Bowman", 
 					"Knight", "Pikeman", "Royal Guard", "Halberdier", "Duelist", "Fencer", "Peasant", "Woodsman", 
@@ -646,7 +956,8 @@ local body_parts = {
 				infantry_variants
 			),
 			heavy_infantry = ucc_structure(
-				{ "Heavy Infantryman", "Shock Trooper", "Iron Mauler", "Afterlife Heavy Infantryman", "Afterlife Shock Trooper", "Afterlife Iron Mauler" }, 
+				{	"Heavy Infantryman", "Shock Trooper", "Iron Mauler", "Afterlife Heavy Infantryman", "Afterlife Shock Trooper", "Afterlife Iron Mauler",
+					"Elite Heavy Infantryman","Elite Shock Trooper","Elite Iron Mauler"}, 
 				"FFFFFF,ECECEC,A8A098,78655A,4D4541,2C2623", 
 				hi_variants
 			),
@@ -660,8 +971,13 @@ local body_parts = {
 				"FFFFFF,ECECEC,C5CFDA,66A5B2,31526B,3F505C",
 				hi_variants
 			),
+			terraent = ucc_structure(
+				{ "Terraent"	},
+				"ffffff,ececec,ffcc43,af7a18,66211b,2f1010",
+				hi_variants
+			),
 			cavalier = ucc_structure(
-				{ "Cavalier", "Afterlife Cavalier"	},
+				{ "Cavalier", "Afterlife Cavalier", "Cavalier Commander"	},
 				"FFFFFF,ECECEC,C6E7E7,A0B9B8,6E8387,3F505C,182931",
 				cavalier_variants
 			),
@@ -671,9 +987,25 @@ local body_parts = {
 				banneret_variants
 			),
 			royal_warrior = ucc_structure(
-				{ "Royal Warrior","Warrior King","King of Wesnoth"	},
+				{ "Royal Warrior","Warrior King"	},
 				"dccaca,c29ea4,a9a5ab,858086,5a565a,332d32,2c2623",
 				royal_warrior_variants
+			),
+			maddock = ucc_structure(
+				{ "Lord of Elensefar"	},
+				"FFFFFF,C6E7E7,A0B9B8,6E8387,3F505C,182931,A8B0B8,788088,404848,405850",
+				maddock_variants
+			),
+			gerrik = ucc_structure(
+				{	"Veteran Infantryman","Master Infantryman"}, 
+				"E3ECFF,c3d2ef,9faecb,808FAC,697895,3d4e69,293a55,11203d", 
+				gerrik_variants
+			),
+			-- needs special treatment, cause there two units with the id with "King of Wesnoth" 
+			king = ucc_structure(
+				{	"King of Wesnoth"	},
+				"dccaca,c29ea4,a9a5ab,858086,5a565a,332d32,2c2623,FFFFFF,C6E7E7,C5CFDA,8F8895,3F505C,182931",
+				king_variants
 			),
 		}
 	},

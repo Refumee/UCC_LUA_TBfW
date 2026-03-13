@@ -8,7 +8,8 @@ local body_parts = {
 				unit_types = {	"Saurian Skirmisher", "Saurian Ambusher", "Saurian Spearthrower", "Saurian Javelineer", "Saurian Flanker", "Saurian Augur", "Saurian Soothsayer", "Saurian Oracle", "Saurian Seer", "Saurian Prophet",
 								"Afterlife Saurian Skirmisher", "Afterlife Saurian Ambusher", "Afterlife Saurian Spearthrower", "Afterlife Saurian Javelineer", "Afterlife Saurian Flanker", "Afterlife Saurian Augur",
 								"Afterlife Saurian Soothsayer", "Afterlife Saurian Oracle", "Afterlife Saurian Seer", "Afterlife Saurian Prophet",
-								"Wild Saurian","Beast Saurian"
+								"Wild Saurian","Beast Saurian",
+								"Saurian Devotee","Saurian Juvenile","Saurian Spike"
 				},
 				base = "cff521,22d22f,85d64f,98d858,3f8b34,4d8d38,26882e,0d4218", 
 				variants = {
