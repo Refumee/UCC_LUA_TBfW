@@ -5,7 +5,7 @@ local body_parts = {
 		description = "Body",
 		data = {
 			feather = {
-				unit_types = { "Gryphon","Gryphon Rider","Gryphon Master", "Afterlife Gryphon Rider", "Afterlife Gryphon Master" },
+				unit_types = { "Gryphon","Gryphon Rider","Gryphon Master", "Afterlife Gryphon Rider", "Afterlife Gryphon Master","Sleeping Gryphon" },
 				base = "E0C3A2,BEA18B,AF937F,83675E,795332,543638,3B232B", 
 				variants = {
 					{ name = "DEFAULT_GRYPHON_BODY", description = "Default", colors = "E0C3A2,BEA18B,AF937F,83675E,795332,543638,3B232B" },
@@ -19,6 +19,36 @@ local body_parts = {
 					-- other units
 					{ name = "GRYPHON_BODY_FALCON", description = "Falcon Body", colors = "E7D9BF,D7C6A4,B99F83,9D7964,7D502E,573711,381507" },
 					{ name = "GRYPHON_BODY_RAVEN", description = "Raven Body", colors = "A0A7FB,A59BB7,8D83A0,716587,5C5073,493C61,2B194C" },
+					{ name = "GRYPHON_BODY_GRYPHLET", description = "Gryphlet Body", colors = "D7D7D7,B8B8B8,AAAAAA,7B7B7B,707070,484848,2E2E2E" },
+					-- different
+					{ name = "GRYPHON_BODY_SNOW", description = "Arctic Body", colors = "FEFFFF,E6ECEF,C0CDDA,9CA8B5,768699,4F6075,2A374A" },
+					{ name = "GRYPHON_BODY_OBSIDIAN", description = "Obsidian Body", colors = "8A8A9E,656578,4C4C5C,363645,242430,15151F,08080C" },
+					{ name = "GRYPHON_BODY_DESERT", description = "Desert Body", colors = "FFE599,EBC573,D1A24B,B37E29,8A5B1C,5C380E,331A05" },
+					{ name = "GRYPHON_BODY_FOREST", description = "Mossy Body", colors = "D6CDA5,B8AD80,968C5E,756B41,544C27,363014,1C1808" },
+				},
+			},
+		}
+	},
+	{
+		name = "gryphon_body_gryphlet", -- body_part
+		description = "Body",
+		data = {
+			feather = {
+				unit_types = { "Gryphlet" },
+				base = "D7D7D7,B8B8B8,AAAAAA,7B7B7B,707070,484848,2E2E2E", 
+				variants = {
+					{ name = "DEFAULT_GRYPHON_BODY", description = "Default", colors = "E0C3A2,BEA18B,AF937F,83675E,795332,543638,3B232B" },
+					-- variation
+					{ name = "GRYPHON_BODY_LIGHT", description = "Lighter Body", colors = "F5DCC0,D4B9A4,C4AA97,9E8177,946D4B,6B4A4C,4F353E" },
+					{ name = "GRYPHON_BODY_DARK", description = "Darker Body", colors = "C2A889,A18774,917967,6B534B,5E3F25,40282A,26151B" },
+					{ name = "GRYPHON_BODY_WARM", description = "Warm Reddish Body", colors = "E8BA9D,C99680,BD8675,915951,874328,612C2F,451D24" },
+					{ name = "GRYPHON_BODY_COOL", description = "Cool Ash Body", colors = "D1C7B1,AF9F92,9EA090,786C6A,6B5242,4A3940,31232B" },
+					{ name = "GRYPHON_BODY_SATURATED", description = "Saturated Body", colors = "F2C596,D1A280,C48F70,996A5C,8C552B,66363B,47212A" },
+					{ name = "GRYPHON_BODY_MUTED", description = "Muted Dusty Body", colors = "D1C6BD,B0A8A2,A19A95,75706E,695B50,4A4042,332A2E" },
+					-- other units
+					{ name = "GRYPHON_BODY_FALCON", description = "Falcon Body", colors = "E7D9BF,D7C6A4,B99F83,9D7964,7D502E,573711,381507" },
+					{ name = "GRYPHON_BODY_RAVEN", description = "Raven Body", colors = "A0A7FB,A59BB7,8D83A0,716587,5C5073,493C61,2B194C" },
+					{ name = "GRYPHON_BODY_GRYPHLET", description = "Gryphlet Body", colors = "D7D7D7,B8B8B8,AAAAAA,7B7B7B,707070,484848,2E2E2E" },
 					-- different
 					{ name = "GRYPHON_BODY_SNOW", description = "Arctic Body", colors = "FEFFFF,E6ECEF,C0CDDA,9CA8B5,768699,4F6075,2A374A" },
 					{ name = "GRYPHON_BODY_OBSIDIAN", description = "Obsidian Body", colors = "8A8A9E,656578,4C4C5C,363645,242430,15151F,08080C" },
@@ -33,7 +63,7 @@ local body_parts = {
 		description = "Head",
 		data = {
 			head = { -- archtype
-				unit_types = { "Gryphon","Gryphon Rider","Gryphon Master", "Afterlife Gryphon Rider", "Afterlife Gryphon Master" },
+				unit_types = { "Gryphon","Gryphon Rider","Gryphon Master", "Afterlife Gryphon Rider", "Afterlife Gryphon Master","Sleeping Gryphon","Gryphlet" },
 				base = "F8EDC5,A8A098,585858,4E3A2D", --last color is just an "eyeliner"
 				variants = {
 					{ name = "DEFAULT_GRYPHON_HEAD", description = "Default", colors = "F8EDC5,A8A098,585858,4E3A2D" },
@@ -61,7 +91,7 @@ local body_parts = {
 		description = "Peak",
 		data = {
 			peak = {
-				unit_types = { "Gryphon","Gryphon Rider","Gryphon Master", "Afterlife Gryphon Rider", "Afterlife Gryphon Master" },
+				unit_types = { "Gryphon","Gryphon Rider","Gryphon Master", "Afterlife Gryphon Rider", "Afterlife Gryphon Master","Sleeping Gryphon","Gryphlet" },
 				base = "EDC66D,CF804D,823F1E", 
 				variants = {
 					{ name = "DEFAULT_GRYPHON_PEAK", description = "Default", colors = "EDC66D,CF804D,823F1E" },
