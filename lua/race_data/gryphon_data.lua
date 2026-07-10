@@ -239,7 +239,7 @@ local body_parts = {
 		data = {
 			dwarf_rider = { -- archetype
 				unit_types = {	"Gryphon Rider","Gryphon Master", "Afterlife Gryphon Rider", "Afterlife Gryphon Master"	},
-				base = "E08B7A,B14B4B,8B3219,592010",
+				base = "DBBEA4,B1937F,8B4E0D,592820",
 				variants = {
 					{ name = "DWARF_BEARD_MINER", description = "Miner", colors = "E08B7A,B14B4B,8B3219,592010"},
 					{ name = "DWARF_BEARD_THUNDERER", description = "Thunderer", colors = "DAB0A4,B0937F,8B3219,582820"},

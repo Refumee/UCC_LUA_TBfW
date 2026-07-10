@@ -144,6 +144,7 @@ local body_parts = {
 					{ name = "MERFOLK_HAIR_ORCISH_ELDER_SHAMAN", description = "Orcish Elder Shaman", colors = "94ac98,6f8078,414445,25262a"},
 
 					--experimental coloring
+					{ name = "MERFOLK_HAIR_NECROMANCER_CTL", description = "Dark Sorcerer (CtL)", colors = "A64E27,7A2906,4F1E03,231007"},
 					{ name = "MERFOLK_HAIR_GREY_GREEN_BLUE", description = "Grey green blue", colors = "c6e9bd,84b8bf,4d687c,313545"},
 					{ name = "MERFOLK_HAIR_ICE_PURPLE", description = "Purple ice", colors = "a2b5ff,85ebe4,2d8b91,02342f"},
 					{ name = "MERFOLK_HAIR_RED", description = "Red", colors = "f51743,9b173f,55173d,37173d"},

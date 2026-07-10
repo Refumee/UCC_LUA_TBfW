@@ -36,6 +36,8 @@ local infantry_variants = {
 					{ name = "SKELETON", description = "Skeleton", colors = "FFFFFF,FFFFCE,D6D69C,C8D090,949473,525239,D6D69C,C8D090,D6D69C"},
 					{ name = "DEATHKNIGHT", description = "Death Knight", colors = "FFFFFF,E0E0E8,A3A7AB,73697E,5E3535,13262E,A3A7AB,73697E,A3A7AB"},
 					{ name = "GHOST", description = "Ghost", colors = "FFFFFF,E0E0E8,A3A7AB,73697E,5E3535,283028,A3A7AB,73697E,A3A7AB"},
+					{ name = "NECROMANCER", description = "Necromancer", colors = "FFFFFF,D2BDA9,A3A7AB,73697E,91822F,5E3535,A3A7AB,73697E,A3A7AB"},
+					{ name = "NECROMANCER_CTL", description = "Necromancer (CtL)", colors = "C3C1C1,9B9B9B,808080,484848,575757,1B1B1B,808080,484848,808080"},
 
 					--GSE
 					{ name = "GSE_MILITA", description = "Great Steppe Era Militia", colors = "FFFFFF,ABE5F6,69BBD9,2B52A9,121B5C,140036,69BBD9,2B52A9,69BBD9"},
@@ -138,6 +140,8 @@ local hi_variants = {
 					{ name = "SKELETON", description = "Skeleton", colors = "ffffff,ffffce,d6d69c,c8d090,949473,525239"},
 					{ name = "DEATHKNIGHT", description = "Death Knight", colors = "ffffff,e0e0e8,a3a7ab,73697e,5e3535,13262e"},
 					{ name = "GHOST", description = "Ghost", colors = "ffffff,e0e0e8,a3a7ab,73697e,5e3535,283028"},
+					{ name = "NECROMANCER", description = "Necromancer", colors = "FFFFFF,D2BDA9,A3A7AB,73697E,91822F,5E3535"},
+					{ name = "NECROMANCER_CTL", description = "Necromancer (CtL)", colors = "C3C1C1,9B9B9B,808080,484848,575757,1B1B1B"},
 
 					--GSE
 					{ name = "GSE_MILITA", description = "Great Steppe Era Militia", colors = "ffffff,abe5f6,69bbd9,2b52a9,121b5c,140036"},
@@ -240,6 +244,8 @@ local cavalier_variants = {
 					{ name = "SKELETON", description = "Skeleton", colors = "FFFFFF,FFFFFF,FFFFCE,D6D69C,C8D090,949473,525239"},
 					{ name = "DEATHKNIGHT", description = "Death Knight", colors = "FFFFFF,FFFFFF,E0E0E8,A3A7AB,73697E,5E3535,13262E"},
 					{ name = "GHOST", description = "Ghost", colors = "FFFFFF,FFFFFF,E0E0E8,A3A7AB,73697E,5E3535,283028"},
+					{ name = "NECROMANCER", description = "Necromancer", colors = "FFFFFF,FFFFFF,D2BDA9,A3A7AB,73697E,91822F,5E3535"},
+					{ name = "NECROMANCER_CTL", description = "Necromancer (CtL)", colors = "C3C1C1,C3C1C1,9B9B9B,808080,484848,575757,1B1B1B"},
 
 					--GSE
 					{ name = "GSE_MILITA", description = "Great Steppe Era Militia", colors = "FFFFFF,FFFFFF,ABE5F6,69BBD9,2B52A9,121B5C,140036"},
@@ -342,6 +348,8 @@ local banneret_variants = {
 					{ name = "SKELETON", description = "Skeleton", colors = "ffffff,ffffce,d6d69c,c8d090,949473,525239"},
 					{ name = "DEATHKNIGHT", description = "Death Knight", colors = "ffffff,e0e0e8,a3a7ab,73697e,5e3535,13262e"},
 					{ name = "GHOST", description = "Ghost", colors = "ffffff,e0e0e8,a3a7ab,73697e,5e3535,283028"},
+					{ name = "NECROMANCER", description = "Necromancer", colors = "FFFFFF,D2BDA9,A3A7AB,73697E,91822F,5E3535"},
+					{ name = "NECROMANCER_CTL", description = "Necromancer (CtL)", colors = "C3C1C1,9B9B9B,808080,484848,575757,1B1B1B"},
 
 					--GSE
 					{ name = "GSE_MILITA", description = "Great Steppe Era Militia", colors = "ffffff,abe5f6,69bbd9,2b52a9,121b5c,140036"},
@@ -444,6 +452,8 @@ local royal_warrior_variants = {
 					{ name = "SKELETON", description = "Skeleton", colors = "ffffff,ffffff,ffffce,d6d69c,c8d090,949473,525239"},
 					{ name = "DEATHKNIGHT", description = "Death Knight", colors = "ffffff,ffffff,e0e0e8,a3a7ab,73697e,5e3535,13262e"},
 					{ name = "GHOST", description = "Ghost", colors = "ffffff,ffffff,e0e0e8,a3a7ab,73697e,5e3535,283028"},
+					{ name = "NECROMANCER", description = "Necromancer", colors = "FFFFFF,FFFFFF,D2BDA9,A3A7AB,73697E,91822F,5E3535"},
+					{ name = "NECROMANCER_CTL", description = "Necromancer (CtL)", colors = "C3C1C1,C3C1C1,9B9B9B,808080,484848,575757,1B1B1B"},
 
 					--GSE
 					{ name = "GSE_MILITA", description = "Great Steppe Era Militia", colors = "ffffff,ffffff,abe5f6,69bbd9,2b52a9,121b5c,140036"},
@@ -546,6 +556,8 @@ local king_variants = {
 						{ name = "SKELETON", description = "Skeleton", colors = "ffffff,ffffff,ffffce,d6d69c,c8d090,949473,525239,FFFFFF,FFFFFF,FFFFCE,D6D69C,C8D090,949473,525239" },
 						{ name = "DEATHKNIGHT", description = "Death Knight", colors = "ffffff,ffffff,e0e0e8,a3a7ab,73697e,5e3535,13262e,FFFFFF,FFFFFF,E0E0E8,A3A7AB,73697E,5E3535,13262E" },
 						{ name = "GHOST", description = "Ghost", colors = "ffffff,ffffff,e0e0e8,a3a7ab,73697e,5e3535,283028,FFFFFF,FFFFFF,E0E0E8,A3A7AB,73697E,5E3535,283028" },
+						{ name = "NECROMANCER", description = "Necromancer", colors = "FFFFFF,FFFFFF,D2BDA9,A3A7AB,73697E,91822F,5E3535,FFFFFF,FFFFFF,D2BDA9,A3A7AB,73697E,91822F,5E3535"},
+						{ name = "NECROMANCER_CTL", description = "Necromancer (CtL)", colors = "C3C1C1,C3C1C1,9B9B9B,808080,484848,575757,1B1B1B,C3C1C1,C3C1C1,9B9B9B,808080,484848,575757,1B1B1B"},
 
 						-- GSE
 						{ name = "GSE_MILITA", description = "Great Steppe Era Militia", colors = "ffffff,ffffff,abe5f6,69bbd9,2b52a9,121b5c,140036,FFFFFF,FFFFFF,ABE5F6,69BBD9,2B52A9,121B5C,140036" },
@@ -648,6 +660,8 @@ local maddock_variants = {
 					{ name = "SKELETON", description = "Skeleton", colors = "ffffff,ffffce,d6d69c,c8d090,949473,525239,d6d69c,c8d090,949473,949473"},
 					{ name = "DEATHKNIGHT", description = "Death Knight", colors = "ffffff,e0e0e8,a3a7ab,73697e,5e3535,13262e,a3a7ab,73697e,5e3535,5e3535"},
 					{ name = "GHOST", description = "Ghost", colors = "ffffff,e0e0e8,a3a7ab,73697e,5e3535,283028,a3a7ab,73697e,5e3535,5e3535"},
+					{ name = "NECROMANCER", description = "Necromancer", colors = "FFFFFF,D2BDA9,A3A7AB,73697E,91822F,5E3535,D2BDA9,A3A7AB,73697E,73697E"},
+					{ name = "NECROMANCER_CTL", description = "Necromancer (CtL)", colors = "C3C1C1,9B9B9B,808080,484848,575757,1B1B1B,9B9B9B,808080,484848,484848"},
 
 					--GSE
 					{ name = "GSE_MILITA", description = "Great Steppe Era Militia", colors = "ffffff,abe5f6,69bbd9,2b52a9,121b5c,140036,69bbd9,2b52a9,121b5c,121b5c"},
@@ -750,6 +764,8 @@ local gerrik_variants = {
 					{ name = "SKELETON", description = "Skeleton", colors = "FFFFFF,FFFFFF,FFFFCE,FFFFCE,D6D69C,C8D090,949473,525239"},
 					{ name = "DEATHKNIGHT", description = "Death Knight", colors = "FFFFFF,FFFFFF,E0E0E8,E0E0E8,A3A7AB,73697E,5E3535,13262E"},
 					{ name = "GHOST", description = "Ghost", colors = "FFFFFF,FFFFFF,E0E0E8,E0E0E8,A3A7AB,73697E,5E3535,283028"},
+					{ name = "NECROMANCER", description = "Necromancer", colors = "FFFFFF,FFFFFF,D2BDA9,D2BDA9,A3A7AB,73697E,91822F,5E3535"},
+					{ name = "NECROMANCER_CTL", description = "Necromancer (CtL)", colors = "C3C1C1,C3C1C1,9B9B9B,9B9B9B,808080,484848,575757,1B1B1B"},
 
 					--GSE
 					{ name = "GSE_MILITA", description = "Great Steppe Era Militia", colors = "FFFFFF,FFFFFF,ABE5F6,ABE5F6,69BBD9,2B52A9,121B5C,140036"},
@@ -846,6 +862,7 @@ local leather_variants = {
 					{ name = "DUNEFOLK_LEATHER", description = "Dunefolk", colors = "fff5a0,d6bd8a,888670,5c6339,5c6339,3d3411"},
 					{ name = "ORC_LEATHER", description = "Orc", colors = "ffdd88,aa9966,7f774c,515138,515138,2d2d2d"},
 					{ name = "ASSASSIN_LEATHER", description = "Assassin", colors = "889880,506858,333d33,273631,273631,1c1b21"},
+					{ name = "ROGUE_MAGE_LEATHER", description = "Rogue Mage", colors = "A88325,936920,754C20,643B23,472924,2f1010"},
 
 					--undead armour
 					{ name = "SKELETON_RIDER_LEATHER", description = "Skeleton Rider", colors = "ccb066,aa6a28,74341c,304860,304860,13262e"},
@@ -918,7 +935,52 @@ local leather_variants = {
 					{ name = "TROLL_OLDGREEN_LEATHER", description = "1.0 Troll", colors = "6ECD8F,50A070,327855,185030,185030,102810" },
 					{ name = "TROLL_GRUU_LEATHER", description = "Grüü (SotBE)", colors = "a8a8a8,817d71,635054,454133,454133,172830" }
 				}
+-- cloth coloring
+local clothing_variants = {
+			{ name = "MAGE_CLOTH_HUMANMAGE", description = "Mage Cloth", colors = "b18134,8a5c2f,75462F,4e3430,2D2410"},
+			{ name = "MAGE_CLOTH_REDMAGE", description = "Red Mage Cloth", colors = "C5956A,A9794F,876246,876246,4E3430"},
+			{ name = "MAGE_CLOTH_ARCHMAGE", description = "Arch Mage Cloth", colors = "cabca2,a4977e,847860,635841,4b402b"},
+			{ name = "MAGE_CLOTH_SILVER_MAGE", description = "Silver Mage Cloth", colors = "C0D7E0,90B3C0,7EA0A0,69788A,384062"},
+			{ name = "MAGE_CLOTH_WHITE_MAGE", description = "White Mage Cloth", colors = "C0D7E0,90B3C0,607B90,607B90,425361"},
+			{ name = "MAGE_CLOTH_MAGE_HOOD", description = "Mage Hood Cloth", colors = "BFBFBF,808080,8A949F,595959,4D4D4D"},
+			{ name = "MAGE_CLOTH_SILVER_MAGE_HOOD", description = "Silver Mage Hood Cloth", colors = "D6D6D6,ABABAB,7A7A7A,7A7A7A,4D4D4D"},
+			{ name = "MAGE_CLOTH_WHITE_MAGE_HOOD", description = "White Mage Hood Cloth", colors = "D3CBBB,8A949F,7A7A7A,3C454F,182830"},
+			{ name = "MAGE_CLOTH_ELDER_MAGE", description = "Elder Mage Cloth", colors = "84401E,773311,5A2816,422110,2C1212"},
+			{ name = "MAGE_CLOTH_ELDER_MAGE_HOOD", description = "Elder Mage Hood Cloth", colors = "A4977E,847860,635841,4B402B,2D2410"},
+			{ name = "MAGE_CLOTH_DELFADOR_HTTT", description = "Delfador Cloth (HttT)", colors = "834D70,6C3064,470D55,38023E,22012D"},
+			{ name = "MAGE_CLOTH_DELFADOR_HTTT_HOOD", description = "Delfador Hood Cloth (HttT)", colors = "3D8381,0C655B,07444A,032A32,031222"},
+			{ name = "MAGE_CLOTH_DELFADOR_TDG3", description = "Delfador Cloth (TDG)", colors = "D4AE76,A78053,705638,384B47,212121"},
+			{ name = "MAGE_CLOTH_DELFADOR_TDG4", description = "Delfador Cloth Grey (TDG)", colors = "D2D2D2,ABABAB,7A7A7A,4D4D4D,384B47"},
+			
+			{ name = "MAGE_CLOTH_DARKER", description = "Darker Cloth", colors = "818442,5c572c,41493a,41493a,212e1a"},
+			{ name = "MAGE_CLOTH_GREENPURPLE", description = "Green Purple", colors = "93a167,6e6962,433455,433455,000001"},
+			{ name = "MAGE_CLOTH_GREENRED", description = "Green Red", colors = "a19f7c,77744f,603b3a,603b3a,213b25"},
+			{ name = "MAGE_CLOTH_BROWNREDPURPLE", description = "Brown Red Purple", colors = "826e2f,75491e,47213c,47213c,3F1519"},
+			{ name = "MAGE_CLOTH_BROWNGREY", description = "Brown Grey", colors = "84754a,594e2f,47433f,47433f,2b2c16"},
+			{ name = "MAGE_CLOTH_DARKBROWN", description = "Dark Brown", colors = "a08662,796755,423934,423934,221c1a"},
+			{ name = "MAGE_CLOTH_LIGHTBROWN", description = "Light Brown", colors = "cda184,93614a,653618,653618,38160a"},
+			{ name = "MAGE_CLOTH_BROWNGREYGREEN", description = "Brown Greygreen", colors = "8f6c61,6b4936,475044,475044,472b27"},
+			{ name = "MAGE_CLOTH_ORANGEBLUE", description = "Orange Blue", colors = "d08159,8d697a,203c56,203c56,0d2b45"},
+			{ name = "MAGE_CLOTH_BLUE", description = "Blue", colors = "50596e,273541,273a48,273a48,1d2336"},
+			{ name = "MAGE_CLOTH_PURPLE", description = "Purple", colors = "9d7d95,684e67,50445a,50445a,322a3f"},
+			{ name = "MAGE_CLOTH_GREY", description = "Grey", colors = "909090,6f6f6f,434343,434343,212121"},
+			{ name = "MAGE_CLOTH_GREYBROWN", description = "Grey Brown", colors = "576d6d,8a7d5d,593f33,593f33,221e23"},
+			{ name = "MAGE_CLOTH_GREYRED", description = "Grey Red", colors = "aaaa8e,717171,553939,553939,393939"},
 
+			--faction clothing
+			{ name = "MAGE_CLOTH_ORC_SHAMAN", description = "Orc Shaman", colors = "9AAB60,80813D,554C1B,524919,312B0A"},
+			{ name = "MAGE_CLOTH_DUNEBURNER", description = "Dune Burner", colors = "D5D3A1,A09F84,7F7165,7F7165,453843"},
+			{ name = "MAGE_CLOTH_DUNEHERBALIST", description = "Dune Herbalist", colors = "B8A641,798D63,535E2D,535E2D,303313"},
+			{ name = "MAGE_CLOTH_DARKDUNE", description = "Dark Dune Cloth", colors = "e6e6cc,aaaa8e,717171,717171,393939"},
+			{ name = "MAGE_CLOTH_LIGHTDUNE", description = "Light Dune Cloth", colors = "f6f6da,d5d3a1,bab98b,bab98b,4b4142"},
+			{ name = "MAGE_CLOTH_ROGUE_MAGE", description = "Rogue Mage Cloth", colors = "636363,474747,3D3D00,2B281D,152114"},
+			{ name = "MAGE_CLOTH_DARKADEPT", description = "Dark Adept Cloth", colors = "a5b89c,889880,506858,506858,283028"},
+			{ name = "MAGE_CLOTH_ELVISHSHAMAN", description = "Elvish Shaman Cloth", colors = "efff9c,9cde5a,529439,529439,4f7229"},
+			{ name = "MAGE_CLOTH_SAURIANAUGUR", description = "Saurian Augur Cloth", colors = "ffffff,9b9c92,515249,515249,17212c"},
+			{ name = "MAGE_CLOTH_SAURIANORACLE", description = "Saurian Oracle Cloth", colors = "ffffff,8dc2c2,2c4c6c,2c4c6c,17212c"},
+			{ name = "MAGE_CLOTH_SAURIANPROPHET", description = "Saurian Prophet Cloth", colors = "ffd44a,ffe59d,bf6d00,bf6d00,581802"},
+			{ name = "MAGE_CLOTH_SAURIANSEER", description = "Saurian Seer Cloth", colors = "ffffff,ffd44a,bf6d00,bf6d00,581802"}
+				}
 local function ucc_structure(unit_type_list, base_color, variant_colors)
     return {
         unit_types = unit_type_list,
@@ -1007,6 +1069,11 @@ local body_parts = {
 				"dccaca,c29ea4,a9a5ab,858086,5a565a,332d32,2c2623,FFFFFF,C6E7E7,C5CFDA,8F8895,3F505C,182931",
 				king_variants
 			),
+			darkadept = ucc_structure(
+				{ "Dark Adept", "Dark Sorcerer", "Necromancer", "Afterlife Dark Adept", "Afterlife Dark Sorcerer", "Afterlife Necromancer", "MalinNecromancer", "MalinDarkMage", "Apprentice Necromancer", "Dark Mage" },
+				"FEFEFE,D2BDA9,A3A7AB,73697E,91822F,5E3535",
+				hi_variants
+			),
 		}
 	},
 	{
@@ -1029,6 +1096,223 @@ local body_parts = {
 				"D6D69C,938D6D,525239,39382D,332D32,2F1010",
 				leather_variants
 			),
+			human = ucc_structure(
+				{ "Rogue Mage", "Arcane Enforcer"},
+				"A88325,936920,754C20,643B23,472924,2f1010",
+				leather_variants
+			),
+		}
+	},
+	{
+		name = "mage_cloth", -- body_part
+		description = "Cloth (Main)",
+		data = {
+			mage = ucc_structure(
+				{ "Mage", "Afterlife Mage", "Red Mage", "Afterlife Red Mage","Malin Keshar","Apprentice Mage" },
+				"b18134,8a5c2f,75462F,4e3430,2D2410",
+				clothing_variants
+			),
+			archmage = ucc_structure(
+				{ "Arch Mage", "Afterlife Arch Mage", "Great Mage", "Afterlife Great Mage" },
+				"cabca2,a4977e,847860,635841,4b402b",
+				clothing_variants
+			),
+			silvermage = ucc_structure(
+				{ "Silver Mage", "Afterlife Silver Mage" },
+				"C0D7E0,90B3C0,7EA0A0,69788A,384062",
+				clothing_variants
+			),
+			whitemage = ucc_structure(
+				{ "White Mage", "Afterlife White Mage", "Mage of Light", "Mage of Light", "Dacyn L2", "Dacyn L3", "Fallen Mage", "Twilight Mage" },
+				"F8F8F8,C0D7E0,90B3C0,607B90,425361",
+				clothing_variants
+			),
+			eldermage = ucc_structure(
+				{ "Elder Mage" },
+				"84401E,773311,5A2816,422110,2C1212",
+				clothing_variants
+			),
+			delfadorhttt = ucc_structure(
+				{ "Delfador" },
+				"834D70,6C3064,470D55,38023E,22012D",
+				clothing_variants
+			),
+			delfadortdg12 = ucc_structure(
+				{ "Delfador L1", "Delfador L2" },
+				"b18134,8a5c2f,75462F,4F2D29,321B11",
+				clothing_variants
+			),
+			delfadortdg3 = ucc_structure(
+				{ "Delfador L3" },
+				"D4AE76,A78053,705638,384B47,212121",
+				clothing_variants
+			),
+			delfadortdg4 = ucc_structure(
+				{ "Delfador L4" },
+				"D2D2D2,ABABAB,7A7A7A,4D4D4D,384B47",
+				clothing_variants
+			),
+			roguemage = ucc_structure(
+				{ "Rogue Mage", "Arcane Enforcer", "Shadow Mage", "Shadow Lord" },
+				"636363,474747,3D3D00,2B281D,152114",
+				clothing_variants
+			),
+			darkadept = {
+				unit_types = { "Dark Adept", "Dark Sorcerer", "Necromancer", "Afterlife Dark Adept", "Afterlife Dark Sorcerer", "Afterlife Necromancer", "MalinNecromancer", "MalinDarkMage", "Apprentice Necromancer", "Dark Mage" },
+				base = "a5b89c,889880,506858,283028",
+				variants = {
+					{ name = "LICH_CLOTH_DARKADEPT", description = "Dark Adept Cloth", colors = "a5b89c,889880,506858,283028"},
+					{ name = "LICH_CLOTH_DARKADEPT1", description = "Dark Adept Cloth Lighter", colors = "BED1B5,A1B199,698171,414941"},
+					{ name = "LICH_CLOTH_DARKADEPT2", description = "Dark Adept Cloth Dark", colors = "8C9F83,6F7F67,374F3F,0F170F"},
+					{ name = "LICH_CLOTH_DARKADEPT3", description = "Dark Adept Cloth Darker", colors = "7D9074,607058,284030,080A08"},
+					{ name = "LICH_CLOTH_HUMANMAGE", description = "Mage Cloth", colors = "b18134,8a5c2f,4e3430,2D2410"},
+					{ name = "LICH_CLOTH_REDMAGE", description = "Red Mage Cloth", colors = "C5956A,A9794F,876246,4E3430"},
+					{ name = "LICH_CLOTH_ARCHMAGE", description = "Arch Mage Cloth", colors = "cabca2,a4977e,635841,4b402b"},
+					{ name = "LICH_CLOTH_SILVER_MAGE", description = "Silver Mage Cloth", colors = "C0D7E0,90B3C0,69788A,384062"},
+					{ name = "LICH_CLOTH_WHITE_MAGE", description = "White Mage Cloth", colors = "C0D7E0,90B3C0,69788A,425361"},
+					{ name = "LICH_CLOTH_ROGUE_MAGE", description = "Rogue Mage Cloth", colors = "636363,474747,2B281D,152114"},
+					{ name = "LICH_CLOTH_MAGE_HOOD", description = "Mage Hood Cloth", colors = "BFBFBF,808080,595959,4D4D4D"},
+					{ name = "LICH_CLOTH_SILVER_MAGE_HOOD", description = "Silver Mage Hood Cloth", colors = "D6D6D6,ABABAB,7A7A7A,4D4D4D"},
+					{ name = "LICH_CLOTH_WHITE_MAGE_HOOD", description = "White Mage Hood Cloth", colors = "D3CBBB,8A949F,626C76,3C454F"},
+					{ name = "LICH_CLOTH_ELDER_MAGE", description = "Elder Mage Cloth", colors = "84401E,773311,5A2816,422110,2C1212"},
+					{ name = "LICH_CLOTH_ELDER_MAGE_HOOD", description = "Elder Mage Hood Cloth", colors = "A4977E,847860,635841,4B402B,2D2410"},
+					{ name = "LICH_CLOTH_DELFADOR_HTTT", description = "Delfador Cloth (HttT)", colors = "834D70,6C3064,38023E,22012D"},
+					{ name = "LICH_CLOTH_DELFADOR_HTTT_HOOD", description = "Delfador Hood Cloth (HttT)", colors = "3D8381,0C655B,032A32,031222"},
+					{ name = "LICH_CLOTH_DELFADOR_TDG3", description = "Delfador Cloth (TDG)", colors = "D4AE76,A78053,384B47,212121"},
+					{ name = "LICH_CLOTH_DELFADOR_TDG4", description = "Delfador Cloth Grey (TDG)", colors = "D2D2D2,ABABAB,4D4D4D,384B47"},
+					{ name = "LICH_CLOTH_ORC_SHAMAN", description = "Orc Shaman", colors = "9AAB60,80813D,524919,312B0A"},
+
+					{ name = "LICH_ORC_CLOTH_DARKER", description = "Darker Cloth", colors = "818442,5c572c,41493a,212e1a"},
+					{ name = "LICH_ORC_CLOTH_GREENPURPLE", description = "Green Purple", colors = "93a167,6e6962,433455,000001"},
+					{ name = "LICH_ORC_CLOTH_GREENRED", description = "Green Red", colors = "a19f7c,77744f,603b3a,213b25"},
+					{ name = "LICH_ORC_CLOTH_BROWNREDPURPLE", description = "Brown Red Purple", colors = "826e2f,75491e,47213c,3F1519"},
+					{ name = "LICH_ORC_CLOTH_BROWNGREY", description = "Brown Grey", colors = "84754a,594e2f,47433f,2b2c16"},
+					{ name = "LICH_ORC_CLOTH_DARKBROWN", description = "Dark Brown", colors = "a08662,796755,423934,221c1a"},
+					{ name = "LICH_ORC_CLOTH_LIGHTBROWN", description = "Light Brown", colors = "cda184,93614a,653618,38160a"},
+					{ name = "LICH_ORC_CLOTH_BROWNGREYGREEN", description = "Brown Greygreen", colors = "8f6c61,6b4936,475044,472b27"},
+					{ name = "LICH_ORC_CLOTH_ORANGEBLUE", description = "Orange Blue", colors = "d08159,8d697a,203c56,0d2b45"},
+					{ name = "LICH_ORC_CLOTH_BLUE", description = "Blue", colors = "50596e,273541,273a48,1d2336"},
+					{ name = "LICHORC__CLOTH_PURPLE", description = "Purple", colors = "9d7d95,684e67,50445a,322a3f"},
+					{ name = "LICH_ORC_CLOTH_GREY", description = "Grey", colors = "909090,6f6f6f,434343,212121"},
+					{ name = "LICH_ORC_CLOTH_GREYBROWN", description = "Grey Brown", colors = "576d6d,8a7d5d,593f33,221e23"},
+					{ name = "LICH_ORC_CLOTH_GREYRED", description = "Grey Red", colors = "aaaa8e,717171,553939,393939"},
+
+					--faction clothing
+					{ name = "LICH_CLOTH_DUNEBURNER", description = "Dune Burner", colors = "D5D3A1,A09F84,7F7165,453843"},
+					{ name = "LICH_CLOTH_DUNEHERBALIST", description = "Dune Herbalist", colors = "B8A641,798D63,535E2D,303313"},
+					{ name = "LICH_CLOTH_DARKDUNE", description = "Dark Dune Cloth", colors = "e6e6cc,aaaa8e,717171,393939"},
+					{ name = "LICH_CLOTH_LIGHTDUNE", description = "Light Dune Cloth", colors = "f6f6da,d5d3a1,bab98b,4b4142"},
+					{ name = "LICH_CLOTH_ELVISHSHAMAN", description = "Elvish Shaman Cloth", colors = "efff9c,9cde5a,529439,4f7229"},
+					{ name = "LICH_CLOTH_SAURIANAUGUR", description = "Saurian Augur Cloth", colors = "ffffff,9b9c92,515249,17212c"},
+					{ name = "LICH_CLOTH_SAURIANORACLE", description = "Saurian Oracle Cloth", colors = "ffffff,8dc2c2,2c4c6c,17212c"},
+					{ name = "LICH_CLOTH_SAURIANPROPHET", description = "Saurian Prophet Cloth", colors = "ffd44a,ffe59d,bf6d00,581802"},
+					{ name = "LICH_CLOTH_SAURIANSEER", description = "Saurian Seer Cloth", colors = "ffffff,ffd44a,bf6d00,581802"}
+				},
+			},
+		}
+	},
+	{
+		name = "mage_cloth_secondary", -- body_part
+		description = "Cloth (Secondary)",
+		data = {
+			mage = ucc_structure(
+				{ "Mage", "Afterlife Mage", "Red Mage", "Afterlife Red Mage" },
+				"BFBFBF,808080,8A949F,595959,4D4D4D",
+				clothing_variants
+			),
+			archmage = ucc_structure(
+				{ "Arch Mage", "Afterlife Arch Mage", "Great Mage", "Afterlife Great Mage" },
+				"BFBFBF,808080,8A949F,595959,4D4D4D",
+				clothing_variants
+			),
+			silvermage = ucc_structure(
+				{ "Silver Mage", "Afterlife Silver Mage" },
+				"D6D6D6,ABABAB,7A7A7A,7A7A7A,4D4D4D",
+				clothing_variants
+			),
+			whitemage = ucc_structure(
+				{ "White Mage", "Afterlife White Mage", "Mage of Light", "Mage of Light", "Dacyn L2", "Dacyn L3", "Fallen Mage", "Twilight Mage" },
+				"D3CBBB,8A949F,7A7A7A,3C454F,182830",
+				clothing_variants
+			),
+			eldermage = ucc_structure(
+				{ "Elder Mage" },
+				"A4977E,847860,635841,4B402B,2D2410",
+				clothing_variants
+			),
+			delfadorhttt = ucc_structure(
+				{ "Delfador" },
+				"3D8381,0C655B,07444A,032A32,031222",
+				clothing_variants
+			),
+			delfadortdg3 = ucc_structure(
+				{ "Delfador L3", "Delfador L4" },
+				"b18134,8a5c2f,73432B,4F2D29,321B11",
+				clothing_variants
+			),
+		}
+	},
+	{
+		name = "mage_hair", -- body_part
+		description = "Hair",
+		data = {
+			darkadept = {
+				unit_types = { "Dark Adept", "Dark Sorcerer", "Necromancer", "Afterlife Dark Adept", "Afterlife Dark Sorcerer", "Afterlife Necromancer" },
+				base = "FCFCFC,E3DCDC,C9C3BE,999188,6E675C,514A3F",
+				variants = {
+					{ name = "NECROMANCER_HAIR", description = "Dark Sorcerer", colors = "FCFCFC,E3DCDC,C9C3BE,999188,6E675C,514A3F"},
+					{ name = "NECROMANCER_HAIR_CTL", description = "Dark Sorcerer (CtL)", colors = "B26D4F,B26D4F,A64E27,7A2906,4F1E03,231007"},
+					{ name = "NECROMANCER_HAIR_HUMANFENCER", description = "Fencer", colors = "d1b563,d1b563,af7a18,734a29,422110,422110"},
+					{ name = "NECROMANCER_HAIR_HUMANARCHMAGE", description = "Archmage", colors = "faf3c9,faf3c9,c5956a,8a5c2f,5a2816,5a2816"},
+					{ name = "NECROMANCER_HAIR_HUMANFEMALEARCHMAGE", description = "Female Archmage", colors = "ebd5bc,ebd5bc,cfa87a,9a7458,7a4a3f,7a4a3f"},
+					{ name = "NECROMANCER_HAIR_HUMANWHITEMAGE", description = "White Mage", colors = "c5956a,c5956a,a9794f,784838,5a2816,5a2816"},
+					{ name = "NECROMANCER_HAIR_HUMANFOOTPAD", description = "Footpad", colors = "ffe970,ffe970,c7a143,bc5d5e,6b2444,6b2444"},
+					{ name = "NECROMANCER_HAIR_HUMANTHIEF", description = "Thief", colors = "bdd3e3,bdd3e3,88a6d8,7c949b,3a5872,3a5872"},
+					{ name = "NECROMANCER_HAIR_HUMANBANDIT", description = "Bandit", colors = "ababab,ababab,ad9960,506858,333d33,333d33"},
+
+					--other factions hair coloring
+					{ name = "NECROMANCER_HAIR_DUNEBURNER", description = "Dunefolk", colors = "cd9db0,cd9db0,a4929f,775b71,4e3d4b,4e3d4b"},
+					{ name = "NECROMANCER_HAIR_DWARFBERSERK", description = "Berserker", colors = "b1ebec,b1ebec,98cfc4,58808d,2d4a4f,2d4a4f"},
+					{ name = "NECROMANCER_HAIR_DWARFTHUNDERER", description = "Thunderer", colors = "dab0a4,dab0a4,af937f,8b3219,582820,582820"},
+					{ name = "NECROMANCER_HAIR_DWARFFIGHTER", description = "Dwarvish Fighter", colors = "f8edc5,f8edc5,e0c3a2,888868,4e3a2d,4e3a2d"},
+					{ name = "NECROMANCER_HAIR_DWARFGUARD", description = "Dwarvish Guard", colors = "eee498,eee498,eec66d,d0804d,833f1e,833f1e"},
+					{ name = "NECROMANCER_HAIR_DWARFRUNESMITH", description = "Rune Smith", colors = "ffffff,ffffff,e0c3a2,af937f,4e3a2d,4e3a2d"},
+					{ name = "NECROMANCER_HAIR_ELVISH", description = "Elvish", colors = "faf3c9,faf3c9,e0c89e,c5956a,a9794f,a9794f"},
+					{ name = "NECROMANCER_HAIR_WOLFRIDER", description = "Wolfrider", colors = "f3c274,f3c274,a59077,796433,494a46,494a46"},
+					{ name = "NECROMANCER_HAIR_WOLFPILLAGER", description = "Pillager", colors = "d09b4c,d09b4c,a35b67,494a46,18222d,18222d"},
+					{ name = "NECROMANCER_HAIR_WOLFKNIGHT", description = "Goblin Knight", colors = "cd9d6f,cd9d6f,826c79,4a503e,2c2319,2c2319"},
+					{ name = "NECROMANCER_HAIR_DIREWOLFRIDER", description = "Direwolfrider", colors = "859a94,859a94,826c79,4a503e,2c2319,2c2319"},
+					{ name = "NECROMANCER_HAIR_ORCISH_NOVICE", description = "Orcish Novice", colors = "d9b75a,d9b75a,b5712f,7b4919,471d09,471d09"},
+					{ name = "NECROMANCER_HAIR_ORCISH_SHAMAN", description = "Orcish Shaman", colors = "a5966d,a5966d,816447,523d28,2a1810,2a1810"},
+					{ name = "NECROMANCER_HAIR_ORCISH_ELDER_SHAMAN", description = "Orcish Elder Shaman", colors = "94ac98,94ac98,6f8078,414445,25262a,25262a"},
+					{ name = "NECROMANCER_HAIR_MERFOLK", description = "Default green", colors = "e8f898,e8f898,98d858,509038,364c3e,364c3e"},
+					{ name = "NECROMANCER_HAIR_JAVELINEER18", description = "1.18 Merfolk Javelineer", colors = "d8c2ad,d8c2ad,93cc7a,2d58ad,637559,637559"},
+					{ name = "NECROMANCER_HAIR_JAVELINEER16", description = "1.16 Merfolk Javelineer", colors = "cae6a9,cae6a9,6fc192,2861a6,637559,637559"},
+					{ name = "NECROMANCER_HAIR_SIREN18", description = "1.18 Merfolk Siren", colors = "c4ffcb,c4ffcb,93cc7a,278162,6e3f89,6e3f89"},
+					{ name = "NECROMANCER_HAIR_SIREN16", description = "1.16 Merfolk Siren", colors = "c7fcd0,c7fcd0,93cc7a,6c9d71,6e3f89,6e3f89"},
+					{ name = "NECROMANCER_HAIR_SPEARMAN18", description = "1.18 Merfolk Spearman", colors = "e8f898,e8f898,98d858,278162,364c3e,364c3e"},
+					{ name = "NECROMANCER_HAIR_SPEARMAN16", description = "1.16 Merfolk Spearman", colors = "e8f898,e8f898,98d858,308f7b,346452,346452"},
+					{ name = "NECROMANCER_HAIR_ENTANGLER18", description = "1.18 Merfolk Entangler", colors = "e8f898,e8f898,98d858,509038,007777,007777"},
+					{ name = "NECROMANCER_HAIR_ENTANGLER16", description = "1.16 Merfolk Entangler", colors = "e8f898,e8f898,c0de67,509038,007777,007777"},
+					{ name = "NECROMANCER_HAIR_ENCHANTRESS18", description = "1.18 Merfolk Enchantress", colors = "f3fcbb,f3fcbb,c7ac71,007b55,6e3f89,6e3f89"},
+					{ name = "NECROMANCER_HAIR_ENCHANTRESS16", description = "1.16 Merfolk Enchantress", colors = "e8f898,e8f898,b3ae78,007777,6e3f89,6e3f89"},
+
+					--experimental coloring
+					{ name = "NECROMANCER_HAIR_GREY_GREEN_BLUE", description = "Grey green blue", colors = "c6e9bd,c6e9bd,84b8bf,4d687c,313545,313545"},
+					{ name = "NECROMANCER_HAIR_ICE_PURPLE", description = "Purple ice", colors = "a2b5ff,a2b5ff,85ebe4,2d8b91,02342f,02342f"},
+					{ name = "NECROMANCER_HAIR_RED", description = "Red", colors = "f51743,f51743,9b173f,55173d,37173d,37173d"},
+					{ name = "NECROMANCER_HAIR_LIGHTSPIRIT", description = "Lightghost (CtL)", colors = "c7faff,c7faff,baa4c0,8c5862,3e2844,3e2844"},
+					{ name = "NECROMANCER_HAIR_DRYAD", description = "Dryad", colors = "00cf9e,00cf9e,00a35f,008734,003008,003008"},
+					{ name = "NECROMANCER_HAIR_ICE", description = "Ice", colors = "cefdff,cefdff,9bdfeb,3591c3,1969b0,1969b0"},
+					{ name = "NECROMANCER_HAIR_WHITE", description = "White", colors = "dfdfdf,dfdfdf,c7c7c7,7e7e7e,434343,434343"},
+					{ name = "NECROMANCER_HAIR_EARTH", description = "Earth", colors = "f6d6bd,f6d6bd,cca88f,746266,4e495f,4e495f"},
+					{ name = "NECROMANCER_HAIR_PURPLE", description = "Purple", colors = "dfd5e3,dfd5e3,b28fb0,5a4a5d,312933,312933"},
+					{ name = "NECROMANCER_HAIR_GREY_BLUE", description = "Grey Blue", colors = "b9f1f0,b9f1f0,90a1bd,50596e,273a48,273a48"},
+					{ name = "NECROMANCER_HAIR_BRIGHT_BROWN", description = "Bright Brown", colors = "ffd4a3,ffd4a3,d08159,544e68,203c56,203c56"},
+					{ name = "NECROMANCER_HAIR_GREY_GREEN", description = "Grey Green", colors = "f8f8a0,f8f8a0,a5b89c,506858,525239,525239"},
+					{ name = "NECROMANCER_HAIR_BLACK", description = "Black", colors = "848484,848484,565656,313131,1a1a1a,1a1a1a"},
+				},
+			},
 		}
 	},
 }
