@@ -1,21 +1,23 @@
 -- ogre_data.lua
 local body_parts = {
 	{
-		name = "orc_skin", -- body_part
+		name = "ogre_skin", -- body_part
 		description = "Skin",
 		data = {
 			orc = {
 				unit_types = { "Young Ogre", "Ogre", "Great Ogre", "Ancient Ogre"},
-				base = "FFD087,F3B368,E2A76F,97663C,574D31,3B3427",
+				base = "FFD087,F3B368,E2A76F,BA9863,97663C,574D31,3B3427", -- color 2 for Great/Ancient Ogre and color 4 for Ancient Ogre
 				variants = {
-					{ name = "BASE_NORTHERNER_ORCISH_SKIN_COLOR", description = "Orc Skin", colors = "ffce39,F8C842,c08008,985810,804018,582820"},
-					{ name = "BASE_NORTHERNER_HUMAN_SKIN_COLOR", description = "Human Skin", colors = "d2d2d2,d2d2d2,f6d39b,e8b374,ce8f50,753c32"},
-					{ name = "BASE_NORTHERNER_DUNEFOLK_SKIN_COLOR", description = "Dunefolk Skin", colors = "d6bd8a,d6bd8a,d0963a,ac7732,97560f,6e3417"},
-					{ name = "BASE_NORTHERNER_SKELETON_SKIN_COLOR", description = "Skeleton Bone Skin", colors = "ffffce,ffffce,d6d69c,949473,525239,283028"},
-					{ name = "BASE_NORTHERNER_WC_SKIN_COLOR", description = "Walking Corpse Skin", colors = "c4c3c1,c4c3c1,a2a684,75826a,555e3e,524133"},
-					{ name = "BASE_NORTHERNER_SOULLESS_SKIN_COLOR", description = "Soulless Skin", colors = "cbcfc7,cbcfc7,b0b3af,826c79,74687b,634258"},
-					{ name = "BASE_NORTHERNER_AOA_MOUNTAINGOBLIN_SKIN_COLOR", description = "AoA Mountain Goblin Skin", colors = "ffd756,ffd756,c2cd71,84873b,617f41,2f461d"},
-					{ name = "BASE_NORTHERNER_ANBENNAR_GREEN_SKIN_COLOR", description = "Anbennar Green Skin", colors = "9CCE36,9CCE36,87B02F,709427,4E671E,3A4A1A"}
+					{ name = "OGRE_SKIN_OGRE", description = "Ogre", colors = "FFD087,F3B368,E2A76F,BA9863,97663C,574D31,3B3427"},
+					{ name = "OGRE_SKIN_SUNBURNOGRE", description = "Sunburn Ogre", colors = "D6BD8A,C29A5E,AC7732,AC7732,97560F,6E3417,502413"},
+					{ name = "OGRE_SKIN_ORCISH", description = "Orc", colors = "ffce39,F8C842,c08008,c08008,985810,804018,582820"},
+					{ name = "OGRE_SKIN_HUMAN", description = "Human", colors = "d2d2d2,d2d2d2,f6d39b,f6d39b,e8b374,ce8f50,753c32"},
+					{ name = "OGRE_SKIN_DUNEFOLK", description = "Dunefolk", colors = "d6bd8a,d6bd8a,d0963a,d0963a,ac7732,97560f,6e3417"},
+					{ name = "OGRE_SKIN_SKELETON", description = "Skeleton Bone", colors = "ffffce,ffffce,d6d69c,d6d69c,949473,525239,283028"},
+					{ name = "OGRE_SKIN_WC", description = "Walking Corpse", colors = "c4c3c1,c4c3c1,a2a684,a2a684,75826a,555e3e,524133"},
+					{ name = "OGRE_SKIN_SOULLESS", description = "Soulless", colors = "cbcfc7,cbcfc7,b0b3af,b0b3af,826c79,74687b,634258"},
+					{ name = "OGRE_SKIN_AOA_MOUNTAINGOBLIN", description = "AoA Mountain Goblin", colors = "ffd756,ffd756,c2cd71,c2cd71,84873b,617f41,2f461d"},
+					{ name = "OGRE_SKIN_ANBENNAR_GREEN", description = "Anbennar Green", colors = "9CCE36,9CCE36,87B02F,87B02F,709427,4E671E,3A4A1A"}
 				},
 			},
 		}
