@@ -133,10 +133,9 @@ function gui.show_picker(unit, race_data)
                 },
                 
                 T.column {
-                    vertical_alignment = "top",
+                    vertical_alignment = "center",
                     horizontal_alignment = "left",
                     grow_factor = 1,
-                    horizontal_grow = true, vertical_grow = true,
                     T.grid {
                         T.row { 
 							T.column{
@@ -181,7 +180,6 @@ function gui.show_picker(unit, race_data)
                     vertical_alignment = "top",
                     horizontal_alignment = "left",
                     grow_factor = 1,
-                    horizontal_grow = true, vertical_grow = true,
                     T.grid {
                         T.row { T.column { T.label { label = "<b>Colors</b>", use_markup = true } } },
                         T.row {
