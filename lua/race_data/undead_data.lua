@@ -451,6 +451,43 @@ local body_parts = {
 			},
 		}
 	},
+	{
+		name = "ghoul", -- body_part
+		description = "Body",
+		data = {
+			lich = {
+                unit_types = {	"Ghoul","Necrophage","Ghast","Afterlife Ghoul","Afterlife Necrophage","Afterlife Ghast",
+				"Ghast DiD","Ghast Necron","Ghoul DiD","Necrophage DiD","Necrophage Necron"},
+				base = "DCF6AF,D6D69C,DBBEA8,C6B67F,AC8C6D,806A4E,756300,394909,2C1D13,1B2923,612A17",
+				variants = {
+					{ name = "DEFAULT_GHOUL", description = "Default", colors = "DCF6AF,D6D69C,DBBEA8,C6B67F,AC8C6D,806A4E,756300,394909,2C1D13,1B2923,612A17"},
+					{ name = "ICE_GHOUL", description = "Ice Ghoul (ToM)", colors = "AEF3F5,99C5E2,9BE0D5,74BECD,5CB2AA,428380,1D6084,0E255D,0E255D,1B2923,1B2332"},
+					
+					{ name = "GHOUL_ROT", description = "Rot", colors = "D0E89B,BACFA8,9FA87F,7F8259,5F5B36,403B20,292412,141108,0A0904,0A0904,40220F"},
+					{ name = "GHOUL_BRUISED", description = "Bruised", colors = "D9C3D6,BBA3B8,9D839A,7F657C,61495E,453043,2B1A2A,150A14,0A0309,0A0309,3B1D36"},
+					{ name = "GHOUL_BARROW", description = "Barrow Dirt", colors = "D4C6A9,B8A98A,9C8E70,7F7355,635940,473F2B,2B2518,141008,0A0703,0A0703,472C19"},
+
+					-- Extended Thematic Variations
+					{ name = "GHOUL_TOXIC", description = "Toxic Ghoul", colors = "E8FFA6,C5F279,9ED954,7ABF36,56991D,38730E,204D06,0D2601,051200,051200,2D4014"},
+					{ name = "GHOUL_FROST", description = "Dark Ice Ghoul", colors = "D6F9FF,B5E3ED,90C4D1,6BA4B5,4A8294,2F6173,1A4252,092430,04121A,04121A,1A2E3D"},
+					{ name = "GHOUL_GORE", description = "Gore Ghoul", colors = "FFC4C4,E89797,C76969,A33F3F,7A1C1C,540B0B,330404,1A0101,0A0000,0A0000,520A0A"},
+					{ name = "GHOUL_ASH", description = "Ashen Ghoul", colors = "D9D9D9,BABABA,969696,737373,525252,333333,1A1A1A,050505,000000,000000,2E2E2E"},
+					{ name = "GHOUL_SWAMP", description = "Swamp Ghoul", colors = "C9E8D3,9DBFAD,759C88,527A65,365C47,20402E,10261A,04120A,020804,020804,1C3626"},
+					{ name = "GHOUL_DESICCATED", description = "Desiccated Ghoul", colors = "FFEED4,E3CBA8,C4A67E,A68356,856236,63441F,42290D,241403,120A01,120A01,47260B"},
+					{ name = "GHOUL_PURPLE", description = "Purple Ghoul", colors = "EED9FF,D1ADF2,B27EE0,9452CC,752EB3,56168F,390766,1E003D,0F001F,0F001F,330F4F"},
+					{ name = "GHOUL_PUTRID", description = "Putrid Ghoul", colors = "FFF5A8,E8D67D,C9B355,AA9034,8A701A,66500B,453403,241A00,120D00,120D00,473507"},
+					{ name = "GHOUL_PALE", description = "Pale Ghoul", colors = "FFF2F5,EBE0E3,D1C1C5,B5A1A7,968087,756067,544248,332429,1A1214,1A1214,4A2D37"},
+					{ name = "GHOUL_ABYSSAL", description = "Abyssal Ghoul", colors = "A4B2C9,7D8EA8,596C87,394D66,21334A,101D2E,060E1A,010308,000103,000103,0E1824"},
+					
+					-- Default & Light/Dark Variations
+					{ name = "GHOUL_DEFAULT_LIGHT_2", description = "Default (Brighter)", colors = "EFFCDB,E5E5B8,EFDCCE,DCCC9C,C3A488,9B8365,947F15,566723,473528,1B2923,7D381F"},
+					{ name = "GHOUL_DEFAULT_LIGHT_1", description = "Default (Bright)", colors = "E5F9C2,DEDEAA,E5CCCB,D1C18D,B8987B,8E7659,85710A,485816,39291D,1B2923,6E311B"},
+					{ name = "GHOUL_DEFAULT_DARK_1", description = "Default (Dark)", colors = "C1D99A,BCBD89,C1A794,AEA06F,977A5F,705D44,665600,303E06,24170E,1B2923,542413"},
+					{ name = "GHOUL_DEFAULT_DARK_2", description = "Default (Darker)", colors = "A4B883,A0A074,A48E7E,94885C,816851,604F3A,574A00,2A3703,1D1007,1B2923,471E10"},
+				},
+			},
+		}
+	},
 }
 
 _G.ucc_race_registry["undead"] = {
