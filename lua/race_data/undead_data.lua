@@ -309,7 +309,12 @@ local body_parts = {
                 unit_types = {"Ghost","Afterlife Ghost","EGhost","Spectral Servant","Wraith","Shadow","Nightgaunt","Spectre","Afterlife Wraith","Afterlife Shadow","Afterlife Nightgaunt","Afterlife Spectre","EWraith","EShadow","ENightgaunt","ESpectre","Phantom","Eidolon"},
 				base = "889880,506858,283028", 
 				variants = {
-					{ name = "BONE_DEFAULT", description = "Default", colors = "D6D69C,949473,525239"},
+					{ name = "GHOST_DEFAULT", description = "Default", colors = "889880,506858,283028"},
+					{ name = "GHOST_BANSHEE", description = "Wailing Banshee", colors = "E6F2F5,99B8C7,4D738A"}, -- Helles, eisiges Silber-Blau
+					{ name = "GHOST_WRAITH", description = "Midnight Wraith", colors = "7A99C2,476699,1F335C"}, -- Tiefes, kühles Mitternachtsblau
+					{ name = "GHOST_SHADOW", description = "Umbral Shadow", colors = "7A7A8F,47475C,1A1A29"}, -- Rauchiges, dunkles Violett-Grau
+					{ name = "GHOST_FORGOTTEN", description = "Forgotten Soul", colors = "D9C2A6,997A52,4D331A"}, -- Ein verblasster, staubiger Sepia-Ton (wie altes Pergament)
+					{ name = "BONE_SKELETON", description = "Bone", colors = "D6D69C,949473,525239"},
 					{ name = "BONE_DRAGON", description = "Bone Dragon", colors = "C8AD95,878365,6F4F48"},
 					{ name = "BONE_LIGHT_BLEACHED", description = "Bleached Bone", colors = "EAEAB4,B3B392,73735A"},
 					{ name = "BONE_LIGHT_IVORY", description = "Ivory Bone", colors = "EBE0B3,B3A47A,736545"},
