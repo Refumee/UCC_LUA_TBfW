@@ -1,5 +1,4 @@
 -- quenoth_data.lua
--- quenoth_data.lua
 local body_parts = {
 	{
 		name = "quenoth_hair", -- body_part
@@ -230,7 +229,7 @@ local body_parts = {
 				},
 			},
 			assassin = {
-				unit_types = { "Dark Assassin Uncloaked","Dark Assassin Cloaked" },
+				unit_types = { "Dark Assassin Uncloaked" },
 				base = "DBA67F,C17662,DF9859,C8715D,9F6050,7F4436,6C3427,5B261A,46261F,382800",
 				variants = {
 					{ name = "DEFAULT", description = "Default", colors = "DBA67F,C17662,DF9859,C8715D,9F6050,7F4436,6C3427,5B261A,46261F,382800" },
@@ -309,7 +308,7 @@ local body_parts = {
 				},
 			},
 			assassin = {
-				unit_types = { "Dark Assassin Uncloaked","Dark Assassin Cloaked"},
+				unit_types = { "Dark Assassin Uncloaked"},
 				base = "9098AC,6C748C,54596E,454A5B,363B48,001038,000F36",
 				variants = {
 					{ name = "DEFAULT", description = "Default", colors = "9098AC,6C748C,54596E,454A5B,363B48,001038,000F36" },
@@ -448,8 +447,7 @@ local body_parts = {
 			fighter = {
 				unit_types = { 	"Quenoth Fighter","Quenoth Warrior","Quenoth Champion",
 								"Quenoth Flanker","Quenoth Ranger",
-								"Corrupted Quenoth Elf",
-								"Dark Assassin Cloaked"},
+								"Corrupted Quenoth Elf"},
 				base = "A4F19D,8B9A88,585E74,4A2E62",
 				variants = {
 					{ name = "DEFAULT", description = "Default", colors = "A4F19D,8B9A88,585E74,4A2E62" },
@@ -521,7 +519,7 @@ local body_parts = {
 				},
 			},
 			assassin = {
-				unit_types = { "Dark Assassin Uncloaked","Dark Assassin Cloaked" },
+				unit_types = { "Dark Assassin Uncloaked" },
 				base = "EACCC6,ECC3C1,BCA39D,CC8F8C,9D6B6F,7D303B,57373B,3F2A31",
 				variants = {
 					{ name = "DEFAULT", description = "Default", colors = "EACCC6,ECC3C1,BCA39D,CC8F8C,9D6B6F,7D303B,57373B,3F2A31" },
@@ -609,7 +607,7 @@ local body_parts = {
 		description = "Tan Cape",
 		data = {
 			assassin = {
-				unit_types = { "Dark Assassin Uncloaked","Dark Assassin Cloaked"},
+				unit_types = { "Dark Assassin Uncloaked"},
 				base = "EFD9CB,CBBEB9,BFAFAB,A79790,907F79,6F615E,544C46,483D3A,342A29",
 				variants = {
 					{ name = "DEFAULT", description = "Default", colors = "EFD9CB,CBBEB9,BFAFAB,A79790,907F79,6F615E,544C46,483D3A,342A29" },
@@ -628,7 +626,7 @@ local body_parts = {
 		description = "Tan Headscarf",
 		data = {
 			assassin = {
-				unit_types = { "Dark Assassin Uncloaked","Dark Assassin Cloaked"},
+				unit_types = { "Dark Assassin Uncloaked"},
 				base = "DBC5AF,C3A89F,9C8B8B,8F7A7A,74605D,5C4744,372725",
 				variants = {
 					{ name = "DEFAULT", description = "Default", colors = "DBC5AF,C3A89F,9C8B8B,8F7A7A,74605D,5C4744,372725" },
