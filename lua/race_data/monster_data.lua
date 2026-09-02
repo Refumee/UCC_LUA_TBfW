@@ -348,16 +348,28 @@ local body_parts = {
 		data = {
 			tauroch = { -- archtype
 				unit_types = { "Tauroch" },
-				base = "E19D6F,BD8331,935B53,664B50,573535",
+				base = "E19D6F,BD8331,935B53,664B50,573535,47213C,2B112A",
 				variants = {
-					{ name = "DEFAULT", description = "Default", colors = "E19D6F,BD8331,935B53,664B50,573535" },
+					{ name = "DEFAULT", description = "Default", colors = "E19D6F,BD8331,935B53,664B50,573535,47213C,2B112A" },
+					{ name = "LIGHT", description = "Light Tauroch", colors = "F5B588,D59F4D,AB746C,7F6469,704C4C,56393F,3D2633" },
+					{ name = "DARK", description = "Dark Tauroch", colors = "C87F52,A06516,763F38,4C3136,3D1D1D,2E1416,1F0B10" },
+					{ name = "ALBINO", description = "Albino Tauroch", colors = "FFFFFF,FDF6EE,F0DFCB,E0C4A8,C9A685,B18F70,99785B" },
+					{ name = "MELANISTIC", description = "Black Tauroch", colors = "4B4B4B,383838,262626,171717,0A0A0A,050505,000000" },
+					{ name = "CAMEL", description = "Camel", colors = "D4B594,B89872,9C7C54,7F5F39,634421,52371A,422B14" },
+					{ name = "ORYX", description = "Oryx", colors = "F4F1EB,DFD8CA,C4BCA6,A49981,7A715C,675F4C,544D3D" },
 				},
 			},
 			dustbok = { -- archtype
 				unit_types = { "Quenoth Dustbok" },
-				base = "F4C960,DFB769,D69168,BA7D54,9F6A3F,844824,4F2400,301000",
+				base = "F4C960,DFB769,D69168,BA7D54,9F6A3F,844824,4F2400,6A390A,301000,000000",
 				variants = {
-					{ name = "DEFAULT", description = "Default", colors = "F4C960,DFB769,D69168,BA7D54,9F6A3F,844824,4F2400,301000" },
+					{ name = "DEFAULT", description = "Default", colors = "F4C960,DFB769,D69168,BA7D54,9F6A3F,844824,4F2400,6A390A,301000,000000" },
+					{ name = "LIGHT", description = "Light Dustbok", colors = "FFE590,EFD392,E9B390,D19A76,B7885F,9C613D,6A3C15,804A1B,4A2010,1F0C05" },
+					{ name = "DARK", description = "Dark Dustbok", colors = "D0A140,BA924B,B06A44,955B32,7C491D,63310B,361400,4D2405,1A0500,050100" },
+					{ name = "ALBINO", description = "Albino Dustbok", colors = "FFFFFF,FCF9F2,F4EBE1,E8D9C8,D9C1AB,C7A98F,B29074,C2A187,8E6B52,5A3E2B" },
+					{ name = "MELANISTIC", description = "Black Dustbok", colors = "5A5A5A,4A4A4A,3D3D3D,2F2F2F,222222,161616,0C0C0C,111111,030303,000000" },
+					{ name = "FENNEC", description = "Fennec Fox", colors = "FDF2D8,F2DEB3,E5C890,D1A96B,B58A4D,946A36,68451E,7A5427,42270D,1A0F05" },
+					{ name = "ADDAX", description = "Addax", colors = "FCFBF8,EEECE4,DCD6C6,C6BDA8,AD9F86,918063,6C5B42,7D6C50,4A3C28,1F1910" },
 				},
 			},
 		}
@@ -370,18 +382,28 @@ local body_parts = {
 				unit_types = { "Tauroch" },
 				base = "FCFFDC,BDD6E6,8592B9,4A707A",
 				variants = {
-					{ name = "DEFAULT", description = "Default", colors = "E19D6F,BD8331,935B53,664B50,573535" },
+					{ name = "DEFAULT", description = "Default", colors = "FCFFDC,BDD6E6,8592B9,4A707A" },
+					{ name = "LIGHT", description = "Light Horn", colors = "FFFFFF,DDF0FF,A9B9DF,67919C" },
+					{ name = "DARK", description = "Dark Horn", colors = "E0E5B5,96B5CA,647299,31515B" },
+					{ name = "ALBINO", description = "Albino Horn", colors = "FFF0F5,FFE4E1,F0B6B6,D28E8E" },
+					{ name = "MELANISTIC", description = "Black Horn", colors = "757575,525252,333333,1A1A1A" },
+					{ name = "DESERT_BONE", description = "Desert Bone", colors = "F5F5DC,E3D8B8,C1B28C,9E8C61" },
 				},
 			},
 			dustbok = { -- archtype
 				unit_types = { "Quenoth Dustbok" },
-				base = "CAD1D7,ADB5BD,929BA3,7B848C,425A52,363E3A",
+				base = "CAD1D7,ADB5BD,929BA3,7B848C,425A52,363E3A,292121",
 				variants = {
-					{ name = "DEFAULT", description = "Default", colors = "F4C960,DFB769,D69168,BA7D54,9F6A3F,844824,4F2400,301000" },
+					{ name = "DEFAULT", description = "Default", colors = "CAD1D7,ADB5BD,929BA3,7B848C,425A52,363E3A,292121" },
+					{ name = "LIGHT", description = "Light Horn", colors = "E6EBEF,C8D2D9,AAB5BE,929CA5,5B7A70,48544E,383E3B" },
+					{ name = "DARK", description = "Dark Horn", colors = "A8B0B6,8C969F,737E88,5D6870,2E433C,252C28,1A1E1C" },
+					{ name = "ALBINO", description = "Albino Horn", colors = "FFF9F9,F2E4E4,E2CCCC,CEA8A8,9C7272,795454,4F3737" },
+					{ name = "MELANISTIC", description = "Black Horn", colors = "505050,424242,353535,292929,1F1F1F,121212,0A0A0A" },
+					{ name = "DESERT_BONE", description = "Desert Bone", colors = "FBF8F1,ECE3CE,D9CBB1,C3AE8F,9C8764,735F42,473926" },
 				},
 			},
 		}
-	},
+	}
 }
 
 _G.ucc_race_registry["monster"] = {
