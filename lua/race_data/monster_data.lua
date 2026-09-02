@@ -342,6 +342,46 @@ local body_parts = {
 			},
 		}
 	},
+	{
+		name = "quenoth_body", -- body_part
+		description = "Body",
+		data = {
+			tauroch = { -- archtype
+				unit_types = { "Tauroch" },
+				base = "E19D6F,BD8331,935B53,664B50,573535",
+				variants = {
+					{ name = "DEFAULT", description = "Default", colors = "E19D6F,BD8331,935B53,664B50,573535" },
+				},
+			},
+			dustbok = { -- archtype
+				unit_types = { "Quenoth Dustbok" },
+				base = "F4C960,DFB769,D69168,BA7D54,9F6A3F,844824,4F2400,301000",
+				variants = {
+					{ name = "DEFAULT", description = "Default", colors = "F4C960,DFB769,D69168,BA7D54,9F6A3F,844824,4F2400,301000" },
+				},
+			},
+		}
+	},
+	{
+		name = "quenoth_horn", -- body_part
+		description = "Horn",
+		data = {
+			tauroch = { -- archtype
+				unit_types = { "Tauroch" },
+				base = "FCFFDC,BDD6E6,8592B9,4A707A",
+				variants = {
+					{ name = "DEFAULT", description = "Default", colors = "E19D6F,BD8331,935B53,664B50,573535" },
+				},
+			},
+			dustbok = { -- archtype
+				unit_types = { "Quenoth Dustbok" },
+				base = "CAD1D7,ADB5BD,929BA3,7B848C,425A52,363E3A",
+				variants = {
+					{ name = "DEFAULT", description = "Default", colors = "F4C960,DFB769,D69168,BA7D54,9F6A3F,844824,4F2400,301000" },
+				},
+			},
+		}
+	},
 }
 
 _G.ucc_race_registry["monster"] = {
