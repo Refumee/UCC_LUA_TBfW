@@ -380,9 +380,9 @@ local body_parts = {
 		data = {
 			tauroch = { -- archtype
 				unit_types = { "Tauroch" },
-				base = "FCFFDC,BDD6E6,8592B9,4A707A",
+				base = "FCFFDD,BDD6E7,8592BA,4A707B",
 				variants = {
-					{ name = "DEFAULT", description = "Default", colors = "FCFFDC,BDD6E6,8592B9,4A707A" },
+					{ name = "DEFAULT", description = "Default", colors = "FCFFDD,BDD6E7,8592BA,4A707B" },
 					{ name = "LIGHT", description = "Light Horn", colors = "FFFFFF,DDF0FF,A9B9DF,67919C" },
 					{ name = "DARK", description = "Dark Horn", colors = "E0E5B5,96B5CA,647299,31515B" },
 					{ name = "ALBINO", description = "Albino Horn", colors = "FFF0F5,FFE4E1,F0B6B6,D28E8E" },
