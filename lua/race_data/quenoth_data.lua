@@ -1473,17 +1473,21 @@ local body_parts = {
 					{ name = "DEFAULT", description = "Default", colors = "F9FDDF,E5FAB4,CEE4A5,BBC392,5D6564" },
 					{ name = "SYLPH", description = "Quenoth Sun Sylph", colors = "C8FCFE,B7D5B8,80B3B6,6786A2,2E6272" },
 					
-					-- Jahreszeiten
+					-- Seasons
 					{ name = "SPRING", description = "Spring", colors = "FFF0F5,FFB6C1,98FB98,3CB371,2E8B57" },
 					{ name = "SUMMER", description = "Summer", colors = "FFFACD,FFD700,FF8C00,FF4500,8B0000" },
 					{ name = "AUTUMN", description = "Autumn", colors = "FFDEAD,D2691E,CD853F,8B4513,556B2F" },
 					{ name = "WINTER", description = "Winter", colors = "F0F8FF,E0FFFF,B0E0E6,4682B4,1C39BB" },
 					
-					-- Elemente
+					-- Elements
 					{ name = "FIRE", description = "Fire", colors = "FFF5EE,FF4500,FF0000,8B0000,4A0000" },
 					{ name = "WIND", description = "Wind", colors = "FFFFFF,E0FFFF,AFEEEE,7FFFD4,48D1CC" },
 					{ name = "WATER", description = "Water", colors = "E0FFFF,00CED1,1E90FF,0000CD,00008B" },
 					{ name = "EARTH", description = "Earth", colors = "F5DEB3,DEB887,A0522D,6B8E23,556B2F" },
+					-- Luminary
+					{ name = "MOON", description = "Moon", colors = "F8F8FF,E6E6FA,D8BFD8,7B68EE,483D8B" },
+					{ name = "SUN", description = "Sun", colors = "FFFFE0,FFFACD,FFD700,FF8C00,B22222" },
+					{ name = "STARS", description = "Stars", colors = "FFFFFF,E0FFFF,87CEEB,1E90FF,191970" },
 				},
 			},
 			sun_sylph = {
@@ -1494,17 +1498,21 @@ local body_parts = {
 					{ name = "DEFAULT", description = "Default", colors = "C8FCFE,E6E9BA,B7D5B8,80B3B6,6786A2,2E6272" },
 					{ name = "SHYDE", description = "Quenoth Shyde", colors = "F9FDDF,E5FAB4,CEE4A5,BBC392,8C947B,5D6564" },
 					
-					-- Jahreszeiten
+					-- Seasons
 					{ name = "SPRING", description = "Spring", colors = "FFF0F5,FFB6C1,98FB98,3CB371,2E8B57" },
 					{ name = "SUMMER", description = "Summer", colors = "FFFACD,FFD700,FF8C00,FF4500,8B0000" },
 					{ name = "AUTUMN", description = "Autumn", colors = "FFDEAD,D2691E,CD853F,8B4513,556B2F" },
 					{ name = "WINTER", description = "Winter", colors = "F0F8FF,E0FFFF,B0E0E6,4682B4,1C39BB" },
 					
-					-- Elemente
+					-- Elements
 					{ name = "FIRE", description = "Fire", colors = "FFF5EE,FF4500,FF0000,8B0000,4A0000" },
 					{ name = "WIND", description = "Wind", colors = "FFFFFF,E0FFFF,AFEEEE,7FFFD4,48D1CC" },
 					{ name = "WATER", description = "Water", colors = "E0FFFF,00CED1,1E90FF,0000CD,00008B" },
 					{ name = "EARTH", description = "Earth", colors = "F5DEB3,DEB887,A0522D,6B8E23,556B2F" },
+					-- Luminary
+					{ name = "MOON", description = "Moon", colors = "F8F8FF,E6E6FA,D8BFD8,7B68EE,483D8B" },
+					{ name = "SUN", description = "Sun", colors = "FFFFE0,FFFACD,FFD700,FF8C00,B22222" },
+					{ name = "STARS", description = "Stars", colors = "FFFFFF,E0FFFF,87CEEB,1E90FF,191970" },
 				},
 			},
 		}
