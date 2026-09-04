@@ -1484,10 +1484,16 @@ local body_parts = {
 					{ name = "WIND", description = "Wind", colors = "FFFFFF,E0FFFF,AFEEEE,7FFFD4,48D1CC" },
 					{ name = "WATER", description = "Water", colors = "E0FFFF,00CED1,1E90FF,0000CD,00008B" },
 					{ name = "EARTH", description = "Earth", colors = "F5DEB3,DEB887,A0522D,6B8E23,556B2F" },
-					-- Luminary
-					{ name = "MOON", description = "Moon", colors = "F8F8FF,E6E6FA,D8BFD8,7B68EE,483D8B" },
+
+					-- Luminary (Überarbeitet)
+					{ name = "MOON", description = "Moon", colors = "F0F8FF,DCDCDC,A9A9A9,4169E1,191970" },
 					{ name = "SUN", description = "Sun", colors = "FFFFE0,FFFACD,FFD700,FF8C00,B22222" },
-					{ name = "STARS", description = "Stars", colors = "FFFFFF,E0FFFF,87CEEB,1E90FF,191970" },
+					{ name = "STARS", description = "Stars", colors = "FFFACD,FFD700,483D8B,191970,0B0B26" },
+
+					-- Style & Theme Extensions
+					{ name = "PINK", description = "Pink Fairy", colors = "FFF0F5,FFC0CB,FF69B4,C71585,4A0033" },
+					{ name = "PURPLE", description = "Purple Fairy", colors = "F8F0FE,E6E6FA,BA55D3,8A2BE2,3B0066" },
+					{ name = "DARK_FOREST", description = "Dark Forest Green", colors = "E8F5E9,A5D6A7,2E7D32,1B5E20,0A2F0C" },
 				},
 			},
 			sun_sylph = {
@@ -1499,20 +1505,26 @@ local body_parts = {
 					{ name = "SHYDE", description = "Quenoth Shyde", colors = "F9FDDF,E5FAB4,CEE4A5,BBC392,8C947B,5D6564" },
 					
 					-- Seasons
-					{ name = "SPRING", description = "Spring", colors = "FFF0F5,FFB6C1,98FB98,3CB371,2E8B57" },
-					{ name = "SUMMER", description = "Summer", colors = "FFFACD,FFD700,FF8C00,FF4500,8B0000" },
-					{ name = "AUTUMN", description = "Autumn", colors = "FFDEAD,D2691E,CD853F,8B4513,556B2F" },
-					{ name = "WINTER", description = "Winter", colors = "F0F8FF,E0FFFF,B0E0E6,4682B4,1C39BB" },
+					{ name = "SPRING", description = "Spring", colors = "FFF0F5,FFE4E1,FFB6C1,98FB98,3CB371,2E8B57" },
+					{ name = "SUMMER", description = "Summer", colors = "FFFACD,FFEFD5,FFD700,FF8C00,FF4500,8B0000" },
+					{ name = "AUTUMN", description = "Autumn", colors = "FFDEAD,F4A460,D2691E,CD853F,8B4513,556B2F" },
+					{ name = "WINTER", description = "Winter", colors = "F0F8FF,E0FFFF,B0E0E6,5F9EA0,4682B4,1C39BB" },
 					
 					-- Elements
-					{ name = "FIRE", description = "Fire", colors = "FFF5EE,FF4500,FF0000,8B0000,4A0000" },
-					{ name = "WIND", description = "Wind", colors = "FFFFFF,E0FFFF,AFEEEE,7FFFD4,48D1CC" },
-					{ name = "WATER", description = "Water", colors = "E0FFFF,00CED1,1E90FF,0000CD,00008B" },
-					{ name = "EARTH", description = "Earth", colors = "F5DEB3,DEB887,A0522D,6B8E23,556B2F" },
-					-- Luminary
-					{ name = "MOON", description = "Moon", colors = "F8F8FF,E6E6FA,D8BFD8,7B68EE,483D8B" },
-					{ name = "SUN", description = "Sun", colors = "FFFFE0,FFFACD,FFD700,FF8C00,B22222" },
-					{ name = "STARS", description = "Stars", colors = "FFFFFF,E0FFFF,87CEEB,1E90FF,191970" },
+					{ name = "FIRE", description = "Fire", colors = "FFF5EE,FFE4E1,FF4500,FF0000,8B0000,4A0000" },
+					{ name = "WIND", description = "Wind", colors = "FFFFFF,F0FFFF,E0FFFF,AFEEEE,7FFFD4,48D1CC" },
+					{ name = "WATER", description = "Water", colors = "E0FFFF,B0E0E6,00CED1,1E90FF,0000CD,00008B" },
+					{ name = "EARTH", description = "Earth", colors = "F5DEB3,FFE4B5,DEB887,A0522D,6B8E23,556B2F" },
+
+					-- Luminary (Überarbeitet)
+					{ name = "MOON", description = "Moon", colors = "F0F8FF,E6E6FA,DCDCDC,A9A9A9,4169E1,191970" },
+					{ name = "SUN", description = "Sun", colors = "FFFFE0,FFFACD,FFE4B5,FFD700,FF8C00,B22222" },
+					{ name = "STARS", description = "Stars", colors = "FFFFFF,FFFACD,FFD700,483D8B,191970,0B0B26" },
+
+					-- Style & Theme Extensions
+					{ name = "PINK", description = "Pink Fairy", colors = "FFF0F5,FFD1DC,FFC0CB,FF69B4,C71585,4A0033" },
+					{ name = "PURPLE", description = "Purple Fairy", colors = "F8F0FE,F0E6FA,E6E6FA,BA55D3,8A2BE2,3B0066" },
+					{ name = "DARK_FOREST", description = "Dark Forest Green", colors = "E8F5E9,C8E6C9,A5D6A7,2E7D32,1B5E20,0A2F0C" },
 				},
 			},
 		}
