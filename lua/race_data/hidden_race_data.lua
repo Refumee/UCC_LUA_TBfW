@@ -112,11 +112,11 @@ local body_parts = {
 				base = "A4F19D,8B9A88,585E74,4A2E62",
 				variants = {
 					{ name = "DEFAULT", description = "Default", colors = "A4F19D,8B9A88,585E74,4A2E62" },
-					{ name = "BLUE_YOUTH", description = "Blue Youth Metal", colors = "E7FFCE,78C1B2,4C91C9,4A2E62" },
+					{ name = "BLUE_YOUTH", description = "Blue Youth Metal", colors = "78C1B2,4C91C9,4A707A,4A2E62" },
 					{ name = "RED_YOUTH", description = "Red Youth Metal", colors = "B38E8E,8A4C4C,664B50,50363B" },
-					{ name = "RED_FIGHTER", description = "Red Fighter Metal", colors = "F1DDD9,D9AEA6,9F2133,3F2A31" },
+					{ name = "RED_FIGHTER", description = "Red Fighter Metal", colors = "D9AEA6,BD696E,9F2133,6A343B,3F2A31" },
 					{ name = "RED_ASSASSIN", description = "Red Assassin Metal", colors = "EACCC6,BCA39D,CC8F8C,3F2A31" },
-					{ name = "CORRUPTED", description = "Corrupted Metal", colors = "C3B398,800A12,61464B,3B2328" },
+					{ name = "CORRUPTED", description = "Corrupted Metal", colors = "9D5875,800A12,61464B,3B2328" },
 					--blue armour
 					{ name = "LOYALIST_BLUE", description = "Loyalist Blue", colors = "c6e7e7,94c6c6,31526b,182931"},
 					{ name = "LOYALIST_CAVALIER", description = "Cavalier", colors = "c6e7e7,a0b9B8,3f505c,182931"},
@@ -228,12 +228,12 @@ local body_parts = {
 				unit_types = { "Dark Assassin Cloaked" },
 				base = "BCA39D,CC8F8C,9D6B6F,7D303B,57373B,3F2A31",
 				variants = {
-					{ name = "DEFAULT", description = "Default", colors = "BCA39D,CC8F8C,9D6B6F,7D303B,57373B,3F2A31" },
-					{ name = "RED_YOUTH", description = "Red Youth Metal", colors = "8A4C4C,8A4C4C,664B50,664B50,50363B,50363B" },
+					{ name = "DEFAULT", description = "Default", colors = "EACCC,BCA39D,9D6B6F,7D303B,57373B,3F2A31" },
+					{ name = "RED_YOUTH", description = "Red Youth Metal", colors = "C4ABAB,B38E8E,8A4C4C,664B50,50363B,3B2328" },
 					{ name = "RED_FIGHTER", description = "Red Fighter Metal", colors = "EACCC6,D9AEA6,BD696E,9F2133,6A343B,3F2A31" },
-					{ name = "BLUE_YOUTH", description = "Blue Youth Metal", colors = "A4F19D,78C1B2,78C1B2,4C91C9,4A707A,4A2E62" },
-					{ name = "BLUE_FIGHTER", description = "Blue Fighter Metal", colors = "8B9A88,8B9A88,585E74,585E74,4A2E62,4A2E62" },
-					{ name = "CORRUPTED", description = "Corrupted Metal", colors = "9D5875,9D5875,800A12,61464B,3B2328,3B2328" },
+					{ name = "BLUE_YOUTH", description = "Blue Youth Metal", colors = "E7FFCE,A4F19D,78C1B2,4C91C9,4A707A,4A2E62" },
+					{ name = "BLUE_FIGHTER", description = "Blue Fighter Metal", colors = "FCFFDC,FFE593,8B9A88,4C91C9,4A707A,4A2E62" },
+					{ name = "CORRUPTED", description = "Corrupted Metal", colors = "CDC2B1,C3B398,9D5875,800A12,61464B,3B2328" },
 					--blue armour
 					{ name = "LOYALIST_BLUE", description = "Loyalist Blue", colors = "FFFFFF,FFFFFF,C6E7E7,94C6C6,638C94,31526B,182931"},
 					{ name = "LOYALIST_CAVALIER", description = "Cavalier", colors = "FFFFFF,ECECEC,C6E7E7,A0B9B8,6E8387,3F505C,182931"},
