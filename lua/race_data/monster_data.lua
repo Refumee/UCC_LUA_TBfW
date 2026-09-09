@@ -8,7 +8,7 @@ local body_parts = {
 				unit_types = { "Fire Wisp", "Fire Guardian", "Fire Wraith" },
 				base = "FFFFFF,FFFFC0,FFD300,E67800,B42D00,5A2108,360000,F7D66B,EF9431,FAA718", --last color is just an "eyeliner"
 				variants = {
-					{ name = "DEFAULT_FIREGUADIAN", description = "Default", colors = "FFFFFF,FFFFC0,FFD300,E67800,B42D00,5A2108,360000,F7D66B,EF9431,FAA718" },
+					{ name = "DEFAULT_FIREGUARDIAN", description = "Default", colors = "FFFFFF,FFFFC0,FFD300,E67800,B42D00,5A2108,360000,F7D66B,EF9431,FAA718" },
 					-- variation
 					{ name = "CTL_FIREGUARDIAN", description = "CtL", colors = "C1FFFF,C1FAFF,C1ADFC,864F61,864445,52315E,360000,BAF1FE,BBA4DB,BBA4DB" },
 					--blue armour
