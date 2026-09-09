@@ -5,7 +5,7 @@ local body_parts = {
 		description = "Body",
 		data = {
 			fireguardian = { -- archtype
-				unit_types = { "Fire Wisp", "Fire Guardian", "Fire Wraith" },
+				unit_types = { "Fire Wisp", "Fire Guardian", "Fire Guardian2", "Fire Guardian3", "Fire Wraith" },
 				base = "FFFFFF,FFFFC0,FFD300,E67800,B42D00,5A2108,360000,F7D66B,EF9431,FAA718", --last color is just an "eyeliner"
 				variants = {
 					{ name = "DEFAULT_FIREGUARDIAN", description = "Default", colors = "FFFFFF,FFFFC0,FFD300,E67800,B42D00,5A2108,360000,F7D66B,EF9431,FAA718" },

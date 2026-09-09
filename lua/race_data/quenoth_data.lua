@@ -5,7 +5,7 @@ local body_parts = {
 		description = "Hair",
 		data = {
 			youth = {
-				unit_types = { "Quenoth Youth", "Quenoth Scout" },
+				unit_types = { "Quenoth Youth", "Quenoth Scout","Quenoth Scout1","Quenoth Scout2","Quenoth Scout3","Quenoth Scout4","Quenoth Scout5","Quenoth Scout6","Quenoth Scout7","Quenoth Scout8","Quenoth Scout9","Quenoth Scout10" },
 				base = "C3B397,D0C4AE,958F8D,897A5A,585E75,61464B,4A332B", -- replace 585E74 with 585E75
 				variants = {
 					{ name = "DEFAULT", description = "Default", colors = "C3B397,D0C4AE,958F8D,897A5A,585E75,61464B,4A332B" },
@@ -64,7 +64,8 @@ local body_parts = {
 				},
 			},
 			fighter = {
-				unit_types = { "Quenoth Fighter","Quenoth Warrior","Quenoth Champion","Corrupted Quenoth Elf" },
+				unit_types = { "Quenoth Fighter","Quenoth Fighter1","Quenoth Fighter2","Quenoth Fighter3","Quenoth Fighter4","Quenoth Fighter5","Quenoth Fighter6","Quenoth Fighter7","Quenoth Fighter8","Quenoth Fighter9","Quenoth Fighter10",
+				"Quenoth Warrior","Quenoth Champion","Corrupted Quenoth Elf" },
 				base = "9D9F90,818584,585E75",
 				variants = {
 					{ name = "DEFAULT", description = "Default", colors = "9D9F90,818584,585E75" },
@@ -182,7 +183,7 @@ local body_parts = {
 				},
 			},
 			mystic = {
-				unit_types = { "Quenoth Mystic","Quenoth Shaman" },
+				unit_types = { "Quenoth Mystic","Quenoth Mystic1","Quenoth Mystic2","Quenoth Mystic3","Quenoth Mystic4","Quenoth Mystic5","Quenoth Mystic6","Quenoth Mystic7","Quenoth Mystic8","Quenoth Mystic9","Quenoth Mystic10","Quenoth Shaman" },
 				base = "D6BCFA,8A92CD,60586E,262328",
 				variants = {
 					{ name = "DEFAULT", description = "Default", colors = "D6BCFA,8A92CD,60586E,262328" },
@@ -419,7 +420,7 @@ local body_parts = {
 				},
 			},
 			tauroch = {
-				unit_types = {	"Tauroch Rider",
+				unit_types = {	"Tauroch Rider","Tauroch Rider1","Tauroch Rider2","Tauroch Rider3","Tauroch Rider4","Tauroch Rider5","Tauroch Rider6","Tauroch Rider7","Tauroch Rider8","Tauroch Rider9","Tauroch Rider10",
 								"Tauroch Vanguard","Tauroch Flagbearer",
 								"Tauroch Stalwart","Tauroch Protector"},
 				base = "C7C9BC,9D9F90,958F8D,897A5A,585E75,61464B,4A332B",
@@ -546,8 +547,8 @@ local body_parts = {
 		data = {
 			youth = {
 				unit_types = {	"Quenoth Youth",
-								"Quenoth Scout","Quenoth Pathfinder",
-								"Tauroch Rider","Tauroch Vanguard","Tauroch Flagbearer","Tauroch Stalwart","Tauroch Protector"},
+								"Quenoth Scout","Quenoth Scout1","Quenoth Scout2","Quenoth Scout3","Quenoth Scout4","Quenoth Scout5","Quenoth Scout6","Quenoth Scout7","Quenoth Scout8","Quenoth Scout9","Quenoth Scout10","Quenoth Pathfinder",
+								"Tauroch Rider","Tauroch Rider1","Tauroch Rider2","Tauroch Rider3","Tauroch Rider4","Tauroch Rider5","Tauroch Rider6","Tauroch Rider7","Tauroch Rider8","Tauroch Rider9","Tauroch Rider10","Tauroch Vanguard","Tauroch Flagbearer","Tauroch Stalwart","Tauroch Protector"},
 				base = "DF9859,C8715D,8C445A,9F6050,7F4436,6C3427,5B261A",
 				variants = {
 					{ name = "DEFAULT", description = "Default", colors = "DF9859,C8715D,8C445A,9F6050,7F4436,6C3427,5B261A" },
@@ -586,7 +587,7 @@ local body_parts = {
 				},
 			},
 			fighter = {
-				unit_types = {	"Quenoth Fighter","Quenoth Warrior","Quenoth Champion",
+				unit_types = {	"Quenoth Fighter","Quenoth Fighter1","Quenoth Fighter2","Quenoth Fighter3","Quenoth Fighter4","Quenoth Fighter5","Quenoth Fighter6","Quenoth Fighter7","Quenoth Fighter8","Quenoth Fighter9","Quenoth Fighter10","Quenoth Warrior","Quenoth Champion",
 								"Quenoth Flanker","Quenoth Ranger"},
 				base = "DF9859,C8715D,9F6050,6C3427,511F13",
 				variants = {
@@ -705,7 +706,7 @@ local body_parts = {
 				},
 			},
 			mystic = {
-				unit_types = { "Quenoth Mystic","Quenoth Shaman","Quenoth Druid" },
+				unit_types = { "Quenoth Mystic","Quenoth Mystic1","Quenoth Mystic2","Quenoth Mystic3","Quenoth Mystic4","Quenoth Mystic5","Quenoth Mystic6","Quenoth Mystic7","Quenoth Mystic8","Quenoth Mystic9","Quenoth Mystic10","Quenoth Shaman","Quenoth Druid" },
 				base = "F1B892,E98F7A,F6D39B,C8715D,904D39,6C3427",
 				variants = {
 					{ name = "DEFAULT", description = "Default", colors = "F1B892,E98F7A,F6D39B,C8715D,6C3427" },
@@ -956,9 +957,9 @@ local body_parts = {
 				},
 			},
 			fighter = {
-				unit_types = {	"Quenoth Fighter","Quenoth Warrior","Quenoth Champion",
+				unit_types = {	"Quenoth Fighter","Quenoth Fighter1","Quenoth Fighter2","Quenoth Fighter3","Quenoth Fighter4","Quenoth Fighter5","Quenoth Fighter6","Quenoth Fighter7","Quenoth Fighter8","Quenoth Fighter9","Quenoth Fighter10","Quenoth Warrior","Quenoth Champion",
 								"Quenoth Flanker","Quenoth Ranger",
-								"Quenoth Scout","Quenoth Pathfinder","Quenoth Outrider"},
+								"Quenoth Scout","Quenoth Scout1","Quenoth Scout2","Quenoth Scout3","Quenoth Scout4","Quenoth Scout5","Quenoth Scout6","Quenoth Scout7","Quenoth Scout8","Quenoth Scout9","Quenoth Scout10","Quenoth Pathfinder","Quenoth Outrider"},
 				base = "EDDDC8,C1B69A,A1966F,827A54,6C6344,574D34,382800",
 				variants = {
 					{ name = "DEFAULT", description = "Default", colors = "EDDDC8,C1B69A,A1966F,827A54,6C6344,574D34,382800" },
@@ -1183,7 +1184,7 @@ local body_parts = {
 		description = "Mystic Robe",
 		data = {
 			mystic = {
-				unit_types = {	"Quenoth Mystic","Quenoth Shaman"},
+				unit_types = {	"Quenoth Mystic","Quenoth Mystic1","Quenoth Mystic2","Quenoth Mystic3","Quenoth Mystic4","Quenoth Mystic5","Quenoth Mystic6","Quenoth Mystic7","Quenoth Mystic8","Quenoth Mystic9","Quenoth Mystic10","Quenoth Shaman"},
 				base = "F1D8B3,D1B6A3,BCAE7E,A1966F,8E755C,705B49,534338",
 				variants = {
 					{ name = "DEFAULT", description = "Default", colors = "F1D8B3,D1B6A3,BCAE7E,A1966F,8E755C,705B49,534338" },
@@ -1645,7 +1646,7 @@ local body_parts = {
 				},
 			},
 			fighter = {
-				unit_types = { 	"Quenoth Fighter","Quenoth Warrior","Quenoth Champion",
+				unit_types = { 	"Quenoth Fighter","Quenoth Fighter1","Quenoth Fighter2","Quenoth Fighter3","Quenoth Fighter4","Quenoth Fighter5","Quenoth Fighter6","Quenoth Fighter7","Quenoth Fighter8","Quenoth Fighter9","Quenoth Fighter10","Quenoth Warrior","Quenoth Champion",
 								"Quenoth Flanker","Quenoth Ranger",
 								"Corrupted Quenoth Elf"},
 				base = "A4F19D,8B9A88,585E74,4A2E62",
@@ -1758,7 +1759,7 @@ local body_parts = {
 				},
 			},
 			archer = {
-				unit_types = { 	"Quenoth Scout",
+				unit_types = { 	"Quenoth Scout","Quenoth Scout1","Quenoth Scout2","Quenoth Scout3","Quenoth Scout4","Quenoth Scout5","Quenoth Scout6","Quenoth Scout7","Quenoth Scout8","Quenoth Scout9","Quenoth Scout10",
 								"Quenoth Archer","Quenoth Marksman",
 								"Quenoth Outrider","Quenoth Pathfinder"},
 				base = "FCFFDC,FFE593,A4F19D,8B9A88,4C91C9,4A707A,4A2E62",
@@ -1871,7 +1872,7 @@ local body_parts = {
 				},
 			},
 			tauroch = {
-				unit_types = {	"Tauroch Rider",
+				unit_types = {	"Tauroch Rider","Tauroch Rider1","Tauroch Rider2","Tauroch Rider3","Tauroch Rider4","Tauroch Rider5","Tauroch Rider6","Tauroch Rider7","Tauroch Rider8","Tauroch Rider9","Tauroch Rider10",
 								"Tauroch Vanguard","Tauroch Flagbearer",
 								"Tauroch Stalwart","Tauroch Protector"},
 				base = "FCFFDC,FFE593,A4F19D,78C1B2,8B9A88,4C91C9,BDD6E6,89BBB5,8592B9,4A707A,4A2E62",
@@ -2108,10 +2109,10 @@ local body_parts = {
 				},
 			},
 			fighter = {
-				unit_types = { 	"Quenoth Fighter","Quenoth Warrior","Quenoth Champion",
+				unit_types = { 	"Quenoth Fighter","Quenoth Fighter1","Quenoth Fighter2","Quenoth Fighter3","Quenoth Fighter4","Quenoth Fighter5","Quenoth Fighter6","Quenoth Fighter7","Quenoth Fighter8","Quenoth Fighter9","Quenoth Fighter10","Quenoth Warrior","Quenoth Champion",
 								"Quenoth Flanker","Quenoth Ranger",
 								"Corrupted Quenoth Elf",
-								"Quenoth Scout","Quenoth Pathfinder"},
+								"Quenoth Scout","Quenoth Scout1","Quenoth Scout2","Quenoth Scout3","Quenoth Scout4","Quenoth Scout5","Quenoth Scout6","Quenoth Scout7","Quenoth Scout8","Quenoth Scout9","Quenoth Scout10","Quenoth Pathfinder"},
 				base = "F1DDD9,EACCC6,D9AEA6,BD696E,9F2133,6A343B,3F2A31",
 				variants = {
 					{ name = "DEFAULT", description = "Default", colors = "F1DDD9,EACCC6,D9AEA6,BD696E,9F2133,6A343B,3F2A31" },
@@ -2686,7 +2687,7 @@ local body_parts = {
 		description = "Tan Hide",
 		data = {
 			scout = {
-				unit_types = { "Quenoth Scout"},
+				unit_types = { "Quenoth Scout","Quenoth Scout1","Quenoth Scout2","Quenoth Scout3","Quenoth Scout4","Quenoth Scout5","Quenoth Scout6","Quenoth Scout7","Quenoth Scout8","Quenoth Scout9","Quenoth Scout10"},
 				base = "E3D89C,BA9C55,746646,4F4E3A",
 				variants = {
 					{ name = "DEFAULT", description = "Default", colors = "E3D89C,BA9C55,746646,4F4E3A" },
@@ -3030,7 +3031,7 @@ local body_parts = {
 		description = "Mount Body",
 		data = {
 			tauroch = { -- archtype
-				unit_types = {	"Tauroch Rider",
+				unit_types = {	"Tauroch Rider","Tauroch Rider1","Tauroch Rider2","Tauroch Rider3","Tauroch Rider4","Tauroch Rider5","Tauroch Rider6","Tauroch Rider7","Tauroch Rider8","Tauroch Rider9","Tauroch Rider10",
 								"Tauroch Vanguard","Tauroch Flagbearer",
 								"Tauroch Stalwart","Tauroch Protector"},
 				base = "E19D6F,BD8331,935B53,664B50,573535,47213C,2B112A",
@@ -3045,7 +3046,7 @@ local body_parts = {
 				},
 			},
 			dustbok = { -- archtype
-				unit_types = { 	"Quenoth Scout",
+				unit_types = { 	"Quenoth Scout","Quenoth Scout1","Quenoth Scout2","Quenoth Scout3","Quenoth Scout4","Quenoth Scout5","Quenoth Scout6","Quenoth Scout7","Quenoth Scout8","Quenoth Scout9","Quenoth Scout10",
 								"Quenoth Archer","Quenoth Marksman",
 								"Quenoth Outrider","Quenoth Pathfinder"},
 				base = "F4C960,DFB769,D69168,BA7D54,9F6A3F,844824,4F2400,6A390A,301000,000000",
@@ -3066,7 +3067,7 @@ local body_parts = {
 		description = "Mount Horn",
 		data = {
 			tauroch = { -- archtype
-				unit_types = {	"Tauroch Rider",
+				unit_types = {	"Tauroch Rider","Tauroch Rider1","Tauroch Rider2","Tauroch Rider3","Tauroch Rider4","Tauroch Rider5","Tauroch Rider6","Tauroch Rider7","Tauroch Rider8","Tauroch Rider9","Tauroch Rider10",
 								"Tauroch Vanguard","Tauroch Flagbearer",
 								"Tauroch Stalwart","Tauroch Protector"},
 				base = "FCFFDD,BDD6E7,8592BA,4A707B",
@@ -3080,7 +3081,7 @@ local body_parts = {
 				},
 			},
 			dustbok = { -- archtype
-				unit_types = { 	"Quenoth Scout",
+				unit_types = { 	"Quenoth Scout","Quenoth Scout1","Quenoth Scout2","Quenoth Scout3","Quenoth Scout4","Quenoth Scout5","Quenoth Scout6","Quenoth Scout7","Quenoth Scout8","Quenoth Scout9","Quenoth Scout10",
 								"Quenoth Archer","Quenoth Marksman",
 								"Quenoth Outrider","Quenoth Pathfinder"},
 				base = "CAD1D7,ADB5BD,929BA3,7B848C,425A52,363E3A,292121",
