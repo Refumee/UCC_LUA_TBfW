@@ -121,7 +121,7 @@ local body_parts = {
 		description = "Body",
 		data = {
 			mudcrawler = { -- archtype
-				unit_types = { "Mudcrawler" },
+				unit_types = { "Mudcrawler","Small Mudcrawler" },
 				base = "E9E89D,DAA340,A1766E,5E581E,372D3C", --last color is just an "eyeliner"
 				variants = {
 					{ name = "DEFAULT_MUDCRAWLER", description = "Default", colors = "E9E89D,DAA340,A1766E,5E581E,372D3C,372D3F" },
