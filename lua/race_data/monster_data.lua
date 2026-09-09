@@ -360,7 +360,7 @@ local body_parts = {
 				},
 			},
 			dustbok = { -- archtype
-				unit_types = { "Quenoth Dustbok" },
+				unit_types = {	"Quenoth Dustbok" },
 				base = "F4C960,DFB769,D69168,BA7D54,9F6A3F,844824,4F2400,6A390A,301000,000000",
 				variants = {
 					{ name = "DEFAULT", description = "Default", colors = "F4C960,DFB769,D69168,BA7D54,9F6A3F,844824,4F2400,6A390A,301000,000000" },
@@ -391,7 +391,7 @@ local body_parts = {
 				},
 			},
 			dustbok = { -- archtype
-				unit_types = { "Quenoth Dustbok" },
+				unit_types = {	"Quenoth Dustbok" },
 				base = "CAD1D7,ADB5BD,929BA3,7B848C,425A52,363E3A,292121",
 				variants = {
 					{ name = "DEFAULT", description = "Default", colors = "CAD1D7,ADB5BD,929BA3,7B848C,425A52,363E3A,292121" },

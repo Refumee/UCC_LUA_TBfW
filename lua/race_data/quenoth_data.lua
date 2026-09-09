@@ -1882,6 +1882,10 @@ local body_parts = {
 					{ name = "RED_FIGHTER", description = "Red Fighter Metal", colors = "F1DDD9,F1DDD9,EACCC6,D9AEA6,BD696E,9F2133,EACCC6,D9AEA6,BD696E,9F2133,6A343B,3F2A31" },
 					{ name = "RED_ASSASSIN", description = "Red Assassin Metal", colors = "F3E1DD,F3E1DD,EACCC6,BCA39D,9D6B6F,7D303B,EACCC,BCA39D,9D6B6F,7D303B,57373B,3F2A31" },
 					{ name = "CORRUPTED", description = "Corrupted Metal", colors = "E2D9CC,E2D9CC,CDC2B1,C3B398,9D5875,800A12,C3B398,9D5875,800A12,61464B,3B2328" },
+					{ name = "DEFAULT_LIGHTER1", description = "Default Lighter1", colors = "FDFFE8,FFEDAA,B9F8B2,8ED7C7,A2B29F,69A8E4,D5E7F5,A0D2CC,9BA9D2,658A94,64467D" },
+					{ name = "DEFAULT_LIGHTER2", description = "Default Lighter2", colors = "FFFFF4,FFF6C3,CEFFC7,A6ECDD,B9C9B6,86BFFF,EDF8FF,B7E9E3,B3BFEC,80A4AF,7F5F98" },
+					{ name = "DEFAULT_DARKER1", description = "Default Darker1", colors = "E2E7BD,E2C979,86D580,5CA596,71806E,2D76AE,9FBDCE,6FA09A,6A779E,30555E,32174A" },
+					{ name = "DEFAULT_DARKER2", description = "Default Darker2", colors = "C8CE9F,C4AD60,6AB964,418A7B,576654,045C93,82A4B5,54857F,505C82,153B44,1D0033" },
 
 					--blue armour
 					{ name = "LOYALIST_BLUE", description = "Loyalist Blue", colors = "FFFFFF,FFFFFF,C6E7E7,94C6C6,94C6C6,638C94,638C94,31526B,31526B,182931"},
@@ -2116,6 +2120,10 @@ local body_parts = {
 					{ name = "BLUE_YOUTH", description = "Blue Youth Metal", colors = "E7FFCE,A4F19D,78C1B2,4C91C9,4A707A,4A2E62" },
 					{ name = "BLUE_FIGHTER", description = "Blue Fighter Metal", colors = "FCFFDC,FFE593,A4F19D,8B9A88,4C91C9,4A707A,4A2E62" },
 					{ name = "CORRUPTED", description = "Corrupted Metal", colors = "E2D9CC,CDC2B1,C3B398,9D5875,800A12,61464B,3B2328" },
+					{ name = "DEFAULT_LIGHTER1", description = "Default Lighter1", colors = "F8E9E5,F5DDD7,E8BFB7,CE7A7F,B03244,7B454C,503B42" },
+					{ name = "DEFAULT_LIGHTER2", description = "Default Lighter2", colors = "FFF6F4,FFEAE4,F7D1C9,E08C91,C24456,8D575E,624D54" },
+					{ name = "DEFAULT_DARKER1", description = "Default Darker1", colors = "DFCBC7,D8BAB4,C79C94,AB575C,8D0F21,582229,2D181F" },
+					{ name = "DEFAULT_DARKER2", description = "Default Darker2", colors = "CEBAB6,C7A9A3,B68B83,9A464B,7C0010,471118,1C070E" },
 					--blue armour
 					{ name = "LOYALIST_BLUE", description = "Loyalist Blue", colors = "FFFFFF,FFFFFF,C6E7E7,94C6C6,638C94,31526B,182931"},
 					{ name = "LOYALIST_CAVALIER", description = "Cavalier", colors = "FFFFFF,ECECEC,C6E7E7,A0B9B8,6E8387,3F505C,182931"},
