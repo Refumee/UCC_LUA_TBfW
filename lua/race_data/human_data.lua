@@ -1003,7 +1003,7 @@ local body_parts = {
 					"Bowman Thea","Longbowman Thea","Master Bowman Thea",
 					"Elite Bowman","Elite Longbowman","Elite Master Bowman","Elite Duelist","Elite Bowman","Elite Master at Arms","Injured Lieutenant",
 					"Prince of Wesnoth", "Veteran Cavalier",
-					"Unarmed Eldred","King Eldred","Crown Prince","Hunker Eldred",
+					"Unarmed Eldred","King Eldred","Crown Prince","Hunker Eldred", "Human Commander",
 					"Cavalryman", "Horseman", "Dragoon", "Spearman", "Master at Arms", 
 					"Bowman", "Swordsman", "General", "Longbowman", "Grand Marshal", "Sergeant", "Lieutenant", "Master Bowman", 
 					"Knight", "Pikeman", "Royal Guard", "Halberdier", "Duelist", "Fencer", "Peasant", "Woodsman", 
@@ -1081,8 +1081,7 @@ local body_parts = {
 		description = "Leather",
 		data = {
 			human = ucc_structure(
-				{ 
-					"Battle Princess", "Princess", "Warrior Princess", "Bound Princess", "Cavalryman", "Horseman", "Dragoon", "Spearman", "Master at Arms", 
+				{	"Battle Princess", "Princess", "Warrior Princess", "Bound Princess", "Cavalryman", "Horseman", "Dragoon", "Spearman", "Master at Arms", 
 					"Bowman", "Swordsman", "General", "Longbowman", "Grand Marshal", "Sergeant", "Lieutenant", "Master Bowman", 
 					"Knight", "Pikeman", "Royal Guard", "Halberdier", "Duelist", "Fencer", "Peasant", "Woodsman", 
 					"Lancer", "Javelineer", 
@@ -1091,12 +1090,11 @@ local body_parts = {
 					"Afterlife General", "Afterlife Longbowman", "Afterlife Grand Marshal", "Afterlife Sergeant", 
 					"Afterlife Lieutenant", "Afterlife Master Bowman", "Knight", "Afterlife Pikeman", "Afterlife Royal Guard", 
 					"Afterlife Halberdier", "Afterlife Duelist", "Afterlife Fencer", "Afterlife Peasant", "Afterlife Woodsman", 
-					"Afterlife Lancer", "Afterlife Javelineer"
-				},
+					"Afterlife Lancer", "Afterlife Javelineer"	},
 				"D6D69C,938D6D,525239,39382D,332D32,2F1010",
 				leather_variants
 			),
-			human = ucc_structure(
+			roguemage = ucc_structure(
 				{ "Rogue Mage", "Arcane Enforcer"},
 				"A88325,936920,754C20,643B23,472924,2f1010",
 				leather_variants
