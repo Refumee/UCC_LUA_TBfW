@@ -95,16 +95,16 @@ function gui.show_picker(unit, race_data)
         T.grid {
             T.row {
                 T.column {
-                    vertical_alignment = "top",
                     border = "right", border_size = 10,
                     horizontal_grow = true,
+					vertical_grow = true,
                     T.grid {
-                        T.row { T.column { T.label { label = "<b>Preview</b>", use_markup = true } } },
+						T.row { T.column { T.label { label = "<big>Preview</big>", use_markup = true } } },
                         T.row { T.column { T.image { id = "the_image", label = base_image } } },
                         T.row { T.column { T.spacer { height = 20 } } },
                         T.row { T.column {
 							grid_width = 3, 
-							horizontal_alignment = "right",
+							horizontal_alignment = "center",
 							border = "top", border_size = 10,
 							T.grid {
 								T.row {
@@ -114,65 +114,72 @@ function gui.show_picker(unit, race_data)
 								}
 							}
 						}},
-                        T.row { T.column { T.spacer { height = 20 } } },
 						T.row {
 							T.column {
-								grid_width = 3, 
-								horizontal_alignment = "right",
-								border = "top", border_size = 10,
+								vertical_alignment = "center",
+								horizontal_alignment = "center",
+								grow_factor = 1,
 								T.grid {
 									T.row {
-										T.column { T.button { id = "cancel", label = "Cancel" } },
-										T.column { T.spacer { width = 10 } },
-										T.column { T.button { id = "ok", label = "Apply", return_value = 1 } }
+										T.column{
+											vertical_alignment = "top",
+											T.label { label = "<b>Body Parts</b>", use_markup = true }
+										}
+									},
+									T.row {
+										T.column {
+											border = "all",
+											border_size = 5,
+											horizontal_grow = true,
+											vertical_grow = true,
+											T.listbox {
+												id = "list_parts",
+												T.list_definition {
+													T.row {
+														T.column {
+															grow_factor = 1,
+															horizontal_grow = true,
+															vertical_grow = true,
+															T.toggle_panel {
+																T.grid {
+																	T.row {
+																		grow_factor = 1,
+																		T.column {
+																			horizontal_alignment = "left",
+																			border = "all", border_size = 5,
+																			T.label { id = "lbl_part" }
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
 									}
 								}
 							}
+						},
+                        T.row { T.column { T.spacer { height = 20 } } },
+						T.row {
+							T.column {
+								grid_width = 3,
+								horizontal_alignment = "center",
+								vertical_alignment = "bottom",
+								border = "top", border_size = 10,
+								T.grid {
+									T.row {
+										T.column { T.button { id = "ok", label = "Apply", definition = "large", return_value = 1 } }
+									},
+									T.row { T.column { T.spacer { height = 10 } } },
+									T.row {
+										T.column { T.button { id = "cancel", label = "Cancel" } },
+									},
+									T.row { T.column { T.spacer { height = 10 } } },
+								}
+							}
 						}
-                    }
-                },
-                
-                T.column {
-                    vertical_alignment = "center",
-                    horizontal_alignment = "left",
-                    grow_factor = 1,
-                    T.grid {
-                        T.row { 
-							T.column{
-								vertical_alignment = "top", 
-								T.label { label = "<b>Body Parts</b>", use_markup = true } } },
-                        T.row {
-                            T.column {
-								border = "all",
-								border_size = 5,
-								horizontal_grow = true,
-								vertical_grow = true,
-                                T.listbox {
-                                    id = "list_parts",
-                                    T.list_definition {
-                                        T.row {
-                                            T.column {
-												grow_factor = 1,
-												horizontal_grow = true,
-												vertical_grow = true,
-                                                T.toggle_panel {
-                                                    T.grid {
-                                                        T.row {
-															grow_factor = 1,
-                                                            T.column {
-                                                                horizontal_alignment = "left",
-                                                                border = "all", border_size = 5,
-                                                                T.label { id = "lbl_part" }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
                     }
                 },
 
