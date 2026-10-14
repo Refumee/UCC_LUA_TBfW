@@ -1,7 +1,7 @@
 --local helper = wesnoth.require "lua/helper.lua"
 local T = wml.tag
 
-local gui = {}
+local uccgui = {}
 
 -- HELPER: Safely retrieve the base image of a unit
 local function get_unit_base_image(unit)
@@ -11,35 +11,7 @@ local function get_unit_base_image(unit)
 	return "misc/missing-image.png"
 end
 
-local function GUI_FORCE_WIDGET_MINIMUM_SIZE(w, h, content)
-	return T.stacked_widget {
-		definition = "default",
-		T.layer {
-			T.row {
-				T.column {
-					T.spacer {
-						definition = "default",
-						width = w,
-						height = h
-					}
-				}
-			} 
-		},
-		T.layer {
-			T.row {
-				grow_factor = 1,
-				T.column {
-					grow_factor = 1,
-					horizontal_grow = "true",
-					vertical_grow = "true",
-					content
-				}
-			} 
-		}
-	}
-end
-
-function gui.show_picker(unit, race_data)
+function uccgui.show_picker(unit, race_data)
 
 	if not race_data then
 		wesnoth.interface.add_chat_message("UCC", "Error: No race data found.")
@@ -85,158 +57,160 @@ function gui.show_picker(unit, race_data)
 	end
 
 	-- 2. GUI Definition (WML Table)
-	local definition = {
-		maximum_height = 700,
-		maximum_width = 900,
-		
-		T.tooltip { id = "tooltip_large" },
-		T.helptip { id = "tooltip_large" },
-		
-		T.grid {
-			T.row {
-				T.column {
-					border = "right", border_size = 10,
-					horizontal_grow = true,
-					vertical_grow = true,
-					T.grid {
-						T.row { T.column { T.label { label = "<big>Preview</big>", use_markup = true } } },
-						T.row { T.column { T.image { id = "the_image", label = base_image } } },
-						T.row { T.column {
-							grid_width = 3,
-							horizontal_alignment = "center",
-							border = "top,bottom", border_size = 10,
-							T.grid {
-								T.row {
-									T.column { T.toggle_button { id = "chk_faction", label = "Whole Faction", tooltip = "Apply to all units and recruits of this faction" } },
-									T.column { T.spacer { width = 10 } },
-									T.column { T.toggle_button { id = "chk_ut", label = "Unit Type only", tooltip = "Apply to all units of this unit type" } }
-								}
-							}
-						}},
-						T.row {
-							T.column {
-								vertical_alignment = "center",
-								horizontal_alignment = "center",
-								grow_factor = 1,
-								T.grid {
-									T.row {
-										T.column{
-											vertical_alignment = "top",
-											T.label { label = "<b>Body Parts</b>", use_markup = true }
-										}
-									},
-									T.row {
-										T.column {
-											border = "all",
-											border_size = 5,
-											horizontal_grow = true,
-											vertical_grow = true,
-											T.listbox {
-												id = "list_parts",
-												T.list_definition {
-													T.row {
-														T.column {
-															grow_factor = 1,
-															horizontal_grow = true,
-															vertical_grow = true,
-															T.toggle_panel {
-																T.grid {
-																	T.row {
-																		grow_factor = 1,
-																		T.column {
-																			horizontal_alignment = "left",
-																			border = "all", border_size = 5,
-																			T.label { id = "lbl_part" }
-																		}
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						},
-						T.row { T.column { T.spacer { height = 20 } } },
-						T.row {
-							T.column {
-								grid_width = 3,
-								horizontal_alignment = "center",
-								vertical_alignment = "bottom",
-								border = "top", border_size = 10,
-								T.grid {
-									T.row {
-										T.column { T.button { id = "ok", label = "Apply", definition = "large", return_value = 1 } }
-									},
-									T.row { T.column { T.spacer { height = 10 } } },
-									T.row {
-										T.column { T.button { id = "cancel", label = "Cancel" } },
-									},
-									T.row { T.column { T.spacer { height = 10 } } },
-								}
-							}
-						}
-					}
-				},
+-- 	local definition = {
+-- 		maximum_height = 700,
+-- 		maximum_width = 900,
+--
+-- 		T.tooltip { id = "tooltip_large" },
+-- 		T.helptip { id = "tooltip_large" },
+--
+-- 		T.grid {
+-- 			T.row {
+-- 				T.column {
+-- 					border = "right", border_size = 10,
+-- 					horizontal_grow = true,
+-- 					vertical_grow = true,
+-- 					T.grid {
+-- 						T.row { T.column { T.label { label = "<big>Preview</big>", use_markup = true } } },
+-- 						T.row { T.column { T.image { id = "the_image", label = base_image } } },
+-- 						T.row { T.column {
+-- 							grid_width = 3,
+-- 							horizontal_alignment = "center",
+-- 							border = "top,bottom", border_size = 10,
+-- 							T.grid {
+-- 								T.row {
+-- 									T.column { T.toggle_button { id = "chk_faction", label = "Whole Faction", tooltip = "Apply to all units and recruits of this faction" } },
+-- 									T.column { T.spacer { width = 10 } },
+-- 									T.column { T.toggle_button { id = "chk_ut", label = "Unit Type only", tooltip = "Apply to all units of this unit type" } }
+-- 								}
+-- 							}
+-- 						}},
+-- 						T.row {
+-- 							T.column {
+-- 								vertical_alignment = "center",
+-- 								horizontal_alignment = "center",
+-- 								grow_factor = 1,
+-- 								T.grid {
+-- 									T.row {
+-- 										T.column{
+-- 											vertical_alignment = "top",
+-- 											T.label { label = "<b>Body Parts</b>", use_markup = true }
+-- 										}
+-- 									},
+-- 									T.row {
+-- 										T.column {
+-- 											border = "all",
+-- 											border_size = 5,
+-- 											horizontal_grow = true,
+-- 											vertical_grow = true,
+-- 											T.listbox {
+-- 												id = "list_parts",
+-- 												T.list_definition {
+-- 													T.row {
+-- 														T.column {
+-- 															grow_factor = 1,
+-- 															horizontal_grow = true,
+-- 															vertical_grow = true,
+-- 															T.toggle_panel {
+-- 																T.grid {
+-- 																	T.row {
+-- 																		grow_factor = 1,
+-- 																		T.column {
+-- 																			horizontal_alignment = "left",
+-- 																			border = "all", border_size = 5,
+-- 																			T.label { id = "lbl_part" }
+-- 																		}
+-- 																	}
+-- 																}
+-- 															}
+-- 														}
+-- 													}
+-- 												}
+-- 											}
+-- 										}
+-- 									}
+-- 								}
+-- 							}
+-- 						},
+-- 						T.row { T.column { T.spacer { height = 20 } } },
+-- 						T.row {
+-- 							T.column {
+-- 								grid_width = 3,
+-- 								horizontal_alignment = "center",
+-- 								vertical_alignment = "bottom",
+-- 								border = "top", border_size = 10,
+-- 								T.grid {
+-- 									T.row {
+-- 										T.column { T.button { id = "ok", label = "Apply", definition = "large", return_value = 1 } }
+-- 									},
+-- 									T.row { T.column { T.spacer { height = 10 } } },
+-- 									T.row {
+-- 										T.column { T.button { id = "cancel", label = "Cancel" } },
+-- 									},
+-- 									T.row { T.column { T.spacer { height = 10 } } },
+-- 								}
+-- 							}
+-- 						}
+-- 					}
+-- 				},
+--
+-- 				T.column {
+-- 					vertical_alignment = "top",
+-- 					horizontal_alignment = "left",
+-- 					grow_factor = 1,
+-- 					T.grid {
+-- 						T.row { T.column { T.label { label = "<b>Colors</b>", use_markup = true } } },
+-- 						T.row {
+-- 							T.column {
+-- 								border = "all",
+-- 								border_size = 5,
+-- 								horizontal_grow = true,
+-- 								vertical_grow = true,
+-- 								T.listbox {
+-- 									id = "list_variants",
+-- 									vertical_scrollbar_mode = "always",
+-- 									T.list_definition {
+-- 										T.row {
+-- 											T.column {
+-- 												grow_factor = 1,
+-- 												horizontal_grow = true,
+-- 												vertical_grow = true,
+-- 												T.toggle_panel {
+-- 													T.grid {
+-- 														T.row {
+-- 															grow_factor = 1,
+-- 															T.column {
+-- 																border = "all",
+-- 																border_size = 5,
+-- 																horizontal_alignment = "left",
+-- 																T.image { id = "lbl_image"}
+-- 															},
+-- 															T.column {
+-- 																border = "all",
+-- 																border_size = 5,
+-- 																horizontal_alignment = "left",
+-- 																GUI_FORCE_WIDGET_MINIMUM_SIZE(150,5,
+-- 																	T.label {
+-- 																		id = "lbl_variant"
+-- 																	}
+-- 																)
+-- 															},
+-- 														}
+-- 													}
+-- 												}
+-- 											}
+-- 										}
+-- 									}
+-- 								}
+-- 							}
+-- 						}
+-- 					}
+-- 				}
+-- 			}
+-- 		}
+-- 	}
 
-				T.column {
-					vertical_alignment = "top",
-					horizontal_alignment = "left",
-					grow_factor = 1,
-					T.grid {
-						T.row { T.column { T.label { label = "<b>Colors</b>", use_markup = true } } },
-						T.row {
-							T.column {
-								border = "all",
-								border_size = 5,
-								horizontal_grow = true,
-								vertical_grow = true,
-								T.listbox {
-									id = "list_variants",
-									vertical_scrollbar_mode = "always",
-									T.list_definition {
-										T.row {
-											T.column {
-												grow_factor = 1,
-												horizontal_grow = true,
-												vertical_grow = true,
-												T.toggle_panel {
-													T.grid {
-														T.row {
-															grow_factor = 1,
-															T.column {
-																border = "all",
-																border_size = 5,
-																horizontal_alignment = "left",
-																T.image { id = "lbl_image"}
-															},
-															T.column {
-																border = "all",
-																border_size = 5,
-																horizontal_alignment = "left",
-																GUI_FORCE_WIDGET_MINIMUM_SIZE(150,5,
-																	T.label {
-																		id = "lbl_variant"
-																	}
-																)
-															},
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+	local definition = wml.get_child(wml.load("~add-ons/UCC_LUA/gui/ucc_dialog.cfg"), "resolution")
 
 	-- 3. Preshow Logic (Dynamic data loading)
 	local function preshow(dialog)
@@ -388,4 +362,4 @@ function gui.show_picker(unit, race_data)
 	end
 end
 
-return gui
+return uccgui
